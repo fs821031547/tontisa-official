@@ -2,7 +2,7 @@
 
 // const Controller = require('egg').Controller;
 module.exports = app => {
-  class HomeController extends app.Controller {
+  class HomeController extends app.ApiController {
     async index() {
       this.ctx.body = 'hi, egg';
     }
@@ -14,9 +14,32 @@ module.exports = app => {
         sign: '88888888',
         timestamp: '2018-05-07 15:04:12',
       };
-      const user = await this.apiGet('http://vutest.op110.com.cn/usercenter-service/user/info', data);
+      const user = await this.apiPost('vutest.op110.com.cn/usercenter-service/user/info', data);
       console.log('user=========:', user);
-      await this.ctx.render({ a: 'pm 10点半' });
+      if (typeof user.data === 'string') {
+        user.data = JSON.parse(user.data);
+      }
+      await this.ctx.render(user.data);
+    }
+    async demo() {
+      // this.ctx.body = { a: 1 };
+      const data = {
+        username: '17603070560',
+        appId: '50001',
+        sign: '88888888',
+        timestamp: '2018-05-07 15:04:12',
+      };
+      const user = await this.apiPost('vutest.op110.com.cn/usercenter-service/user/info', data);
+      if (typeof user.data === 'string') {
+        user.data = JSON.parse(user.data);
+      }
+      await this.ctx.render('index', user.data);
+    }
+    async serveTest() {
+      // this.ctx.body = { a: 1 };
+      console.log('====service');
+      const data = await this.ctx.service.home.demo();
+      await this.ctx.render('index', data);
     }
   }
   return HomeController;

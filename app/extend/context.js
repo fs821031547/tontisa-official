@@ -35,7 +35,6 @@ module.exports = {
       }
     }
     return this.renderView(...renderArgs).then(body => {
-      // this.logger.debug('body', body);
       this.body = body;
     });
   },
