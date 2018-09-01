@@ -1,0 +1,36 @@
+{
+  "name": "egg-less",
+  "version": "2.1.1",
+  "description": "less plugin for egg",
+  "eggPlugin": {
+    "name": "less"
+  },
+  "author": {
+    "name": "Randy Merrill",
+    "email": "Zoramite+github@gmail.com",
+    "url": "http://forthedeveloper.com"
+  },
+  "bugs": {
+    "url": "https://github.com/emberfeather/less.js-middleware/issues"
+  },
+  "dependencies": {
+    "less": "~2.7.1",
+    "mkdirp": "~0.5.1",
+    "node.extend": "~2.0.0"
+  },
+  "deprecated": false,
+  "devDependencies": {
+    "express": "~4.15.3",
+    "fs-extra": "~4.0.0",
+    "mocha": "~3.4.2",
+    "supertest": "~3.0.0"
+  },
+  "engines": {
+    "node": ">= 0.7.1"
+  },
+  "homepage": "https://github.com/emberfeather/less.js-middleware#readme",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  }
+}

@@ -9,13 +9,19 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1535519227477_8304';
 
   // add your config here
-  config.middleware = [ 'less' ];
-  config.less = {
-    src: path.join(appInfo.baseDir, 'app/view/css'),
-    dest: path.join(appInfo.baseDir, 'app/public/css'),
-    prefix: '/css',
-    force: true,
-  };
+  // config.middleware = [ 'less' ];
+  // config.less = {
+  //   src: path.join(appInfo.baseDir, 'app/view/less'),
+  //   dest: path.join(appInfo.baseDir, 'app/public/css'),
+  //   prefix: '/css',
+  //   force: true,
+  // };
+  // config.sass = {
+  //   // src: path.join(appInfo.baseDir, 'app/view/css'),
+  //   dest: path.join(appInfo.baseDir, '/public/'),
+  //   // prefix: '/css',
+  //   // force: true,
+  // };
   config.static = {
     prefix: '/public',
     // dir: '/public',

@@ -4,7 +4,8 @@
 module.exports = app => {
   class HomeController extends app.ApiController {
     async index() {
-      this.ctx.body = 'hi, egg';
+      // this.ctx.body = 'hi, egg';
+      await this.ctx.render('index');
     }
     async test() {
       // this.ctx.body = { a: 1 };
