@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 
 module.exports = appInfo => {
   const config = exports = {};
@@ -8,8 +9,15 @@ module.exports = appInfo => {
 
   // add your config here
   config.middleware = [];
-
+  config.static={
+    prefix: '/',
+    dir:path.join(appInfo.baseDir, 'app/public'),
+  };
   config.view = {
+    root: [
+      path.join(appInfo.baseDir, 'app/view'),
+      path.join(appInfo.baseDir, 'app/public'),
+    ].join(','),
     mapping: {
       '.html': 'nunjucks',
     },

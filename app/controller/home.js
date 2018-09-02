@@ -2,7 +2,7 @@
 
 // const Controller = require('egg').Controller;
 module.exports = app => {
-  class HomeController extends app.Controller {
+  class HomeController extends app.ApiService {
     async index() {
       this.ctx.body = 'hi, egg';
     }
@@ -14,8 +14,8 @@ module.exports = app => {
         sign: '88888888',
         timestamp: '2018-05-07 15:04:12',
       };
-      const user = await this.apiGet('http://vutest.op110.com.cn/usercenter-service/user/info', data);
-      console.log('user=========:', user);
+      // const user = await this.apiGet('http://vutest.op110.com.cn/usercenter-service/user/info', data);
+      // console.log('user=========:', user);
       await this.ctx.render({ a: 'pm 10点半' });
     }
   }
