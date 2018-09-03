@@ -1,0 +1,48 @@
+@charset "utf-8";
+/**
+ @Name：reset.css PC端重置样式
+ @Author：silencyXiao
+ @Email: tongtisa.github.io
+ @Date：2016-06-24
+ **/
+
+/* Reset browser default styles  */
+html { height: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+body{ font:12px/1.5 'Microsoft Yahei'; background-color: #fff; color: #404040; }
+body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset{ margin:0; }
+ul,ol,fieldset,legend{ padding: 0;}
+a{ background-color: transparent;  -webkit-text-decoration-skip: objects; cursor: pointer; color:#666; text-decoration:none;}
+a:active,a:hover{ outline: 0; color: #0066cc;}
+b,strong { font-weight: bolder; }
+em{ font-style: normal; }
+img{ border:0;   vertical-align:middle;   -ms-interpolation-mode: bicubic;}
+li{ list-style-type: none;}
+table { border-collapse: collapse; border-spacing: 0; padding: 0; }
+th,td{ padding: 0; }
+
+/* form */
+fieldset{ border:0; }
+button,input,select,textarea{ margin: 0; padding: 0; font: inherit; outline: 0;}
+textarea{ overflow: auto; vertical-align: top; resize:vertical;}
+button,input[type='button'],input[type='submit'],input[type='reset']{  cursor: pointer;}
+[disabled]{ cursor: not-allowed;}
+input:-moz-placeholder, textarea:-moz-placeholder { color: #ccc; }
+input::-moz-placeholder, textarea::-moz-placeholder { color: #ccc; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #ccc; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #ccc; }
+
+/* HTML5 display definitions in browser */
+article,aside,details,figcaption,figure,footer,header,main, menu,nav,section,summary { display: block; }
+audio,canvas,progress,video { display: inline-block; }
+progress { vertical-align: baseline;}
+template, [hidden] { display: none; }
+sub,sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;}
+sub { bottom: -0.25em;}
+sup { top: -0.5em;}
+small { font-size: 80%;}
+
+/* simple */
+.fl { float: left;}
+.fr { float: right;}
+.clearfix { zoom: 1;}
+.clearfix:after { content: ""; display: block; clear: both;}

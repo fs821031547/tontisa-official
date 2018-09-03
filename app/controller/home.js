@@ -21,6 +21,11 @@ module.exports = app => {
       }
       await this.ctx.render(user.data);
     }
+
+    async default() {
+      await this.ctx.render('default');
+    }
+
     async demo() {
       // this.ctx.body = { a: 1 };
       const data = {
@@ -35,6 +40,7 @@ module.exports = app => {
       }
       await this.ctx.render('index', user.data);
     }
+
     async serveTest() {
       // this.ctx.body = { a: 1 };
       console.log('====service');

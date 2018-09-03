@@ -3,6 +3,7 @@
 /**
  * @param {Egg.Application} app - egg application
  */
+
 module.exports = app => {
   const rv = app.middlewares.routerView;
   const { router, controller } = app;
@@ -10,4 +11,6 @@ module.exports = app => {
   router.get('/test', rv('index'), controller.home.test);
   router.get('/serve', controller.home.serveTest);
   router.get('/demo', controller.home.demo);
+
+  router.get('/index', rv('default'), controller.home.default);
 };
