@@ -3,7 +3,6 @@
   min-width: 1200px;
   margin: 0 auto;
 }
-
 /* Header */
 .header {
   position: fixed;
@@ -14,7 +13,7 @@
   height: 68px;
   line-height: 68px;
   background-color: #fff;
-  box-shadow: 0 3px 5px 0px rgba(0,0,0,.15);
+  box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.15);
 }
 .header .logo {
   float: left;
@@ -32,13 +31,14 @@
   position: relative;
 }
 .header .navs .login:before {
-  position: absolute;
   top: 28px;
   right: 45px;
-  content: "";
   width: 1px;
   height: 13px;
   background-color: #bbb;
+  display: block;
+  position: absolute;
+  contnet: "";
 }
 .header .navs .login a {
   display: inline-block;
@@ -53,12 +53,12 @@
 .header .navs .menus {
   float: right;
 }
-.header .navs .menus .item{
+.header .navs .menus .item {
   position: relative;
   float: left;
   margin: 0 28px;
 }
-.header .navs .menus .item .item-a{
+.header .navs .menus .item .item-a {
   display: block;
   position: relative;
   width: 100%;
@@ -66,17 +66,18 @@
   color: #444;
 }
 .header .navs .menus .item .item-a:after {
-  position: absolute;
   bottom: 0;
   left: 50%;
-  content: "";
   width: 0;
   height: 2px;
   margin-left: 0;
   background: #2770f6;
   transition: all .3s;
+  display: block;
+  position: absolute;
+  contnet: "";
 }
-.header .navs .menus .item .item-a:hover{
+.header .navs .menus .item .item-a:hover {
   color: #2770f6;
 }
 .header .navs .menus .item .sub-box {
@@ -89,24 +90,27 @@
   border-top: 1px solid #e5e5e5;
   background: #fff;
   box-shadow: 0 2px 2px 0px #eee;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  transition: all .3s;
-  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .header .navs .menus .item .sub-menu {
   width: 112px;
 }
-.header .navs .menus .item .sub-menu .sub-item{
+.header .navs .menus .item .sub-menu .sub-item {
   line-height: 30px;
 }
-.header .navs .menus .item .sub-menu .sub-item-a {
+.header .navs .menus .item .sub-menu .sub-item .sub-item-a {
   display: inline-block;
   padding-left: 25px;
   box-sizing: border-box;
   color: transparent;
   transition: all .2s;
+}
+.header .navs .menus .item .sub-menu .sub-item-a:hover {
+  color: #2770f6;
+  padding-left: 32px;
 }
 .header .navs .menus .item:hover .item-a:after {
   width: 24px;
@@ -116,26 +120,19 @@
   width: 112px;
   margin-left: -56px;
 }
-.header .navs .menus .item:hover .sub-menu .sub-item-a{
+.header .navs .menus .item:hover .sub-menu .sub-item-a {
   color: #444;
 }
-.header .navs .menus .item:hover a,
+.header .navs .menus .item:hover a {
+  color: #2770f6;
+}
 .header .navs .menus .item.active .item-a {
-  color: #2770f6;
-}
-.header .navs .menus .item .sub-menu .sub-item-a:hover {
-  color: #2770f6;
-  padding-left: 32px;
-}
-.header .navs .menus .item.active .item-a{
   color: #2770f6;
 }
 .header .navs .menus .item.active .item-a:after {
   width: 24px;
   margin-left: -12px;
 }
-
-
 /* Footer */
 .footer {
   padding: 55px 0 20px;
@@ -143,10 +140,10 @@
   color: #aaaeb5;
   background: #2c343c;
 }
-.footer .logo-foot{
+.footer .logo-foot {
   margin-bottom: 20px;
 }
-.footer .part-one{
+.footer .part-one {
   width: 320px;
   margin-right: 140px;
 }
@@ -155,17 +152,23 @@
   margin-bottom: 15px;
   background: url('../images/icon_foot.png') no-repeat;
 }
-.footer .part-one .p2{
+.footer .part-one .p2 {
   background-position: 0 -37px;
 }
-.footer .part-one .p3{
+.footer .part-one .p3 {
   background-position: 0 -71px;
 }
-
 .footer .part-two {
   margin-right: 110px;
 }
-.footer .title{
+.footer .part-two .items .item {
+  margin-bottom: 12px;
+}
+.footer .part-two .items .item a {
+  font-size: 12px;
+  color: #aaaeb5;
+}
+.footer .title {
   height: 16px;
   line-height: 16px;
   margin-bottom: 32px;
@@ -173,27 +176,19 @@
   font-weight: normal;
   color: #fff;
 }
-.footer .part-two .items .item{
-  margin-bottom: 12px;
-}
-.footer .part-two .items .item a{
-  font-size: 12px;
-  color: #aaaeb5;
-}
-.footer .foot-right h3{
+.footer .foot-right h3 {
   padding-left: 22px;
 }
-.footer .foot-right .codes{
+.footer .foot-right .codes {
   font-size: 12px;
   text-align: center;
 }
-.footer .foot-right .codes .code{
+.footer .foot-right .codes .code {
   margin-left: 22px;
 }
-.footer .foot-right .codes p{
+.footer .foot-right .codes .code p {
   margin-top: 5px;
 }
-
 .footer .foot-bottom {
   font-size: 12px;
   padding: 20px 0 20px;

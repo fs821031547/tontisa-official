@@ -1,0 +1,231 @@
+@lightGray: #999;
+@middleGray: #666;
+@deepGray: #333;
+
+@white: #fff;
+@black: #000;
+@red: #f00;
+@blue: #2770f6;
+@orange: orange;
+
+@bgLightGray: #f7f7f7;
+
+.content() {
+  display: block;
+  position: absolute;
+  contnet: "";
+}
+.transition(@all: all .3s) {
+  -webkit-transition: @all;
+  -moz-transition: @all;
+  -ms-transition: @all;
+  transition: @all;
+}
+
+.inner {
+  width: 1200px;
+  min-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 68px;
+  line-height: 68px;
+  background-color: @white;
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,.15);
+  .logo {
+    float: left;
+    width: 185px;
+    height: 30px;
+    img {
+      width: 100%;
+    }
+  }
+  .navs {
+    float: right;
+    .login {
+      float: right;
+      position: relative;
+      &:before {
+        top: 28px;
+        right: 45px;
+        width: 1px;
+        height: 13px;
+        background-color: #bbb;
+        .content();
+      }
+      a {
+        display: inline-block;
+        margin-left: 30px;
+        font-size: 14px;
+        color: #666;
+        transition: color .2s;
+        &:hover {
+          color: @blue;
+        }
+      }
+    }
+    .menus {
+      float: right;
+      .item {
+        position: relative;
+        float: left;
+        margin: 0 28px;
+        .item-a {
+          display: block;
+          position: relative;
+          width: 100%;
+          font-size: 16px;
+          color: #444;
+          &:after {
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            margin-left: 0;
+            background: #2770f6;
+            transition: all .3s;
+            .content();
+          }
+          &:hover {
+            color: @blue;
+          }
+        }
+        .sub-box {
+          position: absolute;
+          top: 68px;
+          left: 50%;
+          width: 0;
+          padding: 6px 0;
+          margin-left: 0;
+          border-top: 1px solid #e5e5e5;
+          background: #fff;
+          box-shadow: 0 2px 2px 0px #eee;
+          .transition();
+        }
+        .sub-menu {
+          width: 112px;
+          .sub-item {
+            line-height: 30px;
+            .sub-item-a {
+              display: inline-block;
+              padding-left: 25px;
+              box-sizing: border-box;
+              color: transparent;
+              transition: all .2s;
+            }
+          }
+          .sub-item-a {
+            &:hover {
+              color: @blue;
+              padding-left: 32px;
+            }
+          }
+        }
+        &:hover {
+          .item-a {
+            &:after {
+              width: 24px;
+              margin-left: -12px;
+            }
+          }
+          .sub-box {
+            width: 112px;
+            margin-left: -56px;
+          }
+          .sub-menu {
+            .sub-item-a {
+              color: #444;
+            }
+          }
+          a {
+            color: @blue;
+          }
+        }
+        &.active {
+          .item-a {
+            color: @blue;
+            &:after {
+              width: 24px;
+              margin-left: -12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  padding: 55px 0 20px;
+  font-size: 14px;
+  color: #aaaeb5;
+  background: #2c343c;
+  .logo-foot{
+    margin-bottom: 20px;
+  }
+  .part-one{
+    width: 320px;
+    margin-right: 140px;
+    p {
+      padding-left: 30px;
+      margin-bottom: 15px;
+      background: url('../images/icon_foot.png') no-repeat;
+    }
+    .p2{
+      background-position: 0 -37px;
+    }
+    .p3{
+      background-position: 0 -71px;
+    }
+  }
+  .part-two {
+    margin-right: 110px;
+    .items{
+      .item {
+        margin-bottom: 12px;
+        a {
+          font-size: 12px;
+          color: #aaaeb5;
+        }
+      }
+    }
+  }
+  .title{
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+  }
+  .foot-right {
+    h3 {
+      padding-left: 22px;
+    }
+    .codes{
+      font-size: 12px;
+      text-align: center;
+      .code{
+        margin-left: 22px;
+        p{
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  .foot-bottom {
+    font-size: 12px;
+    padding: 20px 0 20px;
+    margin-top: 40px;
+    border-top: 1px solid #49545f;
+    text-align: center;
+  }
+}
