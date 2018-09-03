@@ -5,8 +5,10 @@
  */
 module.exports = app => {
   const rv = app.middlewares.routerView;
+  // const less = app.middlewares.less;
   const { router, controller } = app;
   console.log('app:', app);
+  // await less();
   router.get('/', controller.home.index);
   router.get('/test', rv('index'), controller.home.test);
   router.get('/serve', controller.home.serveTest);

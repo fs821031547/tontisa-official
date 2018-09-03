@@ -4,12 +4,11 @@
   "description": "同天下官网",
   "private": true,
   "dependencies": {
+    "cross-env": "^5.2.0",
     "egg": "^2.2.1",
     "egg-scripts": "^2.5.0",
     "egg-view-nunjucks": "^2.2.0",
-    "koa-sass": "^2.0.0",
-    "less-middleware": "^2.2.1",
-    "node-sass-middleware": "^0.11.0"
+    "less": "^3.8.1"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -25,9 +24,11 @@
     "node": ">=8.9.0"
   },
   "scripts": {
+    "prod": "cross-env NODE_ENV=production EGG_SERVER_ENV=prod egg-scripts start --title=egg-server-tontisa-official --use_strict --port 7003",
+    "pre": "cross-env NODE_ENV=production EGG_SERVER_ENV=pre egg-scripts start --title=egg-server-tontisa-official --use_strict --port 7001",
+    "dev": "egg-bin dev --use_strict --port 7001",
     "start": "egg-scripts start --daemon --title=egg-server-tontisa-official",
     "stop": "egg-scripts stop --title=egg-server-tontisa-official",
-    "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
