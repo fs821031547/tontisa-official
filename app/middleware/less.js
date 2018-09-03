@@ -6,8 +6,8 @@ module.exports = options => {
   return function(app) {
     // lessMiddleware(path.join(baseDir, 'app/view/css'), options);
     // const baseDir = ctx.app.baseDir;
-    const srcPath = options.src;
-    const distPath = options.dist;
+    const optionsSrc = options.src;
+    const optionsDist = options.dist;
     // const srcPath = path.join(baseDir, 'app/view/less/');
     // const distPath = path.join(baseDir, 'app/public/css/');
     function writeFile(srcPath, distPath) {
@@ -44,14 +44,31 @@ module.exports = options => {
 
     function watchFile(srcPath, distPath) {
       // console.log('srcPath:', srcPath);
-      // console.log('distPath:', distPath);
+      // console.log('distPath:', app.env);
       fs.exists(distPath, function(exists) {
         if (!exists) {
           writeFile(srcPath, distPath);
         }
       });
       if (app.env === 'local') {
-      // 监视文件
+        // 监听目录 自动编译less文件
+        fs.watch(options.src, {
+          interval: 500, // 每 500 毫秒监视检查文件 一次
+        }, (eventType, filename) => {
+          try {
+            if (path.extname(filename) === '.less') {
+              const srcStr = path.join(options.src, filename);
+              const distStr = path.join(options.dist, path.basename(filename, '.less') + '.css');
+              if (filename) {
+                writeFile(srcStr, distStr);
+              }
+            }
+          } catch (error) {
+            console.log('异常错误！');
+            throw error;
+          }
+        });
+        // 监视文件
         fs.watchFile(srcPath, {
           interval: 500, // 每 500 毫秒监视检查文件 一次
         },
@@ -101,7 +118,8 @@ module.exports = options => {
         }
       });
     }
-    transformToCss(srcPath, distPath);
+    // watchFile();
+    transformToCss(optionsSrc, optionsDist);
     // await next();
   };
 };
