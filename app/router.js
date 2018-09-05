@@ -15,5 +15,6 @@ module.exports = app => {
   router.get('/serve', controller.home.serveTest);
   router.get('/demo', controller.home.demo);
 
-  router.get('/index', rv('default'), controller.home.default);
+  router.get('/case-list', rv('case-list'), controller.home.caseList);
+  router.get('/case-detail', rv('case-detail'), controller.home.caseDetail);
 };

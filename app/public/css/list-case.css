@@ -188,7 +188,7 @@
 .tp-tab-container .list-case ul li .col {
   height: 380px;
   background: #fff;
-  transition: all .3s;
+  transition: all .5s;
 }
 .tp-tab-container .list-case ul li .col .img {
   position: relative;
@@ -201,6 +201,7 @@
   min-height: 100%;
   top: 0;
   left: -50%;
+  transition: all .5s;
 }
 .tp-tab-container .list-case ul li .col .hd {
   padding: 0 25px;
@@ -229,6 +230,7 @@
   margin-bottom: 8px;
   font-size: 18px;
   color: #333;
+  transition: color .3s;
 }
 .tp-tab-container .list-case ul li .col .bd .info {
   height: 36px;
@@ -244,9 +246,19 @@
 .tp-tab-container .list-case ul li .col .ft {
   padding: 0 25px;
   line-height: 42px;
+  color: #888;
   border-top: 1px solid #f5f5f5;
 }
+.tp-tab-container .list-case ul li .col .ft span {
+  margin-right: 5px;
+}
 .tp-tab-container .list-case ul li .col:hover {
-  margin-bottom: 10px;
+  margin-top: -6px;
   box-shadow: 0 7px 18px 0px rgba(39, 122, 246, 0.1);
+}
+.tp-tab-container .list-case ul li .col:hover img {
+  transform: scale(1.05);
+}
+.tp-tab-container .list-case ul li .col:hover .bd .title {
+  color: #2770f6;
 }

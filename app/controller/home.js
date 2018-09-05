@@ -7,6 +7,23 @@ module.exports = app => {
       // this.ctx.body = 'hi, egg';
       await this.ctx.render('index');
     }
+
+    async default() {
+      // this.ctx.body = 'hi, egg';
+      await this.ctx.render('default');
+    }
+
+    //case-list
+    async caseList() {
+      await this.ctx.render('case_list');
+    }
+
+    //case-detail
+    async caseDetail() {
+      await this.ctx.render('case_detail');
+    }
+
+
     async test() {
       // this.ctx.body = { a: 1 };
       const data = {
@@ -21,10 +38,6 @@ module.exports = app => {
         user.data = JSON.parse(user.data);
       }
       await this.ctx.render(user.data);
-    }
-
-    async default() {
-      await this.ctx.render('default');
     }
 
     async demo() {

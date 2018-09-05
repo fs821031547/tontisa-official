@@ -46,3 +46,8 @@ small { font-size: 80%;}
 .fr { float: right;}
 .clearfix { zoom: 1;}
 .clearfix:after { content: ""; display: block; clear: both;}
+
+@font-face {
+  font-family: Helve;
+  src: url('../fonts/HELVETICANEUELTPRO_THEX_0.otf');
+}
