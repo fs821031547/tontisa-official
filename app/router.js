@@ -17,4 +17,9 @@ module.exports = app => {
 
   router.get('/case-list', rv('case-list'), controller.home.caseList);
   router.get('/case-detail', rv('case-detail'), controller.home.caseDetail);
+
+  router.get('/recent-list', rv('recent-list'), controller.home.recentList);
+
+
+  router.get('/404', rv('404'), controller.home.errPage);
 };

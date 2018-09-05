@@ -25,47 +25,44 @@
         <div class="cpy-info">
           <div class="logo wow slideInUp" data-wow-duration="1s">
             <img class="bg" src="public/images/case_logo_bg.png">
-            <img class="img-logo" src="public/images/case_logo.jpg">
+            <img class="img-logo" src="<$ list[0].content.top.comp_logo $>">
           </div>
           <div class="info">
-            <h3 class="wow slideInLeft" data-wow-duration="1.5s">效率提升，业绩翻倍，从小强ERP开始</h3>
-            <div class="desc wow slideInRight" data-wow-duration="1.5s">新疆峰景运用小强ERP前台网站、电子合同、扫码付等功能，彻底将销售从繁琐的流程工作中解放出来， 告别加班的同事，实现收客量翻倍,业绩猛增。</div>
+            <h3 class="wow slideInLeft" data-wow-duration="1.5s"><$ list[0].title $></h3>
+            <div class="desc wow slideInRight" data-wow-duration="1.5s"><$ list[0].secondTitle $></div>
           </div>
         </div>
         <div class="summary wow slideInDown">
           <div class="inner clearfix">
             <div class="col">
               <p class="sign">企业名称</p>
-              <p class="name">新疆峰景国际旅行社123</p>
+              <p class="name"><$ list[0].content.top.comp_name $></p>
             </div>
             <div class="col">
               <p class="sign">企业类型</p>
-              <p class="name">综合型同业服务商</p>
+              <p class="name"><$ list[0].content.top.comp_type $></p>
             </div>
             <div class="col">
               <p class="sign">企业规模</p>
-              <p class="name">30-40人</p>
+              <p class="name"><$ list[0].content.top.comp_scale $></p>
             </div>
             <div class="col">
               <p class="sign">最常用功能</p>
-              <p class="name">前台网站、扫码付、在线下单 </p>
+              <p class="name"><$ list[0].content.top.comp_function $></p>
             </div>
             <div class="col">
               <p class="sign">使用小强ERP的目的</p>
-              <p class="name">提升销售效率，流程信息化管理</p>
+              <p class="name"><$ list[0].content.top.comp_goal $></p>
             </div>
           </div>
         </div>
       </div>
-
       <!--公司描述-->
       <div class="cpy-content module">
         <div class="inner">
           <div class="info wow fadeInUp" data-wow-delay="0.5s">
-            <span class="name">新疆峰景国际旅行社</span>
-            团队成立于2005年，从最初的北大青专线为起点发展成为服务于同行的综合型同业服务商，是新疆第一家提出“主题旅游”并为之努力的旅行社，目前公司已有五大模块。
-            团队成立于2005年，从最初的北大青专线为起点发展成为服务于同行的综合型同业服务商，是新疆第一家提出“主题旅游”并为之努力的旅行社，目前公司已有五大模块。
-            团队成立于2005年，从最初的北大青专线为起点发展成为服务于同行的综合型同业服务商，是新疆第一家提出“主题旅游”并为之努力的旅行社，目前公司已有五大模块。
+            <span class="name"><$ list[0].content.top.comp_name $></span>
+            <$ list[0].content.one.content $>
           </div>
         </div>
       </div>
@@ -76,20 +73,18 @@
         <div class="inner">
           <h3 class="title wow fadeInDown" data-wow-delay="0.5s"><span class="small">小强</span>ERP<span class="normal">故事</span></h3>
           <div class="info wow fadeInUp" data-wow-delay="1s">
-            峰景国际自有办公场所330平方米，团队现有员工五十多人人，下设销售部、操作部、票务部、证照部、网络部、财务部等。  除了常规的
-            峰景国际自有办公场所330平方米，团队现有员工五十多人人，下设销售部、操作部、票务部、证照部、网络部、财务部等。  除了常规的
-            峰景国际自有办公场所330平方米，团队现有员工五十多人人，下设销售部、操作部、票务部、证照部、网络部、财务部等。  除了常规的
+            <$ list[0].content.two.content $>
           </div>
           <div class="person clearfix wow fadeInUp" data-wow-duration="0.8s">
             <div class="avatar">
               <div class="img">
-                <img src="public/images/case_avatar.png">
+                <img src="<$ list[0].content.three.img $>">
               </div>
             </div>
             <div class="intro">
-              <p class="name-job">毛瑞月<span class="job">新疆峰景总经理</span></p>
+              <p class="name-job"><$ list[0].content.three.name $><span class="job"><$ list[0].content.three.title $></span></p>
               <div class="sign">
-                我们已使用小强系统1年半，进一寸有一寸的欢喜，每发现一个新功能，就对小强ERP更深的喜爱！系统操作简便，客服很热情。
+                <$ list[0].content.three.content $>
               </div>
             </div>
           </div>

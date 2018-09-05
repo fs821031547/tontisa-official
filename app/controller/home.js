@@ -20,7 +20,36 @@ module.exports = app => {
 
     //case-detail
     async caseDetail() {
-      await this.ctx.render('case_detail');
+      let parms = {
+        pageNum: 1,
+        pageSize: 10,
+        navId: 17
+      }
+      let res = await this.apiPost('http://192.168.110.16:9420/websiteContent/list', parms);
+      console.log('AAAAAAAAAAAAA');
+      console.log('caseData:', res.data);
+      console.log('res.status:', res.status);
+      console.log('AAAAAAAAAAAAA');
+
+      if(typeof res.data == 'string') {
+        res.data = JSON.parse(res.data);
+        res.data.data.list.forEach(item => {
+          if(typeof item.content == 'string') {
+            item.content = JSON.parse(item.content)
+          }
+        })
+        await this.ctx.render('case_detail', res.data.data);
+      }
+
+    }
+
+    //recent-list
+    async recentList() {
+      await this.ctx.render('recent_list');
+    }
+
+    async errPage() {
+      await this.ctx.render('404');
     }
 
 

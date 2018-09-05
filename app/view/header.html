@@ -9,12 +9,14 @@
         <a href="">注册</a>
       </div>
       <ul class="menus clearfix">
-        <li class="item"><a class="item-a" href="">首页</a></li>
+        <li class="item"><a class="item-a" href="/">首页</a></li>
         <li class="item"><a class="item-a" href="">小强ERP</a></li>
-        <li class="item active"><a class="item-a" href="">客户案例</a></li>
+        <li class="item <% if ctx.path.includes('/case-list') or ctx.path.includes('/case-detail') %>active<% endif %>">
+          <a class="item-a" href="case-list">客户案例</a>
+        </li>
         <li class="item"><a class="item-a" href="">小强学院</a></li>
-        <li class="item">
-          <a class="item-a" href="">最新动态</a>
+        <li class="item <% if ctx.path.includes('/recent-list') %>active<% endif %>">
+          <a class="item-a" href="/recent-list">最新动态</a>
           <div class="sub-box">
             <ul class="sub-menu">
               <li class="sub-item">

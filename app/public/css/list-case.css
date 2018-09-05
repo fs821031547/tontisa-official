@@ -1,7 +1,4 @@
 /* case-list */
-.main-content {
-  padding-top: 68px;
-}
 /* banner */
 .case-banner {
   position: relative;
@@ -42,28 +39,28 @@
   color: #d3d3d4;
 }
 .case-banner .tp-banner .box .hd:before {
-  display: block;
-  position: absolute;
   left: 0;
   top: 6px;
-  content: "";
   width: 9px;
   height: 2px;
   background: #2770f6;
+  display: block;
+  position: absolute;
+  content: "";
 }
 .case-banner .tp-banner .box .hd .type {
   position: relative;
   margin-right: 26px;
 }
 .case-banner .tp-banner .box .hd .type:after {
-  position: absolute;
-  display: block;
   top: 3px;
   right: -16px;
-  content: "";
   width: 1px;
   height: 11px;
   background-color: #d3d3d4;
+  display: block;
+  position: absolute;
+  content: "";
 }
 .case-banner .tp-banner .box .hd .type:after .bd {
   height: 30px;
@@ -98,29 +95,44 @@
   border: 1px solid #76787a;
   box-sizing: border-box;
   overflow: hidden;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .case-banner .tp-banner .box .more-content .more:before {
   position: absolute;
   left: -100%;
   display: block;
   content: "→";
-  transition: all .6s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  transition: all 0.6s;
 }
 .case-banner .tp-banner .box .more-content .more:hover {
   border-color: #fff;
 }
 .case-banner .tp-banner .box .more-content .more:hover span {
   transform: translateX(300%);
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .case-banner .tp-banner .box .more-content .more:hover:before {
   left: 48%;
-  transition: all .6s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  transition: all 0.6s;
 }
 .case-banner .tp-banner .box .more-content .more span {
   display: inline-block;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .case-banner .tp-bullets.round .bullet {
   background: none;
@@ -188,7 +200,10 @@
 .tp-tab-container .list-case ul li .col {
   height: 380px;
   background: #fff;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .tp-tab-container .list-case ul li .col .img {
   position: relative;
@@ -201,7 +216,10 @@
   min-height: 100%;
   top: 0;
   left: -50%;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .tp-tab-container .list-case ul li .col .hd {
   padding: 0 25px;
@@ -214,13 +232,14 @@
   margin-right: 20px;
 }
 .tp-tab-container .list-case ul li .col .hd .tag:after {
-  position: absolute;
   top: 3px;
   right: -12px;
-  content: "";
   width: 1px;
   height: 12px;
   background: #999;
+  display: block;
+  position: absolute;
+  content: "";
 }
 .tp-tab-container .list-case ul li .col .bd {
   height: 86px;
@@ -230,7 +249,10 @@
   margin-bottom: 8px;
   font-size: 18px;
   color: #333;
-  transition: color .3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .tp-tab-container .list-case ul li .col .bd .info {
   height: 36px;
@@ -253,11 +275,12 @@
   margin-right: 5px;
 }
 .tp-tab-container .list-case ul li .col:hover {
-  margin-top: -6px;
-  box-shadow: 0 7px 18px 0px rgba(39, 122, 246, 0.1);
+  box-shadow: 5px 10px 24px 0px rgba(39, 122, 246, 0.05);
+  -webkit-transform: translateY(-7px);
+  transform: translateY(-7px);
 }
 .tp-tab-container .list-case ul li .col:hover img {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 .tp-tab-container .list-case ul li .col:hover .bd .title {
   color: #2770f6;

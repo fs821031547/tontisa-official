@@ -254,7 +254,7 @@
   padding: 0px 25px;
   text-align: center;
   overflow: hidden;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .case-detail .relation .module-title .more .lines {
   display: block;
@@ -330,7 +330,7 @@
 .case-detail .relation ul li .col {
   height: 380px;
   background: #fff;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 .case-detail .relation ul li .col .img {
   position: relative;
@@ -343,7 +343,7 @@
   min-height: 100%;
   top: 0;
   left: -50%;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .case-detail .relation ul li .col .hd {
   padding: 0 15px;
@@ -373,7 +373,7 @@
   margin-bottom: 8px;
   font-size: 16px;
   color: #333;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .case-detail .relation ul li .col .bd .info {
   height: 36px;

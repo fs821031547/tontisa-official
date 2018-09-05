@@ -1,9 +1,12 @@
-@@import "vars.less";
+@import "vars.less";
 
 .inner {
   width: 1200px;
   min-width: 1200px;
   margin: 0 auto;
+}
+.main-content {
+  padding-top: 68px;
 }
 
 /* Header */
@@ -76,12 +79,13 @@
           }
         }
         .sub-box {
+          display: none;
           position: absolute;
-          top: 68px;
+          top: 78px;
           left: 50%;
-          width: 0;
+          width: 112px;
           padding: 6px 0;
-          margin-left: 0;
+          margin-left: -56px;
           border-top: 1px solid #e5e5e5;
           background: #fff;
           box-shadow: 0 2px 2px 0px #eee;
@@ -95,8 +99,10 @@
               display: inline-block;
               padding-left: 25px;
               box-sizing: border-box;
-              color: transparent;
               transition: all .2s;
+              &:hover {
+                color: @blue;
+              }
             }
           }
           .sub-item-a {
@@ -114,10 +120,8 @@
             }
           }
           .sub-box {
-            width: 112px;
-            margin-left: -56px;
-          }
-          .sub-menu {
+            display: block;
+            top: 68px;
             .sub-item-a {
               color: #444;
             }
