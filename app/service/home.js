@@ -14,8 +14,16 @@ module.exports = app => {
       }
       return user.data;
     }
-
-
+    async navList(query) {
+      const data = {
+        type: 0,
+      };
+      const user = await this.apiPost('192.168.110.16:9420/websiteNav/list', data);
+      if (typeof user.data === 'string') {
+        user.data = JSON.parse(user.data);
+      }
+      return user.data;
+    }
 
   }
   return Home;
