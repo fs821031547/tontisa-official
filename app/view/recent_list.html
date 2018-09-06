@@ -70,6 +70,8 @@
 
   <script>
     $(function() {
+      localStorage.removeItem('objCase');
+
       $('.tp-banner').revolution({
         delay: 6000,
         startwidth: 1200,
@@ -80,8 +82,7 @@
         hideThumbs: 10
       });
 
-      jQuery(".subBox").slide({ titCell:".subHd li", mainCell:".subBd", trigger:"click" });
-      jQuery("#tabCase").slide({ effect:"left", trigger:"click", easing:"easeInBack" });
+
     });
   </script>
 </body>

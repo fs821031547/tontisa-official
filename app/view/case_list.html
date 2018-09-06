@@ -159,6 +159,7 @@
   <script src="public/js/jquery.themepunch.plugins.min.js"></script>
   <script src="public/js/jquery.themepunch.revolution.min.js"></script>
   <script src="public/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="public/js/laypage.js"></script>
 
   <script>
     $(function() {
@@ -174,6 +175,23 @@
 
       jQuery(".subBox").slide({ titCell:".subHd li", mainCell:".subBd", trigger:"click" });
       jQuery("#tabCase").slide({ effect:"left", trigger:"click", easing:"easeInBack" });
+
+      var getObjCase = JSON.parse(localStorage.getItem('objCase'));
+      if(getObjCase) {
+        var $index = getObjCase.typeIndex;
+        $('#tabCase .types').find('li').eq($index).addClass('on').siblings().removeClass('on');
+        //localStorage.removeItem('objCase');
+      }
+
+      /* 切换缓存 */
+      $('#tabCase .types').on('click', '.item', function() {
+        var typeIndex = $(this).index();
+        var objCase = {
+          'typeIndex': typeIndex
+        }
+        objCase = JSON.stringify(objCase);
+        localStorage.setItem('objCase', objCase);
+      });
     });
   </script>
 </body>
