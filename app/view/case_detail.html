@@ -19,7 +19,11 @@
     <div class="case-detail">
       <div class="banner">
         <div class="img">
-          <img src="public/images/case_banner1.jpg">
+          <% if list[0].imgUrl and list[0].imgUrl.length > 0 %>
+            <img src="<$ list[0].imgUrl $>">
+          <% else %>
+            <img src="public/images/case_banner1.jpg">
+          <% endif %>
         </div>
         <div class="overaly"></div>
         <div class="cpy-info">
@@ -93,6 +97,7 @@
       <!--小强ERP故事-->
 
       <!--表格-->
+      <% if list[0].content.four and list[0].content.four.length > 0  %>
       <div class="table module wow fadeInUpBig">
         <div class="inner">
           <ul class="head clearfix">
@@ -101,67 +106,52 @@
             <li>效果</li>
           </ul>
           <div class="body">
-            <ul class="clearfix">
-              <li>
-                <div class="box">旅游合同都是十几甚至几十页，纸质合同制作麻烦，打印耗纸耗墨，签署时间还长</div>
-              </li>
-              <li>
-                <div class="box">电子合同，添加游客信息点击发起，自动根据行程生成电子合同，在线即可签署</div>
-              </li>
-              <li>
-                <div class="box">签署合同10秒完成，简单又合规，省心省力还省钱签署合同10秒完成，简单又合规，省心省力还省钱</div>
-              </li>
-            </ul>
-            <ul class="clearfix">
-              <li>
-                <div class="box">电子合同，添加游客信息点击发起，自动根据行程生成电子合同，在线即可签署</div>
-              </li>
-              <li>
-                <div class="box">前台网站，销售引导客户到网站下单，付款自动确认，点击按钮即可发送确认件和出团通知书</div>
-              </li>
-              <li>
-                <div class="box">销售单月收客数翻番，业绩翻倍，还不需要加班</div>
-              </li>
-            </ul>
-            <ul class="clearfix">
-              <li>
-                <div class="box">签署合同10秒完成，简单又合规，省心省力还省钱</div>
-              </li>
-              <li>
-                <div class="box">扫码付，扫码直接付款，系统自动确认</div>
-              </li>
-              <li>
-                <div class="box">客户可随时随地扫码付款，将销售直接从收款流程中解放出来</div>
-              </li>
-            </ul>
+              <% for item in list[0].content.four %>
+              <ul class="clearfix">
+                <li>
+                  <div class="box"><$ item.title1 $></div>
+                </li>
+                <li>
+                  <div class="box"><$ item.title2 $></div>
+                </li>
+                <li>
+                  <div class="box"><$ item.title3 $></div>
+                </li>
+              </ul>
+              <% endfor %>
           </div>
         </div>
       </div>
+      <% endif %>
       <!--表格-->
 
       <!--功能介绍-->
+      <% if list[0].content.five and list[0].content.five.length > 0  %>
       <div class="function module">
         <div class="inner">
+          <% for item in list[0].content.five %>
           <div class="section">
-            <h6 class="title wow fadeInUp"><span>01</span>电子合同，小功能省大钱</h6>
+            <h6 class="title wow fadeInUp">
+              <% if loop.index < 10 %>
+                <span>0<$ loop.index $></span>
+              <% else %>
+                <span><$ loop.index $></span>
+              <% endif %>
+              <$ item.title $>
+            </h6>
             <div class="info wow fadeInUp">
-              之前门店与游客签署的合同都是纸质合同，一式两份。签字需要至少十分钟，耗时长，而且签得不规范。而且行程稍微做得精美点就要打印10
+              <$ item.content $>
             </div>
+            <% if item.img and item.img.length > 0 %>
             <div class="imgs wow fadeInUp">
-              <img src="public/images/case_test.jpg">
+              <img src="<$ item.img $>">
             </div>
+            <% endif %>
           </div>
-          <div class="section">
-            <h6 class="title wow fadeInUp"><span>02</span>前台自动下单让销售收客翻倍，告别加班</h6>
-            <div class="info wow fadeInUp">
-              之前门店与游客签署的合同都是纸质合同，一式两份。签字需要至少十分钟，耗时长，而且签得不规范。而且行程稍微做得精美点就要打印10
-            </div>
-            <div class="imgs wow fadeInUp">
-              <img src="public/images/case_test.jpg">
-            </div>
-          </div>
+          <% endfor %>
         </div>
       </div>
+      <% endif %>
       <!--功能介绍-->
 
       <!--相关案例-->

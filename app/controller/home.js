@@ -15,7 +15,21 @@ module.exports = app => {
 
     //case-list
     async caseList() {
-      await this.ctx.render('case_list');
+      let parms = {
+        pageNum: 1,
+        pageSize: 10,
+        navId: 18
+      }
+      let res = await this.apiPost('http://192.168.110.16:9420/websiteContent/list', parms);
+      if(typeof res.data == 'string') {
+        res.data = JSON.parse(res.data);
+        res.data.data.list.forEach(item => {
+          if(typeof item.content == 'string') {
+            item.content = JSON.parse(item.content)
+          }
+        })
+        await this.ctx.render('case_list', res.data.data);
+      }
     }
 
     //case-detail
@@ -26,10 +40,6 @@ module.exports = app => {
         navId: 17
       }
       let res = await this.apiPost('http://192.168.110.16:9420/websiteContent/list', parms);
-      console.log('AAAAAAAAAAAAA');
-      console.log('caseData:', res.data);
-      console.log('res.status:', res.status);
-      console.log('AAAAAAAAAAAAA');
 
       if(typeof res.data == 'string') {
         res.data = JSON.parse(res.data);
