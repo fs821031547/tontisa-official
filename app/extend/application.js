@@ -17,7 +17,12 @@ module.exports = {
               result,
             };
             this.ctx.throw(502, `Request Api Data Get Fail Result in ${api}`, errors);
+          }else{
+            if(result && typeof result.data == 'string') {
+              result.data = JSON.parse(result.data);
+            }
           }
+
         }
         async apiPost(api, data = {}, option) {
           const body = {
@@ -102,6 +107,10 @@ module.exports = {
               result,
             };
             this.ctx.throw(502, `Request Api Data Get Fail Result in ${api}`, errors);
+          } else {
+            if(result && typeof result.data == 'string') {
+              result.data = JSON.parse(result.data);
+            }
           }
         }
         async apiPost(api, data = {}, option) {

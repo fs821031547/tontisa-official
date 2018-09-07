@@ -16,7 +16,7 @@ module.exports = app => {
   router.get('/demo', controller.home.demo);
 
   router.get('/case-list', rv('case-list'), controller.home.caseList);
-  router.get('/case-detail', rv('case-detail'), controller.home.caseDetail);
+  router.get('/case-detail/:id', rv('case-detail'), controller.home.caseDetail);
 
   router.get('/recent-list', rv('recent-list'), controller.home.recentList);
 

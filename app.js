@@ -12,6 +12,6 @@ module.exports = app => {
     // await less(app.config.less);
     // 也可以通过以下方式来调用 Service
     // const ctx = app.createAnonymousContext();
-    app.navList = await ctx.service.home.navList();
+    app.headerInfo = await ctx.service.home.headerInfo();
   });
 };
