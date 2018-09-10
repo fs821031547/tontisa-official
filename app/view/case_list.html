@@ -191,6 +191,7 @@
         }
         objCase = JSON.stringify(objCase);
         localStorage.setItem('objCase', objCase);
+        $('.subBox').find('li').eq(0).addClass('on').siblings('li').removeClass('on');
       });
     });
   </script>

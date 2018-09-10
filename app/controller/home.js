@@ -3,6 +3,13 @@
 // const Controller = require('egg').Controller;
 module.exports = app => {
   class HomeController extends app.ApiController {
+    navInfo() {
+      let arrNav = this.ctx.app.headerInfo;
+      console.log('===========');
+      console.log('arrNav:', arrNav);
+      console.log('===========');
+      return arrNav;
+    }
     async index() {
       // this.ctx.body = 'hi, egg';
       await this.ctx.render('index');
@@ -15,7 +22,6 @@ module.exports = app => {
 
     //case-list
     async caseList() {
-
       let parms = {
         pageNum: 1,
         pageSize: 10,

@@ -32,10 +32,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  max-width: 65px;
-  max-height: 65px;
-  margin-top: -24px;
-  margin-left: -34px;
+  max-width: 58px;
+  max-height: 58px;
+  margin-top: -27px;
+  margin-left: -30px;
 }
 .case-detail .banner .cpy-info .logo:hover .bg {
   -webkit-animation: spin 1s linear 1s 5 alternate;
@@ -133,6 +133,7 @@
 .case-detail .story .person .avatar img {
   width: 185px;
   height: 185px;
+  border-radius: 50%;
 }
 .case-detail .story .person .intro {
   float: left;
@@ -323,7 +324,7 @@
 }
 .case-detail .relation ul li {
   float: left;
-  width: 300px;
+  width: 305px;
   padding: 10px;
   box-sizing: border-box;
 }

@@ -13,9 +13,7 @@ module.exports = options => {
     function writeFile(srcPath, distPath) {
       // readFile 第二个参数，可以指定编码类型
       // 指定编码类型后，得到的数据会自动转换
-      fs.readFile(srcPath, {
-        filename:path.resolve(srcPath),
-      },'utf8', (err, data) => {
+      fs.readFile(srcPath, 'utf8', (err, data) => {
         // data.toString()
         if (err) {
           throw err;
@@ -23,7 +21,9 @@ module.exports = options => {
         // 读取 less 文件内容
         // console.log( data )
         // 在代码中调用 less
-        less.render(data, (err, css) => {
+        less.render(data, {
+          filename:path.resolve(srcPath),
+        }, (err, css) => {
           if (err) {
             throw err;
           }
