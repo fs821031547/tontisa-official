@@ -14,7 +14,7 @@ module.exports = () => {
     view: {
       cache: false,
     },
-    apiHost: '',
+    apiHost: 'http://192.168.110.156:9420',
     isEnable: 'false',
   };
   return config;
