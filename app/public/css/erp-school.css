@@ -1,0 +1,120 @@
+.erp-school .tp-banner-container {
+  position: relative;
+  height: 490px;
+  overflow: hidden;
+}
+.erp-school .tp-banner-container .tp-banner {
+  height: 100% !important;
+  overflow: hidden;
+}
+.erp-school .tp-banner-container .tp-banner > ul > li {
+  height: 490px !important;
+}
+.erp-school .tp-banner-container .tp-banner .overaly {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.68);
+}
+.erp-school .tp-banner-container .recent-box {
+  color: #fff;
+}
+.erp-school .tp-banner-container .recent-box .title {
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: normal;
+}
+.erp-school .tp-banner-container .recent-box .sub-title {
+  margin-bottom: 45px;
+  font-size: 20px;
+}
+.erp-school .tp-banner-container .recent-box .more {
+  display: block;
+  position: relative;
+  width: 180px;
+  height: 42px;
+  line-height: 40px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.erp-school .tp-banner-container .recent-box .more:hover {
+  border-color: #fff;
+}
+.erp-school .tp-banner-container .ad-box {
+  position: relative;
+}
+.erp-school .tp-banner-container .ad-box .box {
+  display: inline-block;
+  position: absolute;
+  z-index: 100;
+  top: 80px;
+  right: 0;
+  min-width: 285px;
+  height: 330px;
+  padding: 22px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+}
+.erp-school .tp-banner-container .ad-box .box .title {
+  font-size: 16px;
+  font-weight: normal;
+  color: #fff;
+}
+.erp-school .tp-banner-container .ad-box .box img {
+  margin: 15px 0;
+}
+.erp-school .tp-banner-container .ad-box .box span {
+  font-weight: bold;
+}
+.erp-school .tp-banner-container .ad-box .box .number {
+  font-size: 14px;
+  font-weight: bold;
+}
+.erp-school .tp-banner-container .tp-bullets.round .bullet {
+  background: none;
+  width: 20px;
+  height: 3px;
+  margin-left: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.erp-school .tp-banner-container .tp-bullets.round .bullet.selected {
+  background-color: #ffffff;
+}
+.erp-school .number-info {
+  padding: 70px 0;
+  font-size: 14px;
+  color: #999;
+}
+.erp-school .number-info .content {
+  width: 520px;
+}
+.erp-school .number-info .content .number {
+  height: 50px;
+  line-height: 50px;
+  margin-right: 6px;
+  font-family: Helve;
+  font-size: 62px;
+  color: #2770f6;
+}
+.erp-school .number-info .content .text {
+  height: 24px;
+  line-height: 24px;
+  font-size: 26px;
+  color: #2770f6;
+}
+.erp-school .number-info .content .desc {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #666;
+}

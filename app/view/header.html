@@ -30,8 +30,8 @@
               <% endif %>
             </li>
           <% elseif item.name == '小强学院' %>
-            <li class="item">
-              <a class="item-a" href="/">小强学院</a>
+            <li class="item <% if ctx.path.includes('/erp-school') %>active<% endif %>">
+              <a class="item-a" href="/erp-school">小强学院</a>
               <% if item.subMenu.length > 0 %>
                 <div class="sub-box">
                   <ul class="sub-menu">
@@ -60,15 +60,21 @@
               <% endif %>
             </li>
           <% elseif item.name == '最新动态' %>
-            <li class="item <% if ctx.path.includes('/recent-list') %>active<% endif %>">
+            <li class="item <% if ctx.path.includes('/recent-list') or ctx.path.includes('/cpy-news') or ctx.path.includes('/product-news') %>active<% endif %>">
               <a class="item-a" href="/recent-list">最新动态</a>
               <% if item.subMenu.length > 0 %>
                 <div class="sub-box">
                   <ul class="sub-menu">
                     <% for child in item.subMenu %>
-                    <li class="sub-item">
-                      <a class="sub-item-a" href=""><$ child.name $></a>
-                    </li>
+                    <% if child.name == '企业新闻' %>
+                      <li class="sub-item">
+                        <a class="sub-item-a" href="/cpy-news">企业新闻</a>
+                      </li>
+                    <% elseif child.name == '产品资讯' %>
+                      <li class="sub-item">
+                        <a class="sub-item-a" href="/product-news">产品资讯</a>
+                      </li>
+                    <% endif %>
                     <% endfor %>
                   </ul>
                 </div>

@@ -20,6 +20,10 @@ module.exports = app => {
   router.get('/case-detail/:id', rv('case-detail'), controller.home.caseDetail);
 
   router.get('/recent-list', rv('recent-list'), controller.home.recentList);
+  router.get('/cpy-news', rv('cpy-news'), controller.home.cpyNews);
+  router.get('/product-news', rv('product-news'), controller.home.productNews);
+
+  router.get('/erp-school', rv('erp-school'), controller.home.erpSchool);
 
 
   router.get('/404', rv('404'), controller.home.errPage);
