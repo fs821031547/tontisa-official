@@ -4,7 +4,7 @@
 module.exports = app => {
   class HomeController extends app.ApiController {
     navInfo() {
-      let arrNav = this.ctx.app.headerInfo;
+      const arrNav = this.ctx.app.headerInfo;
       console.log('===========');
       console.log('arrNav:', arrNav);
       console.log('===========');
@@ -20,39 +20,97 @@ module.exports = app => {
       await this.ctx.render('default');
     }
 
-    //case-list
-    async caseList() {
-      let parms = {
+    async websiteContent() {
+      const { query } = this.ctx;
+      const params = {
         pageNum: 1,
         pageSize: 10,
-        navId: 18
-      }
-      let res = await this.apiPost('/websiteContent/list', parms);
-      res.data.data.list.forEach(item => {
-        if(typeof item.content == 'string') {
-          item.content = JSON.parse(item.content)
+        navId: query.navId,
+        tags: query.tags,
+      };
+      const res = await this.apiPost('/websiteContent/list', params);
+      this.ctx.body = res.data;
+    }
+    // case-list
+    async caseList() {
+      const { query } = this.ctx;
+      const params = {
+        pageNum: query.page || 1,
+        pageSize: 12,
+        navId: 18,
+        tags: query.tags || null,
+      };
+      const bannerParams = {
+        pageNum: '1',
+        pageSize: '10',
+        navId: 17,
+      };
+      const tagParams = {
+        pageNum: '1',
+        pageSize: '10',
+      };
+      const res = await this.apiPost('/websiteContent/list', params);
+      const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
+      const tagRes = await this.apiPost('/websiteTag/list', tagParams);
+      const websiteTag = {
+        type: [],
+        size: [],
+        feature: [],
+        target: [],
+      };
+      tagRes.data.data.list.forEach(item => {
+        switch (item.type) {
+          case 1:
+            websiteTag.type.push(item);
+            break;
+          case 2:
+            websiteTag.size.push(item);
+            break;
+          case 3:
+            websiteTag.feature.push(item);
+            break;
+          default:
+            websiteTag.target.push(item);
+            break;
         }
-      })
-      await this.ctx.render('case_list', res.data.data);
+      });
+      res.data.data.list.forEach(item => {
+        if (typeof item.content === 'string') {
+          item.content = JSON.parse(item.content);
+        }
+      });
+      bannerRes.data.data.list.forEach(item => {
+        if (typeof item.content === 'string') {
+          item.content = JSON.parse(item.content);
+        }
+      });
+      console.log('\n bannerRes: \n', bannerRes.data.data.pages);
+      const resData = {
+        list: res.data.data.list,
+        tagList: websiteTag,
+        bannerList: bannerRes.data.data.list,
+        page: res.data.data,
+      };
+      await this.ctx.render('case_list', resData);
     }
 
-    //case-detail
+    // case-detail
     async caseDetail() {
-      let parms = {
+      const parms = {
         pageNum: 1,
         pageSize: 10,
-        navId: 17
-      }
-      let res = await this.apiPost('/websiteContent/list', parms);
+        navId: 17,
+      };
+      const res = await this.apiPost('/websiteContent/list', parms);
       res.data.data.list.forEach(item => {
-        if(typeof item.content == 'string') {
-          item.content = JSON.parse(item.content)
+        if (typeof item.content === 'string') {
+          item.content = JSON.parse(item.content);
         }
-      })
+      });
       await this.ctx.render('case_detail', res.data.data);
     }
 
-    //recent-list
+    // recent-list
     async recentList() {
       await this.ctx.render('recent_list');
     }

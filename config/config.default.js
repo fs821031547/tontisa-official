@@ -19,7 +19,12 @@ module.exports = appInfo => {
     prefix: '/public',
     dir: path.join(appInfo.baseDir, 'app/public'),
   };
-
+  config.httpclient = {
+    request: {
+      // 默认 request 超时时间
+      timeout: 15000,
+    },
+  };
   config.view = {
     mapping: {
       '.html': 'nunjucks',
