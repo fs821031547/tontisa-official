@@ -177,6 +177,102 @@
                     </a>
                   </div>
                 </li>
+                <li>
+                  <div class="col">
+                    <a href="">
+                      <div class="hd">
+                        <img src="public/images/banner2.jpg">
+                      </div>
+                      <div class="bd">
+                        <p class="name">陈澎葰</p>
+                        <p class="cpy">腾邦旅游集团 副总裁</p>
+                      </div>
+                      <div class="ft">
+                        旅业强势黑马
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="col">
+                    <a href="">
+                      <div class="hd">
+                        <img src="public/images/banner2.jpg">
+                      </div>
+                      <div class="bd">
+                        <p class="name">陈澎葰</p>
+                        <p class="cpy">腾邦旅游集团 副总裁</p>
+                      </div>
+                      <div class="ft">
+                        旅业强势黑马
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="col">
+                    <a href="">
+                      <div class="hd">
+                        <img src="public/images/banner2.jpg">
+                      </div>
+                      <div class="bd">
+                        <p class="name">陈澎葰</p>
+                        <p class="cpy">腾邦旅游集团 副总裁</p>
+                      </div>
+                      <div class="ft">
+                        旅业强势黑马
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="col">
+                    <a href="">
+                      <div class="hd">
+                        <img src="public/images/banner2.jpg">
+                      </div>
+                      <div class="bd">
+                        <p class="name">陈澎葰</p>
+                        <p class="cpy">腾邦旅游集团 副总裁</p>
+                      </div>
+                      <div class="ft">
+                        旅业强势黑马
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="col">
+                    <a href="">
+                      <div class="hd">
+                        <img src="public/images/banner2.jpg">
+                      </div>
+                      <div class="bd">
+                        <p class="name">陈澎葰</p>
+                        <p class="cpy">腾邦旅游集团 副总裁</p>
+                      </div>
+                      <div class="ft">
+                        旅业强势黑马
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="col">
+                    <a href="">
+                      <div class="hd">
+                        <img src="public/images/banner2.jpg">
+                      </div>
+                      <div class="bd">
+                        <p class="name">陈澎葰</p>
+                        <p class="cpy">腾邦旅游集团 副总裁</p>
+                      </div>
+                      <div class="ft">
+                        旅业强势黑马
+                      </div>
+                    </a>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="head">
@@ -186,14 +282,63 @@
           </div>
         </div>
       </div>
-      <div class="produce-news module">
+      <div class="product-news module">
         <div class="inner">
           <h2 class="module-title">产品资讯</h2>
           <ul class="list clearfix">
-            <li class="item">
-              <div></div>
+            <li class="item clearfix">
+              <a href="">
+                <div class="img">
+                  <img src="public/images/banner2.jpg">
+                  <div class="overaly">
+                    <p class="date">08-20</p>
+                    <p class="year">2018</p>
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="title">传统旅行社玩转电商会员营销，只需这三步就行</h3>
+                  <div class="summary">
+                    同样身为旅行社销售，有的销售月薪3000，有的月薪30000，到底是什么原因造成这么大的区别？
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="item clearfix">
+              <a href="">
+                <div class="img">
+                  <img src="public/images/banner2.jpg">
+                  <div class="overaly">
+                    <p class="date">08-20</p>
+                    <p class="year">2018</p>
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="title">传统旅行社玩转电商会员营销，只需这三步就行</h3>
+                  <div class="summary">
+                    同样身为旅行社销售，有的销售月薪3000，有的月薪30000，到底是什么原因造成这么大的区别？
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="item clearfix">
+              <a href="">
+                <div class="img">
+                  <img src="public/images/banner2.jpg">
+                  <div class="overaly">
+                    <p class="date">08-20</p>
+                    <p class="year">2018</p>
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="title">传统旅行社玩转电商会员营销，只需这三步就行</h3>
+                  <div class="summary">
+                    同样身为旅行社销售，有的销售月薪3000，有的月薪30000，到底是什么原因造成这么大的区别？
+                  </div>
+                </div>
+              </a>
             </li>
           </ul>
+          <a class="more" href="">查看更多</a>
         </div>
       </div>
     </div>
@@ -209,6 +354,10 @@
     $(function() {
       localStorage.removeItem('objCase');
 
+      if($('#viewBox .body').find('li').length < 5) {
+        $('#viewBox .head').hide();
+      }
+
       $('.tp-banner').revolution({
         delay: 6000,
         startwidth: 1200,
@@ -219,7 +368,30 @@
         hideThumbs: 10
       });
 
-      jQuery("#viewBox").slide({titCell:".head ul", mainCell:".body ul", autoPage:true, effect:"left", easing:"easeOutCubic", scroll:4, vis:4, pnLoop:false});
+      var slideNum = $('#viewBox .body').find('li').length;
+      jQuery("#viewBox").slide({titCell:".head ul", mainCell:".body ul", autoPage:true, effect:"left", easing:"easeOutCubic", scroll:1, vis:4, pnLoop:false});
+
+
+      // var $arrowPrev = $('#viewBox .head').find('.prev');
+      // var $arrowNext = $('#viewBox .head').find('.next');
+      // $arrowNext.on('click', function() {
+      //   var $slideNum = $('#viewBox .body').find('li').length;
+      //   var $slideWidth = $slideNum*300;
+      //   var modulePx = $slideWidth%1200;
+      //   console.log('$slideNum', $slideNum);
+      //   if($slideNum > 4) {
+      //     if(modulePx != 0) {
+      //       var getUlLeft = Math.abs($('#viewBox .body').find('ul').css('left').slice(0,-2));
+      //       if($slideWidth - getUlLeft - 1200 - modulePx == 0) {
+      //         if(modulePx == 900) {
+      //           console.log('-' + ($slideWidth-300));
+      //           var $slideNum = $('#viewBox .body').find('ul').css('left', 0)
+      //         }
+      //       }
+      //     }
+      //   }
+      // });
+
     });
   </script>
 </body>

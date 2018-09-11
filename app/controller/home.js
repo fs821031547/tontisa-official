@@ -57,10 +57,24 @@ module.exports = app => {
       await this.ctx.render('recent_list');
     }
 
+    //cpy-news
+    async cpyNews() {
+      await this.ctx.render('cpy_news');
+    }
+
+    //product-news
+    async productNews() {
+      await this.ctx.render('product_news');
+    }
+
+    //erp-school
+    async erpSchool() {
+      await this.ctx.render('erp_school');
+    }
+
     async errPage() {
       await this.ctx.render('404');
     }
-
 
     async test() {
       // this.ctx.body = { a: 1 };
