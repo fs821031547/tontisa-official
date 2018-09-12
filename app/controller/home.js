@@ -41,13 +41,10 @@ module.exports = app => {
         tags: query.tags || null,
       };
       const bannerParams = {
-        pageNum: '1',
-        pageSize: '10',
         navId: 17,
       };
       const tagParams = {
-        pageNum: '1',
-        pageSize: '10',
+
       };
       const res = await this.apiPost('/websiteContent/list', params);
       const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
@@ -112,20 +109,42 @@ module.exports = app => {
 
     // recent-list
     async recentList() {
-      await this.ctx.render('recent_list');
+      const { query } = this.ctx;
+      const bannerParams = {
+        navId: 17,
+      };
+      const params = {
+        pageNum: query.page || 1,
+        pageSize: 12,
+        navId: 18,
+        tags: query.tags || null,
+      };
+      const res = await this.apiPost('/websiteContent/list', params);
+      const newsRes = await this.apiPost('/websiteContent/list', params);
+      const viewRes = await this.apiPost('/websiteContent/list', params);
+      const productRes = await this.apiPost('/websiteContent/list', params);
+      const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
+      const resData = {
+        list: res.data.data.list,
+        newsList: newsRes.data.data.list,
+        viewList: viewRes.data.data.list,
+        productList: productRes.data.data.list,
+        bannerList: bannerRes.data.data.list,
+      };
+      await this.ctx.render('recent_list', resData);
     }
 
-    //cpy-news
+    // cpy-news
     async cpyNews() {
       await this.ctx.render('cpy_news');
     }
 
-    //product-news
+    // product-news
     async productNews() {
       await this.ctx.render('product_news');
     }
 
-    //erp-school
+    // erp-school
     async erpSchool() {
       await this.ctx.render('erp_school');
     }
