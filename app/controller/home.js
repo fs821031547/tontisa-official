@@ -34,15 +34,36 @@ module.exports = app => {
     // case-list
     async caseList() {
       const { query } = this.ctx;
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '客户案例';
+      });
+      const navIdArr = [];
+      pageInfo.forEach(x => {
+        if (x.parentId === actionData.id) {
+          switch (x.name) {
+            case '轮播':
+              navIdArr[0] = x.id;
+              break;
+            case '列表':
+              navIdArr[1] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      const bannerParams = {
+        navId: navIdArr[0],
+      };
       const params = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 18,
+        navId: navIdArr[1],
         tags: query.tags || null,
       };
-      const bannerParams = {
-        navId: 17,
-      };
+
       const tagParams = {
 
       };
