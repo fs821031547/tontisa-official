@@ -12,7 +12,12 @@ module.exports = app => {
     // await less(app.config.less);
     // 也可以通过以下方式来调用 Service
     // const ctx = app.createAnonymousContext();
-    app.headerInfo = await ctx.service.home.headerInfo();
-    app.pageInfo = await ctx.service.home.pageInfo();
+    try {
+      app.headerInfo = await ctx.service.home.headerInfo();
+      app.pageInfo = await ctx.service.home.pageInfo();
+    } catch (error) {
+      app.headerInfo = [];
+      app.pageInfo = [];
+    }
   });
 };

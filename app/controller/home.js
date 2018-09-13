@@ -111,7 +111,7 @@ module.exports = app => {
       const { query } = this.ctx;
       // 轮播
       const bannerParams = {
-        navId: 31,
+        navId: 30,
         pageNum: 1,
         pageSize: 8,
       };
@@ -119,7 +119,7 @@ module.exports = app => {
       const newsParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 30,
+        navId: 31,
       };
       // 同业专访
       const viewParams = {
