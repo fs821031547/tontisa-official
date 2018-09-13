@@ -2,7 +2,7 @@
 /* banner */
 .case-banner {
   position: relative;
-  height: 492px;
+  height: 490px;
   overflow: hidden;
 }
 .case-banner .tp-banner {
@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 .case-banner .tp-bannerulli {
-  height: 492px !important;
+  height: 490px !important;
 }
 .case-banner .tp-banner .overaly {
   width: 100%;
