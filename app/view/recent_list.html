@@ -60,6 +60,7 @@
           <h2 class="module-title">企业新闻</h2>
           <div class="list">
             <% for item in newsList %>
+              <% if loop.index < 4 %>
               <div class="item clearfix">
                 <div class="img">
                   <img src="<$ item.imgUrl $>">
@@ -75,6 +76,7 @@
                   </div>
                 </div>
               </div>
+              <% endif %>
             <% endfor %>
             <!-- <div class="item clearfix">
               <div class="img">
@@ -197,6 +199,7 @@
           <h2 class="module-title">产品资讯</h2>
           <ul class="list clearfix">
             <% for item in productList %>
+            <% if loop.index < 7 %>
             <li class="item clearfix">
               <a href="">
                 <div class="img">
@@ -214,6 +217,7 @@
                 </div>
               </a>
             </li>
+            <% endif %>
             <% endfor %>
             <!-- <li class="item clearfix">
               <a href="">

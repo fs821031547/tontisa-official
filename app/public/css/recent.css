@@ -30,8 +30,12 @@
   overflow: hidden;
 }
 .tp-banner-container .recent-box .sub-title {
+  width: 900px;
   margin-bottom: 40px;
   font-size: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .tp-banner-container .recent-box .more {
   display: block;
