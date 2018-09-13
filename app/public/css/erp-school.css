@@ -118,3 +118,134 @@
   font-size: 16px;
   color: #666;
 }
+.erp-school .module {
+  padding: 50px 0;
+}
+.erp-school .school-info {
+  background: #f7f7f7;
+}
+.erp-school .school-info .items {
+  padding-top: 60px;
+}
+.erp-school .school-info .items .item {
+  position: relative;
+  float: left;
+  width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.erp-school .school-info .items .item .normal {
+  height: 320px;
+}
+.erp-school .school-info .items .item .normal .hd {
+  height: 155px;
+  padding-top: 40px;
+  font-family: Helve;
+  font-size: 56px;
+  color: #999;
+  box-sizing: border-box;
+}
+.erp-school .school-info .items .item .normal .bd {
+  position: relative;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.erp-school .school-info .items .item .normal .bd:before {
+  width: 14px;
+  height: 14px;
+  top: -7px;
+  left: 50%;
+  margin-left: -7px;
+  border-radius: 7px;
+  border: 1px solid #cdcdcd;
+  background: #f7f7f7;
+  outline: 6px solid #f7f7f7;
+  display: block;
+  position: absolute;
+  content: "";
+}
+.erp-school .school-info .items .item .normal .bd:after {
+  width: 6px;
+  height: 6px;
+  top: -2px;
+  left: 50%;
+  z-index: 1;
+  margin-left: -2px;
+  border-radius: 3px;
+  background: #999;
+  display: block;
+  position: absolute;
+  content: "";
+}
+.erp-school .school-info .items .item .normal .ft h6 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #333;
+}
+.erp-school .school-info .items .item .normal .ft p {
+  font-size: 14px;
+  color: #888;
+}
+.erp-school .school-info .items .item:nth-child(2) .hd {
+  height: auto;
+  padding-top: 0;
+}
+.erp-school .school-info .items .item:nth-child(2) .bd {
+  margin-bottom: none;
+}
+.erp-school .school-info .items .item:nth-child(2) .ft {
+  padding: 36px 0 35px;
+}
+.erp-school .school-info .items .item .active {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 400px;
+  height: 320px;
+  background: #fff;
+  border: 1px solid #2770f6;
+  box-sizing: border-box;
+}
+.erp-school .school-info .items .item .active .hd {
+  padding-top: 39px;
+  font-family: Helve;
+  font-size: 56px;
+  color: #666;
+}
+.erp-school .school-info .items .item .active .bd {
+  width: 20px;
+  height: 1px;
+  margin: 30px auto 36px;
+  background: #bbb;
+}
+.erp-school .school-info .items .item .active .ft h6 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #2770f6;
+}
+.erp-school .school-info .items .item .active .ft p {
+  font-size: 14px;
+  color: #333;
+}
+.erp-school .school-info .items .item .two .ft {
+  padding: 35px 0 10px;
+}
+.erp-school .school-info .items .item .two .bd {
+  margin: 27px auto 25px;
+}
+.erp-school .school-info .items .item .two .hd {
+  padding-top: 8px;
+}
+.erp-school .school-info .items .item:hover .active {
+  display: block;
+}
+.erp-school .module-sub-title {
+  margin-top: 3px;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}

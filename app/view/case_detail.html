@@ -19,8 +19,8 @@
     <div class="case-detail">
       <div class="banner">
         <div class="img">
-          <% if list[0].imgUrl and list[0].imgUrl.length > 0 %>
-            <img src="<$ list[0].imgUrl $>">
+          <% if imgUrl and imgUrl.length > 0 %>
+            <img src="<$ imgUrl $>">
           <% else %>
             <img src="public/images/case_banner1.jpg">
           <% endif %>
@@ -29,34 +29,34 @@
         <div class="cpy-info">
           <div class="logo wow slideInUp" data-wow-duration="1s">
             <img class="bg" src="../public/images/case_logo_bg.png">
-            <img class="img-logo" src="<$ list[0].content.top.comp_logo $>">
+            <img class="img-logo" src="<$ content.top.comp_logo $>">
           </div>
           <div class="info">
-            <h3 class="wow slideInLeft" data-wow-duration="1.5s"><$ list[0].title $></h3>
-            <div class="desc wow slideInRight" data-wow-duration="1.5s"><$ list[0].secondTitle $></div>
+            <h3 class="wow slideInLeft" data-wow-duration="1.5s"><$ title $></h3>
+            <div class="desc wow slideInRight" data-wow-duration="1.5s"><$ secondTitle $></div>
           </div>
         </div>
         <div class="summary wow slideInDown">
           <div class="inner clearfix">
             <div class="col">
               <p class="sign">企业名称</p>
-              <p class="name"><$ list[0].content.top.comp_name $></p>
+              <p class="name"><$ content.top.comp_name $></p>
             </div>
             <div class="col">
               <p class="sign">企业类型</p>
-              <p class="name"><$ list[0].content.top.comp_type $></p>
+              <p class="name"><$ content.top.comp_type $></p>
             </div>
             <div class="col">
               <p class="sign">企业规模</p>
-              <p class="name"><$ list[0].content.top.comp_scale $></p>
+              <p class="name"><$ content.top.comp_scale $></p>
             </div>
             <div class="col">
               <p class="sign">最常用功能</p>
-              <p class="name"><$ list[0].content.top.comp_function $></p>
+              <p class="name"><$ content.top.comp_function $></p>
             </div>
             <div class="col">
               <p class="sign">使用小强ERP的目的</p>
-              <p class="name"><$ list[0].content.top.comp_goal $></p>
+              <p class="name"><$ content.top.comp_goal $></p>
             </div>
           </div>
         </div>
@@ -65,8 +65,8 @@
       <div class="cpy-content module">
         <div class="inner">
           <div class="info wow fadeInUp" data-wow-delay="0.5s">
-            <span class="name"><$ list[0].content.top.comp_name $></span>
-            <$ list[0].content.one.content $>
+            <span class="name"><$ content.top.comp_name $></span>
+            <$ content.one.contet $>
           </div>
         </div>
       </div>
@@ -77,18 +77,18 @@
         <div class="inner">
           <h3 class="title wow fadeInDown" data-wow-delay="0.5s"><span class="small">小强</span>ERP<span class="normal">故事</span></h3>
           <div class="info wow fadeInUp" data-wow-delay="1s">
-            <$ list[0].content.two.content $>
+            <$ content.two.content $>
           </div>
           <div class="person clearfix wow fadeInUp" data-wow-duration="0.8s">
             <div class="avatar">
               <div class="img">
-                <img src="<$ list[0].content.three.img $>">
+                <img src="<$ content.three.img $>">
               </div>
             </div>
             <div class="intro">
-              <p class="name-job"><$ list[0].content.three.name $><span class="job"><$ list[0].content.three.title $></span></p>
+              <p class="name-job"><$ content.three.name $><span class="job"><$ content.three.title $></span></p>
               <div class="sign">
-                <$ list[0].content.three.content $>
+                <$ content.three.content $>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@
       <!--小强ERP故事-->
 
       <!--表格-->
-      <% if list[0].content.four and list[0].content.four.length > 0  %>
+      <% if content.four and content.four.length > 0  %>
       <div class="table module wow fadeInUpBig">
         <div class="inner">
           <ul class="head clearfix">
@@ -106,7 +106,7 @@
             <li>效果</li>
           </ul>
           <div class="body">
-              <% for item in list[0].content.four %>
+              <% for item in content.four %>
               <ul class="clearfix">
                 <li>
                   <div class="box"><$ item.title1 $></div>
@@ -126,10 +126,10 @@
       <!--表格-->
 
       <!--功能介绍-->
-      <% if list[0].content.five and list[0].content.five.length > 0  %>
+      <% if content.five and content.five.length > 0  %>
       <div class="function module">
         <div class="inner">
-          <% for item in list[0].content.five %>
+          <% for item in content.five %>
           <div class="section">
             <h6 class="title wow fadeInUp">
               <% if loop.index < 10 %>

@@ -9,7 +9,7 @@
   height: 100% !important;
   overflow: hidden;
 }
-.case-banner .tp-bannerulli {
+.case-banner .tp-banner > ul > li {
   height: 490px !important;
 }
 .case-banner .tp-banner .overaly {

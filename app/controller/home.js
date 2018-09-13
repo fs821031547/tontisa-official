@@ -96,17 +96,16 @@ module.exports = app => {
 
     // case-detail
     async caseDetail() {
+      let url = this.ctx.request.url;
+      let id = url.split('/')[url.split('/').length - 1];
+      console.log('AAAAAA=============BBBBBBBBBBB', this.ctx.request.url);
       const parms = {
-        pageNum: 1,
-        pageSize: 10,
-        navId: 17,
+        id: id
       };
-      const res = await this.apiPost('/websiteContent/list', parms);
-      res.data.data.list.forEach(item => {
-        if (typeof item.content === 'string') {
-          item.content = JSON.parse(item.content);
-        }
-      });
+      const res = await this.apiPost('/websiteContent/detail', parms);
+      if (typeof res.data.data.content === 'string') {
+        res.data.data.content = JSON.parse(res.data.data.content);
+      }
       await this.ctx.render('case_detail', res.data.data);
     }
 
