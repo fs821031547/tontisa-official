@@ -22,7 +22,7 @@ module.exports = options => {
         // console.log( data )
         // 在代码中调用 less
         less.render(data, {
-          filename:path.resolve(srcPath),
+          filename: path.resolve(srcPath),
         }, (err, css) => {
           if (err) {
             throw err;
@@ -52,7 +52,7 @@ module.exports = options => {
           writeFile(srcPath, distPath);
         }
       });
-      if (app.env === 'local') {
+      if (app.config.env === 'local') {
         // 监听目录 自动编译less文件
         fs.watch(options.src, {
           interval: 500, // 每 500 毫秒监视检查文件 一次

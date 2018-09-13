@@ -9,30 +9,29 @@ module.exports = app => {
       if (typeof navData.data === 'string') {
         navData.data = JSON.parse(navData.data);
         return navData.data;
-      } else {
-        let list = navData.data.data.list;
-        let arr = [];
-
-        list.forEach(item => {
-          item.subMenu = [];
-          if(item.parentId == 0) {
-            arr.push(item);
-          }
-        })
-        list.forEach(item => {
-          if(item.parentId !== 0) {
-            let parentId = item.parentId;
-            arr.forEach(i => {
-              if(i.id == parentId) {
-                i.subMenu.push(item);
-              }
-            })
-          }
-        })
-        return arr;
       }
-    }
+      const list = navData.data.data.list;
+      const arr = [];
 
+      list.forEach(item => {
+        item.subMenu = [];
+        if (item.parentId === 0) {
+          arr.push(item);
+        }
+      });
+      list.forEach(item => {
+        if (item.parentId !== 0) {
+          const parentId = item.parentId;
+          arr.forEach(i => {
+            if (i.id === parentId) {
+              i.subMenu.push(item);
+            }
+          });
+        }
+      });
+      return arr;
+
+    }
 
 
     async demo(query) {

@@ -124,4 +124,204 @@
       }
     }
   }
+  .module {
+    padding: 50px 0;
+  }
+  .module-sub-title {
+    margin-top: 3px;
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+  }
+  .school-info {
+    background: #f7f7f7;
+    .items {
+      padding-top: 60px;
+      .item {
+        position: relative;
+        float: left;
+        width: 400px;
+        text-align: center;
+        box-sizing: border-box;
+        .normal {
+          height: 320px;
+          .hd {
+            height: 155px;
+            padding-top: 40px;
+            font-family: Helve;
+            font-size: 56px;
+            color: @lightGray;
+            box-sizing: border-box;
+          }
+          .bd {
+            position: relative;
+            margin-bottom: 35px;
+            border-bottom: 1px solid #cdcdcd;
+            &:before {
+              width: 14px;
+              height: 14px;
+              top: -7px;
+              left: 50%;
+              margin-left: -7px;
+              border-radius: 7px;
+              border: 1px solid #cdcdcd;
+              background: #f7f7f7;
+              outline: 6px solid #f7f7f7;
+              .content();
+            }
+            &:after {
+              width: 6px;
+              height: 6px;
+              top: -2px;
+              left: 50%;
+              z-index: 1;
+              margin-left: -2px;
+              border-radius: 3px;
+              background: @lightGray;
+              .content();
+            }
+          }
+          .ft {
+            h6 {
+              margin-bottom: 12px;
+              font-size: 20px;
+              font-weight: normal;
+              color: @deepGray;
+            }
+            p {
+              font-size: 14px;
+              color: #888;
+            }
+          }
+        }
+        &:nth-child(2) {
+          .hd {
+            height: auto;
+            padding-top: 0;
+          }
+          .bd {
+            margin-bottom: none;
+          }
+          .ft {
+            padding: 36px 0 35px;
+          }
+        }
+        .active {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          width: 400px;
+          height: 320px;
+          background: #fff;
+          border: 1px solid @blue;
+          box-sizing: border-box;
+          .hd {
+            padding-top: 39px;
+            font-family: Helve;
+            font-size: 56px;
+            color: @middleGray;
+          }
+          .bd {
+            width: 20px;
+            height: 1px;
+            margin: 30px auto 36px;
+            background: #bbb;
+          }
+          .ft {
+            h6 {
+              margin-bottom: 12px;
+              font-size: 20px;
+              font-weight: normal;
+              color: @blue;
+            }
+            p {
+              font-size: 14px;
+              color: @deepGray;
+            }
+          }
+        }
+        .two{
+          .ft {
+            padding: 35px 0 10px;
+          }
+          .bd {
+            margin: 27px auto 25px;
+          }
+          .hd {
+            padding-top: 8px;
+          }
+        }
+        &:hover {
+          .active {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .three-course {
+    .items {
+      padding-top: 30px;
+      .item {
+        padding: 40px 0;
+        height: 270px;
+        .transition();
+        .img {
+          position: relative;
+          width: 480px;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            .transition();
+          }
+        }
+        .info {
+          width: 720px;
+          height: 270px;
+          padding: 12px 0;
+          box-sizing: border-box;
+          .hd {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: normal;
+          }
+          .bd {
+            height: 90px;
+            line-height: 30px;
+            margin-bottom: 65px;
+            font-size: 15px;
+            color: #888;
+          }
+          .ft {
+            a {
+              display: inline-block;
+              width: 100px;
+              height: 28px;
+              line-height: 28px;
+              margin-right: 10px;
+              color: #888;
+              border: 1px solid #bbb;
+              text-align: center;
+              .transition();
+              &:hover {
+                color: @white;
+                background: @blue;
+                border-color: @blue;
+              }
+            }
+            .two {
+              color: @blue;
+              border-color: @blue;
+            }
+          }
+        }
+        &:hover {
+          box-shadow: 5px 10px 24px 2px rgba(39, 122, 246, 0.07);
+        }
+      }
+    }
+  }
 }

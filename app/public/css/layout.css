@@ -101,6 +101,7 @@
 }
 .header .navs .menus .item .sub-menu {
   width: 100%;
+  text-align: center;
 }
 .header .navs .menus .item .sub-menu .sub-item {
   line-height: 30px;
@@ -108,7 +109,6 @@
 .header .navs .menus .item .sub-menu .sub-item .sub-item-a {
   display: inline-block;
   line-height: 20px;
-  padding: 0 10px 0 25px;
   box-sizing: border-box;
   transition: all 0.2s;
 }
@@ -117,7 +117,6 @@
 }
 .header .navs .menus .item .sub-menu .sub-item-a:hover {
   color: #2770f6;
-  padding-left: 32px;
 }
 .header .navs .menus .item:hover .item-a:after {
   width: 24px;
@@ -257,4 +256,11 @@
 }
 .banner-normal .box .more:hover {
   border-color: #fff;
+}
+/* module */
+.module-title {
+  font-size: 34px;
+  font-weight: normal;
+  color: #333;
+  text-align: center;
 }

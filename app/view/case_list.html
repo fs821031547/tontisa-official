@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<% import "macro-base.html" as base %>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,6 +12,12 @@
   <link rel="stylesheet" href="public/css/layout.css">
   <link rel="stylesheet" href="public/css/revolution.css">
   <link rel="stylesheet" href="public/css/list-case.css">
+  <style>
+    .case-pagination {
+      margin: 20px 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <% include './header.html' %>
@@ -18,8 +25,8 @@
     <div class="tp-banner-container case-banner">
       <div class="tp-banner swiper-container">
         <ul>
-          <% if list and list.length > 0 %>
-            <% for item in list %>
+          <% if bannerList and bannerList.length > 0 %>
+            <% for item in bannerList %>
             <li data-transition="slideleft" data-slotamount="9" data-masterspeed="1500">
               <div class="overaly tp-caption" data-speed="0" data-start="0"></div>
               <% if item.imgUrl and item.imgUrl.length > 0 %>
@@ -69,20 +76,20 @@
         <div id="tabCase" class="tab-cases">
           <div class="hd">
     				<ul class="types clearfix">
-              <li class="item">按类型查看</li>
-              <li class="item">按规模查看</li>
-              <li class="item">按使用目的查看</li>
-              <li class="item">按小强ERP功能查看</li>
+              <li class="<$ 'item on' if ctx.query.type==1 else 'item' $>">按类型查看</li>
+              <li class="<$ 'item on' if ctx.query.type==2 else 'item' $>">按规模查看</li>
+              <li class="<$ 'item on' if ctx.query.type==4 else 'item' $>">按使用目的查看</li>
+              <li class="<$ 'item on' if ctx.query.type==3 else 'item' $>" class="item">按小强ERP功能查看</li>
             </ul>
     			</div>
           <div class="bd">
             <div class="subBox">
               <div class="subHd">
   							<ul class="clearfix">
-                  <li>全部</li>
-                  <li>类型一</li>
-                  <li>类型二</li>
-                  <li>类型三</li>
+                  <li class="<$ 'on' if not ctx.query.tags else '' $>" onclick="common.fnSearch({'tags':'','type':1})">全部</li>
+                  <% for item in tagList.type %>
+                    <li class="<$ 'on' if ctx.query.tags == item.id else '' $>" onclick="common.fnSearch({'tags':'<$ item.id $>','type':'<$ item.type $>'})"><$ item.typeValue $></li>
+                  <% endfor %>
                 </ul>
   						</div>
   						<div class="subBd"></div>
@@ -90,10 +97,10 @@
             <div class="subBox">
               <div class="subHd">
   							<ul class="clearfix">
-                  <li>全部</li>
-                  <li>0~20人</li>
-                  <li>20~50人</li>
-                  <li>50~80人</li>
+                  <li class="<$ 'on' if not ctx.query.tags else '' $>" onclick="common.fnSearch({'tags':'','type':2})">全部</li>
+                  <% for item in tagList.size %>
+                  <li class="<$ 'on' if ctx.query.tags == item.id else '' $>" onclick="common.fnSearch({'tags':'<$ item.id $>','type':'<$ item.type $>'})"><$ item.typeValue $></li>
+                  <% endfor %>
                 </ul>
   						</div>
   						<div class="subBd"></div>
@@ -101,9 +108,10 @@
             <div class="subBox">
               <div class="subHd">
   							<ul class="clearfix">
-                  <li>全部</li>
-                  <li>使用目的一</li>
-                  <li>类型三</li>
+                  <li class="<$ 'on' if not ctx.query.tags else '' $>" onclick="common.fnSearch({'tags':'','type':4})">全部</li>
+                  <% for item in tagList.target %>
+                    <li class="<$ 'on' if ctx.query.tags == item.id else '' $>" onclick="common.fnSearch({'tags':'<$ item.id $>','type':'<$ item.type $>'})"><$ item.typeValue $></li>
+                  <% endfor %>
                 </ul>
   						</div>
   						<div class="subBd"></div>
@@ -111,45 +119,49 @@
             <div class="subBox">
               <div class="subHd">
   							<ul class="clearfix">
-                  <li>全部</li>
-                  <li>出团</li>
-                  <li>财务统计</li>
+                  <li class="<$ 'on' if not ctx.query.tags else '' $>" onclick="common.fnSearch({'tags':'','type':3})">全部</li>
+                  <% for item in tagList.feature %>
+                    <li class="<$ 'on' if ctx.query.tags == item.id else '' $>" onclick="common.fnSearch({'tags':'<$ item.id $>','type':'<$ item.type $>'})"><$ item.typeValue $></li>
+                  <% endfor %>
                 </ul>
   						</div>
   						<div class="subBd"></div>
             </div>
           </div>
         </div>
-        <div class="list-case">
+        <div class="list-case" >
           <ul class="clearfix">
+            <% for item in list %>
             <li>
               <div class="col">
-                <a href="">
+                <a  href="/case-detail/<$ item.id $>">
                   <div class="img">
-                    <img src="public/images/case_banner1.jpg">
+                    <img src="<$ item.imgUrl $>">
                   </div>
                   <p class="hd">
-                    <span class="tag">台湾批发商</span>
-                    <span>深圳抱团旅行</span>
+                    <span class="tag"><$ item.content.top.comp_type $></span>
+                    <span><$ item.content.top.comp_name $></span>
                   </p>
                   <div class="bd">
-                    <p class="title">规范内部流程，提升工作效率</p>
+                    <p class="title"><$ item.title $></p>
                     <p class="info">
-                      抱团旅行用小强ERP规范各岗位工作流程，大大提升了员 工工作效率，降低了企业运营成本大大提升了员 工工作效率，降低了企业运营成本
+                      <$ item.secondTitle $>
                     </p>
                   </div>
                   <div class="ft clearfix">
-                    <p class="fl">
-                      <span>内部流程管理</span>
-                      <span>提升运营效率</span>
+                    <p class="fl left-item">
+                      <span class=""><$ item.content.top.comp_goal $></span>
+                      <span class=""><$ item.content.top.comp_function $></span>
                     </p>
-                    <p class="fr">100~150人</p>
+                    <p class="fr"><$ item.content.top.comp_scale $></p>
                   </div>
                 </a>
               </div>
             </li>
+            <% endfor %>
           </ul>
         </div>
+        <div class="case-pagination"></div>
       </div>
     </div>
   </div>
@@ -160,9 +172,67 @@
   <script src="public/js/jquery.themepunch.revolution.min.js"></script>
   <script src="public/js/jquery.SuperSlide.2.1.1.js"></script>
   <script src="public/js/laypage.js"></script>
+<$ base.importBaseJs() $>
 
   <script>
+    // 分页变量
+    var page = {
+      pages: '<$ page.pages $>',
+      pageNum: '<$ page.pageNum $>'
+    };
+
+    // 初始化
     $(function() {
+      var queryType = '<$ ctx.query.type $>';
+      var queryPage = '<$ ctx.query.page $>';
+      var scrollTopVal = localStorage.getItem('scrollTop');
+      if ((queryType || queryPage) && scrollTopVal) {
+        setTimeout(function(){
+          window.scroll(0,scrollTopVal)
+        });
+      }
+
+      /**
+       * 分页
+      */
+      !function(){
+        laypage({
+          cont: $('.case-pagination'),
+          pages: page.pages,
+          curr: page.pageNum,
+          skin: '#0386CA',
+          groups: 5,
+          jump: function(obj, first) {
+            if (!first) {
+              setScrollTop();
+              window.location.href = window.location.protocol + '//'+ window.location.host + window.location.pathname + setUrlParam('page', obj.curr);
+            }
+          }
+        });
+      }()
+
+      window.common = {};
+
+      /**
+       * 筛选客户案例
+      */
+      common.fnSearch = function(option){
+        var str;
+        for(var k in option){
+          if(option[k]===''){
+            continue;
+          }
+          if(!str){
+            str = '?' + k + '=' + option[k];
+          }else{
+            str += '&' + k + '=' + option[k];
+          }
+        }
+        setScrollTop();
+        hrefStr = window.location.protocol + '//' + window.location.host + window.location.pathname + str;
+        window.location.href = hrefStr;
+      }
+
       $('.tp-banner').revolution({
         delay: 6000,
         startwidth: 1200,
@@ -174,24 +244,20 @@
       });
 
       jQuery(".subBox").slide({ titCell:".subHd li", mainCell:".subBd", trigger:"click" });
-      jQuery("#tabCase").slide({ effect:"left", trigger:"click", easing:"easeInBack" });
+      jQuery("#tabCase").slide({ effect:"left", trigger:"click", easing:"easeInOutCirc" });
 
-      var getObjCase = JSON.parse(localStorage.getItem('objCase'));
-      if(getObjCase) {
-        var $index = getObjCase.typeIndex;
-        $('#tabCase .types').find('li').eq($index).addClass('on').siblings().removeClass('on');
-        //localStorage.removeItem('objCase');
+      /**
+       * 设置滚动条离顶部距离
+      */
+      function setScrollTop(){
+        localStorage.setItem('scrollTop', $(document).scrollTop());
       }
-
       /* 切换缓存 */
       $('#tabCase .types').on('click', '.item', function() {
         var typeIndex = $(this).index();
         var objCase = {
           'typeIndex': typeIndex
         }
-        objCase = JSON.stringify(objCase);
-        localStorage.setItem('objCase', objCase);
-        $('.subBox').find('li').eq(0).addClass('on').siblings('li').removeClass('on');
       });
     });
   </script>

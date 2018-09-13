@@ -9,7 +9,7 @@
   height: 100% !important;
   overflow: hidden;
 }
-.case-banner .tp-bannerulli {
+.case-banner .tp-banner > ul > li {
   height: 490px !important;
 }
 .case-banner .tp-banner .overaly {
@@ -73,6 +73,9 @@
   line-height: 30px;
   margin-bottom: 15px;
   font-size: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .case-banner .tp-banner .box .ft {
   font-size: 14px;
@@ -193,7 +196,7 @@
 }
 .tp-tab-container .list-case ul li {
   float: left;
-  width: 400px;
+  width: 33.3333333%;
   padding: 13px;
   box-sizing: border-box;
 }
@@ -249,6 +252,9 @@
   margin-bottom: 8px;
   font-size: 18px;
   color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -270,6 +276,12 @@
   line-height: 42px;
   color: #888;
   border-top: 1px solid #f5f5f5;
+}
+.tp-tab-container .list-case ul li .col .ft .left-item {
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .tp-tab-container .list-case ul li .col .ft span {
   margin-right: 5px;
