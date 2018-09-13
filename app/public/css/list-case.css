@@ -249,6 +249,9 @@
   margin-bottom: 8px;
   font-size: 18px;
   color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
