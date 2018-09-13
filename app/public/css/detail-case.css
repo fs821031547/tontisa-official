@@ -38,8 +38,8 @@
   margin-left: -30px;
 }
 .case-detail .banner .cpy-info .logo:hover .bg {
-  -webkit-animation: spin 1s linear 1s 5 alternate;
-  animation: spin 1s linear infinite;
+  -webkit-animation: spin 2s linear 2s 5 alternate;
+  animation: spin 2s linear infinite;
 }
 .case-detail .banner .cpy-info .info h3 {
   padding: 0 100px;
