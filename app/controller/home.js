@@ -109,9 +109,35 @@ module.exports = app => {
     // recent-list
     async recentList() {
       const { query } = this.ctx;
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '最新动态';
+      });
+      const navIdArr = [];
+      pageInfo.forEach(x => {
+        if (x.parentId === actionData.id) {
+          switch (x.name) {
+            case '轮播':
+              navIdArr[0] = x.id;
+              break;
+            case '企业新闻':
+              navIdArr[1] = x.id;
+              break;
+            case '同业专访':
+              navIdArr[2] = x.id;
+              break;
+            case '产品资讯':
+              navIdArr[3] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
       // 轮播
       const bannerParams = {
-        navId: 30,
+        navId: navIdArr[0],
         pageNum: 1,
         pageSize: 8,
       };
@@ -119,19 +145,19 @@ module.exports = app => {
       const newsParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 31,
+        navId: navIdArr[1],
       };
       // 同业专访
       const viewParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 32,
+        navId: navIdArr[2],
       };
       // 产品资讯
       const productParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 33,
+        navId: navIdArr[3],
       };
       const newsRes = await this.apiPost('/websiteContent/list', newsParams);
       const viewRes = await this.apiPost('/websiteContent/list', viewParams);
