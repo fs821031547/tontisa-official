@@ -93,11 +93,11 @@ module.exports = app => {
 
     // case-detail
     async caseDetail() {
-      let url = this.ctx.request.url;
-      let id = url.split('/')[url.split('/').length - 1];
+      const url = this.ctx.request.url;
+      const id = url.split('/')[url.split('/').length - 1];
       console.log('AAAAAA=============BBBBBBBBBBB', this.ctx.request.url);
       const parms = {
-        id: id
+        id,
       };
       const res = await this.apiPost('/websiteContent/detail', parms);
       if (typeof res.data.data.content === 'string') {
@@ -109,22 +109,35 @@ module.exports = app => {
     // recent-list
     async recentList() {
       const { query } = this.ctx;
+      // 轮播
       const bannerParams = {
-        navId: 17,
+        navId: 31,
+        pageNum: 1,
+        pageSize: 8,
       };
-      const params = {
+      // 企业新闻
+      const newsParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 18,
-        tags: query.tags || null,
+        navId: 30,
       };
-      const res = await this.apiPost('/websiteContent/list', params);
-      const newsRes = await this.apiPost('/websiteContent/list', params);
-      const viewRes = await this.apiPost('/websiteContent/list', params);
-      const productRes = await this.apiPost('/websiteContent/list', params);
+      // 同业专访
+      const viewParams = {
+        pageNum: query.page || 1,
+        pageSize: 12,
+        navId: 32,
+      };
+      // 产品资讯
+      const productParams = {
+        pageNum: query.page || 1,
+        pageSize: 12,
+        navId: 33,
+      };
+      const newsRes = await this.apiPost('/websiteContent/list', newsParams);
+      const viewRes = await this.apiPost('/websiteContent/list', viewParams);
+      const productRes = await this.apiPost('/websiteContent/list', productParams);
       const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
       const resData = {
-        list: res.data.data.list,
         newsList: newsRes.data.data.list,
         viewList: viewRes.data.data.list,
         productList: productRes.data.data.list,

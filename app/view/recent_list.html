@@ -37,7 +37,7 @@
               <img src="<$ item.imgUrl $>" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
               <div class="recent-box tp-caption lfr" data-x="0" data-y="130" data-speed="800">
                 <h2 class="title"><$ item.title $></h2>
-                <p class="sub-title"><$ item.secondTitle $></p>
+                <p class="sub-title"><$ item.description $></p>
                 <a class="more" href=""><span>了解详情</span></a>
               </div>
             </li>
@@ -67,8 +67,8 @@
                 <div class="info">
                   <h3><a href=""><$ item.title $></a></h3>
                   <p class="tags">
-                    <span class="time">2018-08-04 18:04</span>
-                    <span>同天下 魔鬼训练营</span>
+                    <span class="time"><$ item.showTime $></span>
+                    <span></span>
                   </p>
                   <div class="summary">
                     <$ item.description $>
@@ -76,7 +76,7 @@
                 </div>
               </div>
             <% endfor %>
-            <div class="item clearfix">
+            <!-- <div class="item clearfix">
               <div class="img">
                 <img src="public/images/banner2.jpg">
               </div>
@@ -90,7 +90,7 @@
                   昨天，同天下“膨胀了”因为我们的队伍又壮大了！欢迎7位新加入的小伙伴通过1个月的魔鬼训练营，以优异成绩顺利毕业，正式加入同天下大家庭
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <a class="more" href="">查看更多</a>
         </div>
@@ -109,8 +109,8 @@
                         <img src="<$ item.imgUrl $>">
                       </div>
                       <div class="bd">
-                        <p class="name">陈澎葰</p>
-                        <p class="cpy">腾邦旅游集团 副总裁</p>
+                        <p class="name"><$ item.title $></p>
+                        <p class="cpy"><$ item.description $></p>
                       </div>
                       <div class="ft">
                         旅业强势黑马
@@ -119,102 +119,6 @@
                   </div>
                 </li>
                 <% endfor %>
-                <li>
-                  <div class="col">
-                    <a href="">
-                      <div class="hd">
-                        <img src="public/images/banner2.jpg">
-                      </div>
-                      <div class="bd">
-                        <p class="name">陈澎葰</p>
-                        <p class="cpy">腾邦旅游集团 副总裁</p>
-                      </div>
-                      <div class="ft">
-                        旅业强势黑马
-                      </div>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="col">
-                    <a href="">
-                      <div class="hd">
-                        <img src="public/images/banner2.jpg">
-                      </div>
-                      <div class="bd">
-                        <p class="name">陈澎葰</p>
-                        <p class="cpy">腾邦旅游集团 副总裁</p>
-                      </div>
-                      <div class="ft">
-                        旅业强势黑马
-                      </div>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="col">
-                    <a href="">
-                      <div class="hd">
-                        <img src="public/images/banner2.jpg">
-                      </div>
-                      <div class="bd">
-                        <p class="name">陈澎葰</p>
-                        <p class="cpy">腾邦旅游集团 副总裁</p>
-                      </div>
-                      <div class="ft">
-                        旅业强势黑马
-                      </div>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="col">
-                    <a href="">
-                      <div class="hd">
-                        <img src="public/images/banner2.jpg">
-                      </div>
-                      <div class="bd">
-                        <p class="name">陈澎葰</p>
-                        <p class="cpy">腾邦旅游集团 副总裁</p>
-                      </div>
-                      <div class="ft">
-                        旅业强势黑马
-                      </div>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="col">
-                    <a href="">
-                      <div class="hd">
-                        <img src="public/images/banner2.jpg">
-                      </div>
-                      <div class="bd">
-                        <p class="name">陈澎葰</p>
-                        <p class="cpy">腾邦旅游集团 副总裁</p>
-                      </div>
-                      <div class="ft">
-                        旅业强势黑马
-                      </div>
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div class="col">
-                    <a href="">
-                      <div class="hd">
-                        <img src="public/images/banner2.jpg">
-                      </div>
-                      <div class="bd">
-                        <p class="name">陈澎葰</p>
-                        <p class="cpy">腾邦旅游集团 副总裁</p>
-                      </div>
-                      <div class="ft">
-                        旅业强势黑马
-                      </div>
-                    </a>
-                  </div>
-                </li>
                 <li>
                   <div class="col">
                     <a href="">
@@ -296,22 +200,22 @@
             <li class="item clearfix">
               <a href="">
                 <div class="img">
-                  <img src="public/images/banner2.jpg">
+                  <img src="<$ item.imgUrl $>">
                   <div class="overaly">
-                    <p class="date">08-20</p>
-                    <p class="year">2018</p>
+                    <p class="date"><$ item.showTime.slice(5,11) $></p>
+                    <p class="year"><$ item.showTime.slice(0,4) $></p>
                   </div>
                 </div>
                 <div class="info">
-                  <h3 class="title">传统旅行社玩转电商会员营销，只需这三步就行</h3>
+                  <h3 class="title"><$ item.title $></h3>
                   <div class="summary">
-                    同样身为旅行社销售，有的销售月薪3000，有的月薪30000，到底是什么原因造成这么大的区别？
+                    <$ item.description $>
                   </div>
                 </div>
               </a>
             </li>
             <% endfor %>
-            <li class="item clearfix">
+            <!-- <li class="item clearfix">
               <a href="">
                 <div class="img">
                   <img src="public/images/banner2.jpg">
@@ -327,24 +231,7 @@
                   </div>
                 </div>
               </a>
-            </li>
-            <li class="item clearfix">
-              <a href="">
-                <div class="img">
-                  <img src="public/images/banner2.jpg">
-                  <div class="overaly">
-                    <p class="date">08-20</p>
-                    <p class="year">2018</p>
-                  </div>
-                </div>
-                <div class="info">
-                  <h3 class="title">传统旅行社玩转电商会员营销，只需这三步就行</h3>
-                  <div class="summary">
-                    同样身为旅行社销售，有的销售月薪3000，有的月薪30000，到底是什么原因造成这么大的区别？
-                  </div>
-                </div>
-              </a>
-            </li>
+            </li> -->
           </ul>
           <a class="more" href="">查看更多</a>
         </div>

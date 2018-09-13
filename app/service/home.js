@@ -32,6 +32,18 @@ module.exports = app => {
       return arr;
 
     }
+    async pageInfo(query) {
+      const pageParams = {
+        type: 1,
+      };
+      const pageData = await this.apiPost('/websiteNav/list', pageParams);
+      if (typeof pageData.data === 'string') {
+        pageData.data = JSON.parse(pageData.data);
+        return pageData.data;
+      }
+      const pageList = pageData.data.data.list;
+      return pageList;
+    }
 
 
     async demo(query) {

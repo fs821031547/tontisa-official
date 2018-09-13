@@ -13,5 +13,6 @@ module.exports = app => {
     // 也可以通过以下方式来调用 Service
     // const ctx = app.createAnonymousContext();
     app.headerInfo = await ctx.service.home.headerInfo();
+    app.pageInfo = await ctx.service.home.pageInfo();
   });
 };
