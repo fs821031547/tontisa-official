@@ -32,6 +32,9 @@ module.exports = app => {
       this.ctx.body = res.data;
     }
     // case-list
+    /**
+     * 客户案例列表
+     */
     async caseList() {
       const { query } = this.ctx;
       const pageInfo = this.ctx.app.pageInfo;
@@ -59,7 +62,7 @@ module.exports = app => {
       };
       const params = {
         pageNum: query.page || 1,
-        pageSize: 12,
+        // pageSize: 12,
         navId: navIdArr[1],
         tags: query.tags || null,
       };
@@ -102,21 +105,22 @@ module.exports = app => {
           item.content = JSON.parse(item.content);
         }
       });
-      console.log('\n bannerRes: \n', bannerRes.data.data.pages);
       const resData = {
-        list: res.data.data.list,
+        list: res.data.data.list.slice(0, 12),
         tagList: websiteTag,
         bannerList: bannerRes.data.data.list,
         page: res.data.data,
+        listStr: JSON.stringify(res.data.data.list),
       };
       await this.ctx.render('case_list', resData);
     }
-
+    /**
+     * 客户案例详情
+     */
     // case-detail
     async caseDetail() {
       const url = this.ctx.request.url;
       const id = url.split('/')[url.split('/').length - 1];
-      console.log('AAAAAA=============BBBBBBBBBBB', this.ctx.request.url);
       const parms = {
         id,
       };
@@ -126,7 +130,9 @@ module.exports = app => {
       }
       await this.ctx.render('case_detail', res.data.data);
     }
-
+    /**
+     * 最新动态
+     */
     // recent-list
     async recentList() {
       const { query } = this.ctx;
