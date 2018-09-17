@@ -28,7 +28,6 @@
           <% if bannerList and bannerList.length > 0 %>
             <% for item in bannerList %>
             <li data-transition="slideleft" data-slotamount="9" data-masterspeed="1500">
-              <div class="overaly tp-caption" data-speed="0" data-start="0"></div>
               <% if item.imgUrl and item.imgUrl.length > 0 %>
                 <img src="<$ item.imgUrl $>" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
               <% else %>

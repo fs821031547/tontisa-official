@@ -69,7 +69,7 @@
 				num = (num == "." ? 10 : num);
 				var spanHei = $(this).height() / 11; //11为元素个数
 				var thisTop = -num * spanHei + "px";
-				if(thisTop != $(this).css("top")) {
+				//if(thisTop != $(this).css("top")) {
 					if(setting.iniAnimate) {
 						//HTML5不支持
 						if(!window.applicationCache) {
@@ -99,7 +99,7 @@
 							top: thisTop
 						});
 					}
-				}
+				//}
 			});
 		}
 

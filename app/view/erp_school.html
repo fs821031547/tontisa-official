@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="public/css/reset.css">
   <link rel="stylesheet" href="public/css/layout.css">
   <link rel="stylesheet" href="../public/css/animate.min.css">
-  <link rel="stylesheet" href="public/css/revolution.css">
-  <link rel="stylesheet" href="public/css/erp-school.css">
+  <link rel="stylesheet" href="../public/css/revolution.css">
+  <link rel="stylesheet" href="../public/css/plugins/lightgallery.min.css">
+  <link rel="stylesheet" href="../public/css/erp-school.css">
 </head>
 <body>
   <% include './header.html' %>
@@ -52,16 +53,16 @@
       </div>
       <div class="number-info">
         <div class="inner clearfix">
-          <div class="fl content">
+          <div class="fl content wow slideInLeft">
             <div class="clearfix">
-              <p id="num1" class="fl number">1000</p>
+              <p id="num1" class="fl number numberRun1">1000</p>
               <p class="fl">位<br><span class="text">旅游人</span></p>
             </div>
             <p class="desc">已有1000旅游人通过小强学院充电赋能，解决工作中出现的问题</p>
           </div>
-          <div class="fr content">
+          <div class="fr content wow slideInRight">
             <div class="clearfix">
-              <p id="num2" class="fl number numberRun">100</p>
+              <p id="num2" class="fl number numberRun2">100</p>
               <p class="fl">家<br><span class="text">旅行社</span></p>
             </div>
             <p class="desc">小强学院使员工心态和效率的提升，从内到外地解决了现实经营中的困难</p>
@@ -73,7 +74,7 @@
         <div class="inner">
           <h3 class="module-title">小强学院，旅游人自己的学院</h3>
           <p class="module-sub-title">小强学院成立于2017 年10 月，是同天下创办的一所旅游人的实战学院，包括信息化技能培训、信任五环·超级销售拜访术和心灵团建三大主题课程</p>
-          <div class="items clearfix">
+          <div class="items clearfix wow slideInUp">
             <div class="item">
               <div class="normal">
                 <div class="hd">01</div>
@@ -143,7 +144,7 @@
           </p>
         </div>
         <div class="items">
-          <div class="item">
+          <div class="item wow slideInUp">
             <div class="inner clearfix">
               <div class="fl img">
                 <img src="public/images/school_img1.jpg">
@@ -161,7 +162,7 @@
               </div>
             </div>
           </div>
-          <div class="item clearfix">
+          <div class="item wow slideInUp">
             <div class="inner clearfix">
               <div class="fl img">
                 <img src="public/images/school_img2.jpg">
@@ -179,7 +180,7 @@
               </div>
             </div>
           </div>
-          <div class="item clearfix">
+          <div class="item wow slideInUp">
             <div class="inner clearfix">
               <div class="fl img">
                 <img src="public/images/school_img3.jpg">
@@ -200,13 +201,349 @@
         </div>
       </div>
       <!--三大课程-->
+
+      <!--优秀学员分享-->
+      <div class="module share-box">
+        <div class="inner">
+          <h3 class="module-title wow slideInUp">优秀学员分享</h3>
+          <div class="share-slide">
+            <span id="prev" class="btn prev" style="display:none;"></span>
+      			<span id="next" class="btn next" style="display:none;"></span>
+      			<span id="prevTop" class="btn prev"></span>
+      			<span id="nextTop" class="btn next"></span>
+            <div id="picBox" class="picBox">
+      				<ul class="cf">
+      					<li class="clearfix">
+                  <div class="img">
+                    <img src="public/images/case_avatar.png" alt="">
+                  </div>
+                  <div class="info">
+                    <p class="hd">毛瑞月</p>
+                    <p class="bd">新疆峰景国际旅行社·副总经理</p>
+                    <div class="ft">参加完同天下主办的《信任五环》课程，受益良多。印象最深的是如何倾听，如何沟通，对我之后工作的指导非常的大</div>
+                  </div>
+                </li>
+                <li class="clearfix">
+                  <div class="img">
+                    <img src="public/images/case_avatar.png" alt="">
+                  </div>
+                  <div class="info">
+                    <p class="hd">毛瑞月1</p>
+                    <p class="bd">新疆峰景国际旅行社·副总经理</p>
+                    <div class="ft">参加完同天下主办的《信任五环》课程，受益良多。印象最深的是如何倾听，如何沟通，对我之后工作的指导非常的大</div>
+                  </div>
+                </li>
+                <li class="clearfix">
+                  <div class="img">
+                    <img src="public/images/case_avatar.png" alt="">
+                  </div>
+                  <div class="info">
+                    <p class="hd">毛瑞月2</p>
+                    <p class="bd">新疆峰景国际旅行社·副总经理</p>
+                    <div class="ft">参加完同天下主办的《信任五环》课程，受益良多。印象最深的是如何倾听，如何沟通，对我之后工作的指导非常的大</div>
+                  </div>
+                </li>
+                <li class="clearfix">
+                  <div class="img">
+                    <img src="public/images/case_avatar.png" alt="">
+                  </div>
+                  <div class="info">
+                    <p class="hd">毛瑞月3</p>
+                    <p class="bd">新疆峰景国际旅行社·副总经理</p>
+                    <div class="ft">参加完同天下主办的《信任五环》课程，受益良多。印象最深的是如何倾听，如何沟通，对我之后工作的指导非常的大</div>
+                  </div>
+                </li>
+                <li class="clearfix">
+                  <div class="img">
+                    <img src="public/images/case_avatar.png" alt="">
+                  </div>
+                  <div class="info">
+                    <p class="hd">毛瑞月4</p>
+                    <p class="bd">新疆峰景国际旅行社·副总经理</p>
+                    <div class="ft">参加完同天下主办的《信任五环》课程，受益良多。印象最深的是如何倾听，如何沟通，对我之后工作的指导非常的大</div>
+                  </div>
+                </li>
+      				</ul>
+      			</div>
+            <div id="listBox" class="listBox">
+      				<ul class="cf">
+      					<li class="on">
+                  <div class="col clearfix">
+                    <img src="public/images/case_avatar.png" alt="">
+                    <div class="info">
+                      <p class="p1">毛瑞月</p>
+                      <p class="p2">新疆峰景国际旅行社 副总经理</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="col clearfix">
+                    <img src="public/images/case_avatar.png" alt="">
+                    <div class="info">
+                      <p class="p1">毛瑞月1</p>
+                      <p class="p2">新疆峰景国际旅行社 副总经理</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="col clearfix">
+                    <img src="public/images/case_avatar.png" alt="">
+                    <div class="info">
+                      <p class="p1">毛瑞月2</p>
+                      <p class="p2">新疆峰景国际旅行社 副总经理</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="col clearfix">
+                    <img src="public/images/case_avatar.png" alt="">
+                    <div class="info">
+                      <p class="p1">毛瑞月3</p>
+                      <p class="p2">新疆峰景国际旅行社 副总经理</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="col clearfix">
+                    <img src="public/images/case_avatar.png" alt="">
+                    <div class="info">
+                      <p class="p1">毛瑞月4</p>
+                      <p class="p2">新疆峰景国际旅行社 副总经理</p>
+                    </div>
+                  </div>
+                </li>
+      				</ul>
+      			</div>
+          </div>
+        </div>
+      </div>
+      <!--优秀学员分享-->
+
+      <!--精彩图集-->
+      <div class="module photos-gallery">
+        <div class="inner">
+          <h3 class="module-title">精彩图集</h3>
+          <div id="tabPhotos" class="tab-photos">
+            <div class="head">
+              <ul class="types clearfix">
+                <li>信任五环</li>
+                <li>信息化技能培训</li>
+                <li>心灵团建</li>
+              </ul>
+            </div>
+            <div class="body wow slideInUp">
+              <div class="box">
+                <div id="lightgallery1" class="photos-box clearfix" lg-uid="lg0">
+                  <a class="item" href="public/images/banner2.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="box">
+                <div id="lightgallery2" class="photos-box clearfix" lg-uid="lg0">
+                  <a class="item" href="public/images/banner2.jpg">
+                    <img class="img-small" src="public/images/banner2.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="box">
+                <div id="lightgallery3" class="photos-box clearfix" lg-uid="lg0">
+                  <a class="item" href="public/images/banner2.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                  <a class="item" href="public/images/case_banner1.jpg">
+                    <img class="img-small" src="public/images/case_banner1.jpg" />
+                    <div class="info">
+                      <p class="text">信任五环学员认真听讲</p>
+                      <p class="date">08-19</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--精彩图集-->
+
+      <!--往期课程回顾-->
+      <div class="module course-review">
+        <div class="inner">
+          <h3 class="module-title">往期课程回顾</h3>
+          <ul class="items clearfix wow slideInUp">
+            <li class="item">
+              <div class="col">
+                <a href="">
+                  <div class="hd">
+                    <img src="public/images/case_banner1.jpg" alt="">
+                    <div class="overaly">
+                      <p class="date">08-20</p>
+                      <p class="year">2018</p>
+                    </div>
+                  </div>
+                  <div class="bd">这个会玩的旅行社，是这样团建的！</div>
+                  <div class="ft">
+                    年轻有趣的灵魂，都喜欢未知、刺激和惊喜。就算是公司团建，也不甘于出游、军事拓展训练、聚会这些俗套的形式。
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="item">
+              <div class="col">
+                <a href="">
+                  <div class="hd">
+                    <img src="public/images/case_banner1.jpg" alt="">
+                    <div class="overaly">
+                      <p class="date">08-20</p>
+                      <p class="year">2018</p>
+                    </div>
+                  </div>
+                  <div class="bd">这个会玩的旅行社，是这样团建的！</div>
+                  <div class="ft">
+                    年轻有趣的灵魂，都喜欢未知、刺激和惊喜。就算是公司团建，也不甘于出游、军事拓展训练、聚会这些俗套的形式。
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="item">
+              <div class="col">
+                <a href="">
+                  <div class="hd">
+                    <img src="public/images/case_banner1.jpg" alt="">
+                    <div class="overaly">
+                      <p class="date">08-20</p>
+                      <p class="year">2018</p>
+                    </div>
+                  </div>
+                  <div class="bd">这个会玩的旅行社，是这样团建的！</div>
+                  <div class="ft">
+                    年轻有趣的灵魂，都喜欢未知、刺激和惊喜。就算是公司团建，也不甘于出游、军事拓展训练、聚会这些俗套的形式。
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="item">
+              <div class="col">
+                <a href="">
+                  <div class="hd">
+                    <img src="public/images/case_banner1.jpg" alt="">
+                    <div class="overaly">
+                      <p class="date">08-20</p>
+                      <p class="year">2018</p>
+                    </div>
+                  </div>
+                  <div class="bd">这个会玩的旅行社，是这样团建的！</div>
+                  <div class="ft">
+                    年轻有趣的灵魂，都喜欢未知、刺激和惊喜。就算是公司团建，也不甘于出游、军事拓展训练、聚会这些俗套的形式。
+                  </div>
+                </a>
+              </div>
+            </li>
+          </ul>
+          <a class="more rotate-more" href="">查看更多<span class="lines"></span></a>
+        </div>
+      </div>
+      <!--往期课程回顾-->
     </div>
   </div>
   <% include './footer.html' %>
 
   <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-  <script src="public/js/jquery.themepunch.plugins.min.js"></script>
-  <script src="public/js/jquery.themepunch.revolution.min.js"></script>
+  <script src="../public/js/jquery.themepunch.plugins.min.js"></script>
+  <script src="../public/js/jquery.themepunch.revolution.min.js"></script>
+  <script src="../public/js/plugins/lightgallery.min.js"></script>
+  <script src="../public/js/plugins/lightgallery-all.min.js"></script>
+  <script src="public/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="../public/js/jqueryPhoto.js"></script>
   <script src="../public/js/wow.min.js"></script>
   <script src="../public/js/numAnimate.js"></script>
   <script>
@@ -222,6 +559,69 @@
         onHoverStop: 'on',
         hideThumbs: 10
       });
+
+      jQuery("#tabPhotos").slide({titCell:".head li", mainCell:".body", effect:"fold", trigger:"click"});
+
+      $("#lightgallery1").lightGallery({
+				thumbnail: true,
+				animateThumb: false,
+				showThumbByDefault: false,
+				thumbWidth: 100,
+				thumbHeight: '150px',
+				loop: false,
+				actualSize: true,
+				speed: 500,
+				download: false,  //下载按钮
+				backdropDuration: 100
+			});
+      $("#lightgallery2").lightGallery({
+				thumbnail: true,
+				animateThumb: false,
+				showThumbByDefault: false,
+				thumbWidth: 100,
+				thumbHeight: '150px',
+				loop: false,
+				actualSize: true,
+				speed: 500,
+				download: false,  //下载按钮
+				backdropDuration: 100
+			});
+      $("#lightgallery3").lightGallery({
+				thumbnail: true,
+				animateThumb: false,
+				showThumbByDefault: false,
+				thumbWidth: 100,
+				thumbHeight: '150px',
+				loop: false,
+				actualSize: true,
+				speed: 500,
+				download: false,  //下载按钮
+				backdropDuration: 100
+			});
+
+
+
+      // var numRun = $(".numberRun1").numberAnimate({
+      // 	num: '1000',
+      // 	dot: 0,
+      // 	speed: 1000,
+      // 	symbol: ''
+      // });
+      // var nums = 1000;
+      // setInterval(function() {
+      // 	numRun.resetData(nums);
+      // }, 2000);
+      //
+      // var numView = $(".numberRun2").numberAnimate({
+      //   num: '100',
+      //   dot: 0,
+      //   speed: 1000,
+      //   symbol: ''
+      // });
+      // var nums2 = 100;
+      // setInterval(function() {
+      //   numView.resetData(nums2);
+      // }, 2000);
     });
   </script>
 </body>

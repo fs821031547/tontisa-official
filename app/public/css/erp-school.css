@@ -1,3 +1,76 @@
+.rotate-more {
+  display: inline-block;
+  position: relative;
+  line-height: 32px;
+  padding: 0px 25px;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+.rotate-more .lines {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.rotate-more .lines:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background-color: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more .lines:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background-color: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more:before {
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more:hover:before {
+  transform: translateX(-100%);
+}
+.rotate-more:hover:after {
+  transform: translateX(100%);
+}
+.rotate-more:hover .lines:before {
+  transform: translateY(-100%);
+}
+.rotate-more:hover .lines:after {
+  transform: translateY(100%);
+}
 .erp-school .tp-banner-container {
   position: relative;
   height: 490px;
@@ -137,11 +210,21 @@
   position: relative;
   float: left;
   width: 400px;
+  height: 320px;
   text-align: center;
   box-sizing: border-box;
+  perspective: 1000px;
 }
 .erp-school .school-info .items .item .normal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
   height: 320px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 500ms;
 }
 .erp-school .school-info .items .item .normal .hd {
   height: 155px;
@@ -204,16 +287,19 @@
   padding: 36px 0 35px;
 }
 .erp-school .school-info .items .item .active {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
   width: 400px;
   height: 320px;
   background: #fff;
   border: 1px solid #2770f6;
   box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 500ms;
+  transform: rotateY(-180deg);
 }
 .erp-school .school-info .items .item .active .hd {
   padding-top: 39px;
@@ -246,8 +332,11 @@
 .erp-school .school-info .items .item .two .hd {
   padding-top: 8px;
 }
+.erp-school .school-info .items .item:hover .normal {
+  transform: rotateY(180deg);
+}
 .erp-school .school-info .items .item:hover .active {
-  display: block;
+  transform: rotateY(0deg);
 }
 .erp-school .three-course .items {
   padding-top: 30px;
@@ -315,5 +404,351 @@
   border-color: #2770f6;
 }
 .erp-school .three-course .items .item:hover {
-  box-shadow: 5px 10px 24px 2px rgba(39, 122, 246, 0.07);
+  box-shadow: 0px 0px 18px 3px rgba(39, 122, 246, 0.1);
+}
+.erp-school .three-course .items .item:hover img {
+  left: 10px;
+}
+.erp-school .share-box {
+  height: 698px;
+  padding: 70px 0;
+  background: url('../images/share_bg.jpg') no-repeat;
+  box-sizing: border-box;
+}
+.erp-school .share-box .share-slide {
+  position: relative;
+  margin-top: 75px;
+}
+.erp-school .share-box .share-slide .btn {
+  width: 18px;
+  height: 33px;
+  cursor: pointer;
+  position: absolute;
+  top: 121px;
+  z-index: 10;
+  background: url('../images/arrow_share.png');
+}
+.erp-school .share-box .share-slide .prev {
+  left: 0;
+}
+.erp-school .share-box .share-slide .prev:hover {
+  background: url('../images/arrow_share.png') -18px 0;
+}
+.erp-school .share-box .share-slide .next {
+  right: 0;
+  background: url('../images/arrow_share.png') 0 -33px;
+}
+.erp-school .share-box .share-slide .next:hover {
+  background: url('../images/arrow_share.png') -18px -33px;
+}
+.erp-school .share-box .picBox {
+  position: relative;
+  width: 1200px;
+  height: 260px;
+  overflow: hidden;
+}
+.erp-school .share-box .picBox ul {
+  position: absolute;
+  height: 260px;
+}
+.erp-school .share-box .picBox ul li {
+  float: left;
+  width: 990px;
+  padding: 0 105px;
+}
+.erp-school .share-box .picBox ul li .img {
+  float: left;
+  width: 260px;
+  height: 260px;
+}
+.erp-school .share-box .picBox ul li .img img {
+  width: 100%;
+  height: 100%;
+}
+.erp-school .share-box .picBox ul li .info {
+  float: left;
+  width: 730px;
+  padding: 60px 0 60px 75px;
+  box-sizing: border-box;
+}
+.erp-school .share-box .picBox ul li .info .hd {
+  height: 28px;
+  line-height: 28px;
+  padding-bottom: 8px;
+  font-size: 26px;
+  color: #333;
+}
+.erp-school .share-box .picBox ul li .info .bd {
+  margin-bottom: 25px;
+  font-size: 14px;
+  color: #999;
+}
+.erp-school .share-box .picBox ul li .info .ft {
+  height: 40px;
+  line-height: 20px;
+  padding-top: 25px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px dashed #bbb;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.erp-school .share-box .listBox {
+  position: relative;
+  width: 1200px;
+  height: 86px;
+  margin-top: 60px;
+  overflow: hidden;
+}
+.erp-school .share-box .listBox ul {
+  position: absolute;
+  height: 86px;
+}
+.erp-school .share-box .listBox ul li {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 84px;
+  padding: 0 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.erp-school .share-box .listBox ul li .col {
+  padding: 14px 20px;
+  background: #fff;
+  box-sizing: border-box;
+}
+.erp-school .share-box .listBox ul li .col img {
+  float: left;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+.erp-school .share-box .listBox ul li .col .info {
+  float: left;
+  padding: 5px 0 0 20px;
+}
+.erp-school .share-box .listBox ul li .col .info .p1 {
+  font-size: 18px;
+  color: #333;
+}
+.erp-school .share-box .listBox ul li .col .info .p2 {
+  color: #888;
+}
+.erp-school .share-box .listBox ul li.on .col {
+  border-bottom: 1px solid #2770f6;
+}
+.erp-school .photos-gallery .tab-photos .head {
+  text-align: center;
+}
+.erp-school .photos-gallery .tab-photos .head .types {
+  padding: 25px 0 30px;
+}
+.erp-school .photos-gallery .tab-photos .head .types li {
+  display: inline-block;
+  line-height: 24px;
+  padding: 0 12px;
+  margin: 0 30px;
+  color: #999;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.erp-school .photos-gallery .tab-photos .head .types li.on {
+  color: #fff;
+  background: #333;
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box .item {
+  display: block;
+  position: relative;
+  float: left;
+  width: 285px;
+  height: 205px;
+  margin: 10px;
+  overflow: hidden;
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box .item img {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  min-height: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box .item .info {
+  position: absolute;
+  left: -275px;
+  bottom: 10px;
+  width: 265px;
+  padding: 10px 15px 5px;
+  color: #fff;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.36);
+  border-top: 1px solid #d2d4d6;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box .item .info .text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box .item .info .date {
+  font-family: Helve;
+  color: rgba(255, 255, 255, 0.6);
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box .item:hover img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.erp-school .photos-gallery .tab-photos .body .photos-box .item:hover .info {
+  left: 10px;
+}
+.erp-school .course-review {
+  padding: 60px 0;
+  background: #fafafa;
+}
+.erp-school .course-review .items {
+  padding-top: 50px;
+  margin: 0 -10px;
+}
+.erp-school .course-review .items .item {
+  float: left;
+  width: 300px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.erp-school .course-review .items .item .col {
+  position: relative;
+  height: 310px;
+  box-sizing: border-box;
+}
+.erp-school .course-review .items .item .col .hd {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+.erp-school .course-review .items .item .col .hd img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  min-height: 100%;
+}
+.erp-school .course-review .items .item .col .hd .overaly {
+  position: absolute;
+  top: -170px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 70px 0;
+  color: #fff;
+  font-family: Helve;
+  font-size: 16px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.erp-school .course-review .items .item .col .hd .overaly .date {
+  height: 16px;
+  line-height: 16px;
+}
+.erp-school .course-review .items .item .col .hd .overaly .year {
+  height: 14px;
+  line-height: 14px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.erp-school .course-review .items .item .col .bd {
+  padding: 15px 0 10px;
+  font-size: 16px;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.erp-school .course-review .items .item .col .ft {
+  height: 60px;
+  line-height: 20px;
+  color: #888;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.erp-school .course-review .items .item .col:after {
+  width: 0;
+  height: 1px;
+  background: #2770f6;
+  left: 0;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  content: "";
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.erp-school .course-review .items .item .col:hover .overaly {
+  top: 0;
+}
+.erp-school .course-review .items .item .col:hover .bd {
+  color: #2770f6;
+}
+.erp-school .course-review .items .item .col:hover .ft {
+  color: #666;
+}
+.erp-school .course-review .items .item .col:hover:after {
+  width: 100%;
+}
+.erp-school .course-review .more {
+  display: block;
+  width: 110px;
+  margin: 30px auto 0;
+}
+.mt-number-animate {
+  line-height: 50px;
+  height: 50px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+.mt-number-animate .mt-number-animate-dot {
+  width: 15px;
+  /*设置分割符宽度*/
+  line-height: 40px;
+  float: left;
+  text-align: center;
+}
+.mt-number-animate .mt-number-animate-dom {
+  width: 40px;
+  /*设置单个数字宽度*/
+  text-align: center;
+  float: left;
+  position: relative;
+  top: 0;
+}
+.mt-number-animate .mt-number-animate-dom .mt-number-animate-span {
+  width: 100%;
+  float: left;
 }
