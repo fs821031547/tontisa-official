@@ -208,6 +208,21 @@ module.exports = app => {
       await this.ctx.render('erp_school');
     }
 
+    // trust-circle
+    async trustCircle() {
+      await this.ctx.render('trust_circle');
+    }
+
+    // information-train
+    async inforTrain() {
+      await this.ctx.render('infor_train');
+    }
+
+    // team-build
+    async teamBuild() {
+      await this.ctx.render('team_build');
+    }
+
     async errPage() {
       await this.ctx.render('404');
     }

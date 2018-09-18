@@ -24,6 +24,9 @@ module.exports = app => {
   router.get('/product-news', rv('product-news'), controller.home.productNews);
 
   router.get('/erp-school', rv('erp-school'), controller.home.erpSchool);
+  router.get('/trust-circle', rv('trust-circle'), controller.home.trustCircle);
+  router.get('/infor-train', rv('infor-train'), controller.home.inforTrain);
+  router.get('/team-build', rv('team-build'), controller.home.teamBuild);
 
 
   router.get('/404', rv('404'), controller.home.errPage);

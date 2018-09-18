@@ -595,10 +595,10 @@
   background: rgba(0, 0, 0, 0.36);
   border-top: 1px solid #d2d4d6;
   box-sizing: border-box;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .erp-school .photos-gallery .tab-photos .body .photos-box .item .info .text {
   text-overflow: ellipsis;
@@ -660,12 +660,12 @@
   font-family: Helve;
   font-size: 16px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
 }
 .erp-school .course-review .items .item .col .hd .overaly .date {
   height: 16px;
@@ -704,10 +704,10 @@
   display: block;
   position: absolute;
   content: "";
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
 }
 .erp-school .course-review .items .item .col:hover .overaly {
   top: 0;
