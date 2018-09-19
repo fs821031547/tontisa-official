@@ -11,6 +11,12 @@
   <link rel="stylesheet" href="public/css/layout.css">
   <link rel="stylesheet" href="../public/css/animate.min.css">
   <link rel="stylesheet" href="public/css/product-news.css">
+  <style>
+    .case-pagination {
+      margin: 20px 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <% include './header.html' %>
@@ -26,7 +32,7 @@
     </div>
     <div class="product-news">
       <div class="inner">
-        <ul class="list clearfix">
+        <ul class="list clearfix"> 
           <% for item in list %>
           <li class="item clearfix">
             <a href="">
@@ -65,16 +71,49 @@
           </li> -->
         </ul>
       </div>
+      <div class="case-pagination"></div>
     </div>
   </div>
   <% include './footer.html' %>
 
   <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
   <script src="../public/js/wow.min.js"></script>
+  <script src="public/js/laypage.js"></script>
   <script>
     new WOW().init();
-    $(function() {
+    $(function () {
+      // 分页变量
+      var page = {
+        pages: '<$ page.pages $>',
+        // pages: '<$ page.total $>',
+        pageNum: '<$ page.pageNum $>'
+      };
+      if (location.search) {
+        window.scroll(0, 300);
+      }
 
+      function paging(arg) {
+        laypage({
+          cont: $('.case-pagination'),
+          pages: page.pages,
+          curr: page.pageNum,
+          skin: '#0386CA',
+          groups: 5,
+          jump: function (obj, first) {
+            if (!first) {
+              // window.location.href = location.href + '#1'
+              // setScrollTop();
+              // window.location.href = window.location.protocol + '//'+ window.location.host + window.location.pathname +
+              console.log('obj:', obj);
+              var queryStr = '?page=' + obj.curr;
+              var hrefStr = window.location.protocol + '//' + window.location.host + window.location.pathname +
+                queryStr;
+              window.location.replace(hrefStr);
+            }
+          }
+        });
+      }
+      paging();
     });
   </script>
 </body>

@@ -201,6 +201,7 @@ module.exports = app => {
 
     // cpy-news
     async cpyNews() {
+      const { query } = this.ctx;
       const pageInfo = this.ctx.app.pageInfo;
       const headerInfo = this.ctx.app.headerInfo;
       const actionData = headerInfo.find(x => {
@@ -221,15 +222,19 @@ module.exports = app => {
       // 企业新闻
       const newsParams = {
         navId: navIdArr[1],
+        pageNum: query.page || 1,
+        pageSize: 8,
       };
       const viewRes = await this.apiPost('/websiteContent/list', newsParams);
       await this.ctx.render('cpy_news', {
         list: viewRes.data.data.list,
+        page: viewRes.data.data,
       });
     }
 
     // product-news
     async productNews() {
+      const { query } = this.ctx;
       const pageInfo = this.ctx.app.pageInfo;
       const headerInfo = this.ctx.app.headerInfo;
       const actionData = headerInfo.find(x => {
@@ -250,10 +255,13 @@ module.exports = app => {
       // 企业新闻
       const params = {
         navId: navIdArr[1],
+        pageNum: query.page || 1,
+        pageSize: 8,
       };
       const res = await this.apiPost('/websiteContent/list', params);
       await this.ctx.render('product_news', {
         list: res.data.data.list,
+        page: res.data.data,
       });
     }
 

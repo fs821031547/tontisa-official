@@ -180,6 +180,7 @@
       // pages: '<$ page.total $>',
       pageNum: '<$ page.pageNum $>'
     };
+    // safe 不转义
     var contentList = '<$ listStr | safe $>';
     try {
       contentList = JSON.parse(contentList);
