@@ -211,7 +211,99 @@ module.exports = app => {
 
     // erp-school
     async erpSchool() {
-      await this.ctx.render('erp_school');
+      const { query } = this.ctx;
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '小强学院';
+      });
+      const paramsValue = '10000';
+      const navIdArr = [ paramsValue, paramsValue, paramsValue, paramsValue, paramsValue ];
+      pageInfo.forEach(x => {
+        if (x.parentId == actionData.id) {
+          switch (x.name) {
+            case '轮播':
+              navIdArr[0] = x.id;
+              break;
+            case '课程':
+              navIdArr[1] = x.id;
+              break;
+            case '优秀学员':
+              navIdArr[2] = x.id;
+              break;
+            case '精彩图集':
+              navIdArr[3] = x.id;
+              break;
+            case '课程回顾':
+              navIdArr[4] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      const navIdArrChild = [];
+      pageInfo.forEach(x => {
+        if (x.parentId == navIdArr[3]) {
+          navIdArrChild.push(x.id);
+        }
+      });
+      const bannerParams = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[0],
+        tags: query.tags || null,
+      };
+      const params = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[1],
+        tags: query.tags || null,
+      };
+      const paramsTwo = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[2],
+        tags: query.tags || null,
+      };
+      const paramsThree = {
+        // pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[3],
+        // tags: query.tags || null,
+      };
+      const paramsFour = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[4],
+        tags: query.tags || null,
+      };
+
+      const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
+      const res = await this.apiPost('/websiteContent/list', params);
+      const resTwo = await this.apiPost('/websiteContent/list', paramsTwo);
+      const resThree = await this.apiPost('/websiteContent/list', paramsThree);
+      const resFour = await this.apiPost('/websiteContent/list', paramsFour);
+      bannerRes.data.data.list.forEach(item => {
+        if (typeof item.content === 'string') {
+          item.content = JSON.parse(item.content);
+        }
+      });
+      res.data.data.list.forEach(item => {
+        if (typeof item.content === 'string') {
+          item.content = JSON.parse(item.content);
+        }
+      });
+
+      const resData = {
+        list: res.data.data.list,
+        twoList: resTwo.data.data.list,
+        threeList: resThree.data.data.list,
+        fourList: resFour.data.data.list,
+        bannerList: bannerRes.data.data.list,
+        navIdArrChild,
+      };
+      await this.ctx.render('erp_school', resData);
     }
 
     async errPage() {
