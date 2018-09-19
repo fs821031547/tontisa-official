@@ -201,12 +201,60 @@ module.exports = app => {
 
     // cpy-news
     async cpyNews() {
-      await this.ctx.render('cpy_news');
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '最新动态';
+      });
+      const navIdArr = [];
+      pageInfo.forEach(x => {
+        if (x.parentId === actionData.id) {
+          switch (x.name) {
+            case '企业新闻':
+              navIdArr[1] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      // 企业新闻
+      const newsParams = {
+        navId: navIdArr[1],
+      };
+      const viewRes = await this.apiPost('/websiteContent/list', newsParams);
+      await this.ctx.render('cpy_news', {
+        list: viewRes.data.data.list,
+      });
     }
 
     // product-news
     async productNews() {
-      await this.ctx.render('product_news');
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '最新动态';
+      });
+      const navIdArr = [];
+      pageInfo.forEach(x => {
+        if (x.parentId === actionData.id) {
+          switch (x.name) {
+            case '产品资讯':
+              navIdArr[1] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      // 企业新闻
+      const params = {
+        navId: navIdArr[1],
+      };
+      const res = await this.apiPost('/websiteContent/list', params);
+      await this.ctx.render('product_news', {
+        list: res.data.data.list,
+      });
     }
 
     // erp-school

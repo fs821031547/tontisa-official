@@ -27,7 +27,24 @@
     <div class="cpy-news module">
       <div class="inner">
         <div class="list">
+          <% for item in list %>
           <div class="item clearfix">
+            <div class="img">
+              <img src="public/images/banner2.jpg">
+            </div>
+            <div class="info">
+              <h3><a href=""><$ item.title $></a></h3>
+              <p class="tags">
+                <span class="time"><$ item.showTime $></span>
+                <span></span>
+              </p>
+              <div class="summary">
+                <$ item.description $>
+              </div>
+            </div>
+          </div>
+          <% endfor %>
+          <!-- <div class="item clearfix">
             <div class="img">
               <img src="public/images/banner2.jpg">
             </div>
@@ -41,22 +58,7 @@
                 昨天，同天下“膨胀了”因为我们的队伍又壮大了！欢迎7位新加入的小伙伴通过1个月的魔鬼训练营，以优异成绩顺利毕业，正式加入同天下大家庭
               </div>
             </div>
-          </div>
-          <div class="item clearfix">
-            <div class="img">
-              <img src="public/images/banner2.jpg">
-            </div>
-            <div class="info">
-              <h3><a href="">昨天，同天下居然“膨胀了”？</a></h3>
-              <p class="tags">
-                <span class="time">2018-08-04 18:04</span>
-                <span>同天下 魔鬼训练营</span>
-              </p>
-              <div class="summary">
-                昨天，同天下“膨胀了”因为我们的队伍又壮大了！欢迎7位新加入的小伙伴通过1个月的魔鬼训练营，以优异成绩顺利毕业，正式加入同天下大家庭
-              </div>
-            </div>
-          </div>
+          </div> -->
         </div>
         <!-- <a class="more" href="">查看更多</a> -->
       </div>
