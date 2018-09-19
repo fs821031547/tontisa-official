@@ -223,6 +223,16 @@ module.exports = app => {
       await this.ctx.render('team_build');
     }
 
+    // news-detail
+    async newsDetail() {
+      await this.ctx.render('news_detail');
+    }
+
+    // view-detail
+    async viewDetail() {
+      await this.ctx.render('interview_detail');
+    }
+
     async errPage() {
       await this.ctx.render('404');
     }
