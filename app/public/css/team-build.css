@@ -202,7 +202,7 @@
 }
 .team-build .part-two .items .item .front .ft {
   line-height: 28px;
-  padding: 0 40px;
+  padding: 0 31px;
   font-size: 14px;
   color: #d8dade;
 }
@@ -229,7 +229,7 @@
   background: url('../images/build_icon/icon_04_1.png') center no-repeat;
 }
 .team-build .part-two .items .item .back .bd {
-  padding: 0 40px;
+  padding: 0 30px;
 }
 .team-build .part-two .items .item .back .bd .name {
   margin-bottom: 18px;
