@@ -129,7 +129,7 @@
           </div>
         </div>
         <div class="list-case" >
-          <ul class="clearfix">
+          <ul class="clearfix" id="listCase">
             <% for item in list %>
             <li>
               <div class="col">
@@ -177,14 +177,79 @@
     // 分页变量
     var page = {
       pages: '<$ page.pages $>',
+      // pages: '<$ page.total $>',
       pageNum: '<$ page.pageNum $>'
     };
-
+    var contentList = '<$ listStr | safe $>';
+    try {
+      contentList = JSON.parse(contentList);
+    } catch (error) {
+      contentList = [];
+    }
+    // contentList = Array.prototype.slice.apply(contentList,null);
     // 初始化
     $(function() {
       var queryType = '<$ ctx.query.type $>';
       var queryPage = '<$ ctx.query.page $>';
       var scrollTopVal = localStorage.getItem('scrollTop');
+      var globalOption = {};
+      var globalList = [];
+      var util = {
+        renderHtmlTmpl: function (item) {
+          var str = ['            <li>',
+            '              <div class="col">',
+            '                <a  href="/case-detail/' + item.id + ' ">',
+            '                  <div class="img">',
+            '                    <img src="' + item.imgUrl + '">',
+            '                  </div>',
+            '                  <p class="hd">',
+            '                    <span class="tag">' + item.content.top.comp_type + '</span>',
+            '                    <span>' + item.content.top.comp_name + '</span>',
+            '                  </p>',
+            '                  <div class="bd">',
+            '                    <p class="title">' + item.title + ' </p>',
+            '                    <p class="info">',
+            '                      ' + item.secondTitle + '',
+            '                    </p>',
+            '                  </div>',
+            '                  <div class="ft clearfix">',
+            '                    <p class="fl left-item">',
+            '                      <span class="">' + item.content.top.comp_goal + ' </span>',
+            '                      <span class="">' + item.content.top.comp_function + ' </span>',
+            '                    </p>',
+            '                    <p class="fr">' + item.content.top.comp_scale + ' </p>',
+            '                  </div>',
+            '                </a>',
+            '              </div>',
+            '            </li>'].join("");
+          return str;
+        },
+        renderHtml(arr, tag, fn){
+          var renderList = [];
+          var renderStr = '';
+          var list= [];
+          arr.forEach(function (x, index) {
+            if(tag){
+              var tags = x.tags.split(',');
+              if (tags.length && tags.includes(tag)) {
+                renderList.push(x);
+              }
+            }else{
+              renderList.push(x);
+            }
+          });
+          list = renderList.slice(0,12);
+          list.forEach(function (x) {
+            renderStr += util.renderHtmlTmpl(x);
+          });
+          if(fn){
+            fn(renderList);
+          }
+          // globalList = renderList;
+          return renderStr;
+        }
+      };
+      
       if ((queryType || queryPage) && scrollTopVal) {
         setTimeout(function(){
           window.scroll(0,scrollTopVal)
@@ -194,41 +259,88 @@
       /**
        * 分页
       */
-      !function(){
+      function paging(arg){
+        var pages;
+        var curr;
+        if(arg){
+          pages = Math.ceil(arg.pages/12);
+          curr = arg.pageNum;
+        }else{
+          pages = Math.ceil(contentList.length / 12);
+          curr = page.pageNum;
+        }
         laypage({
           cont: $('.case-pagination'),
-          pages: page.pages,
-          curr: page.pageNum,
+          pages: pages,
+          curr: curr,
           skin: '#0386CA',
           groups: 5,
           jump: function(obj, first) {
             if (!first) {
-              setScrollTop();
-              window.location.href = window.location.protocol + '//'+ window.location.host + window.location.pathname + setUrlParam('page', obj.curr);
+              // window.location.href = location.href + '#1'
+              // setScrollTop();
+              // window.location.href = window.location.protocol + '//'+ window.location.host + window.location.pathname + setUrlParam('page', obj.curr);
+              var hashStr = '';
+              var renderStr = '';
+              var renderArr = [];
+              if(globalOption.tags){
+                renderArr = globalList.slice((obj.curr-1)*12, obj.curr * 12);
+                renderStr = util.renderHtml(renderArr,globalOption.tags);
+                hashStr = '#tag-' + globalOption.type + '-' + globalOption.tags + '-' + obj.curr;
+              } else if(obj.curr > 0) {
+                renderArr = contentList.slice((obj.curr - 1) * 12, obj.curr * 12);
+                renderStr = util.renderHtml(renderArr);
+                hashStr = '#--' + obj.curr;
+              }
+              $('#listCase').html(renderStr);             
+              var hrefStr = window.location.protocol + '//' + window.location.host + window.location.pathname + hashStr;
+              window.location.replace(hrefStr);
+              window.scroll(0,500);
             }
           }
         });
-      }()
-
+      };
+      paging();
       window.common = {};
 
       /**
        * 筛选客户案例
       */
       common.fnSearch = function(option){
-        var str;
-        for(var k in option){
-          if(option[k]===''){
-            continue;
-          }
-          if(!str){
-            str = '?' + k + '=' + option[k];
-          }else{
-            str += '&' + k + '=' + option[k];
-          }
-        }
-        setScrollTop();
-        hrefStr = window.location.protocol + '//' + window.location.host + window.location.pathname + str;
+        var renderStr = '';
+        globalOption = option;
+        var hashStr = '#tag-' + option.type + '-' + option.tags;
+        // globalList = [];
+        // contentList.forEach(function(x){
+        //   var tags = x.tags.split(',');
+        //   if(tags.length && tags.includes(globalTag)){
+        //     globalList.push(x);
+        //   }
+        // });
+        // globalList.forEach(function(x){
+        //   renderStr+=util.renderHtml(x); 
+        // });
+        renderStr = util.renderHtml(contentList, option.tags,function(gList){
+          globalList = gList;
+        });
+        var pagingArgu = {
+          pages: globalList.length,
+          pageNum: 1,
+        };
+        paging(pagingArgu);
+        $('#listCase').html(renderStr);
+        // for(var k in option){
+        //   if(option[k]===''){
+        //     continue;
+        //   }
+        //   if(!str){
+        //     str = '?' + k + '=' + option[k];
+        //   }else{
+        //     str += '&' + k + '=' + option[k];
+        //   }
+        // }
+        // setScrollTop();
+        var hrefStr = window.location.protocol + '//' + window.location.host + window.location.pathname + hashStr;
         window.location.href = hrefStr;
       }
 

@@ -32,17 +32,41 @@ module.exports = app => {
       this.ctx.body = res.data;
     }
     // case-list
+    /**
+     * 客户案例列表
+     */
     async caseList() {
       const { query } = this.ctx;
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '客户案例';
+      });
+      const navIdArr = [];
+      pageInfo.forEach(x => {
+        if (x.parentId === actionData.id) {
+          switch (x.name) {
+            case '轮播':
+              navIdArr[0] = x.id;
+              break;
+            case '列表':
+              navIdArr[1] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      const bannerParams = {
+        navId: navIdArr[0],
+      };
       const params = {
         pageNum: query.page || 1,
-        pageSize: 12,
-        navId: 18,
+        // pageSize: 12,
+        navId: navIdArr[1],
         tags: query.tags || null,
       };
-      const bannerParams = {
-        navId: 17,
-      };
+
       const tagParams = {
 
       };
@@ -81,21 +105,22 @@ module.exports = app => {
           item.content = JSON.parse(item.content);
         }
       });
-      console.log('\n bannerRes: \n', bannerRes.data.data.pages);
       const resData = {
-        list: res.data.data.list,
+        list: res.data.data.list.slice(0, 12),
         tagList: websiteTag,
         bannerList: bannerRes.data.data.list,
         page: res.data.data,
+        listStr: JSON.stringify(res.data.data.list),
       };
       await this.ctx.render('case_list', resData);
     }
-
+    /**
+     * 客户案例详情
+     */
     // case-detail
     async caseDetail() {
       const url = this.ctx.request.url;
       const id = url.split('/')[url.split('/').length - 1];
-      console.log('AAAAAA=============BBBBBBBBBBB', this.ctx.request.url);
       const parms = {
         id,
       };
@@ -105,13 +130,41 @@ module.exports = app => {
       }
       await this.ctx.render('case_detail', res.data.data);
     }
-
+    /**
+     * 最新动态
+     */
     // recent-list
     async recentList() {
       const { query } = this.ctx;
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '最新动态';
+      });
+      const navIdArr = [];
+      pageInfo.forEach(x => {
+        if (x.parentId === actionData.id) {
+          switch (x.name) {
+            case '轮播':
+              navIdArr[0] = x.id;
+              break;
+            case '企业新闻':
+              navIdArr[1] = x.id;
+              break;
+            case '同业专访':
+              navIdArr[2] = x.id;
+              break;
+            case '产品资讯':
+              navIdArr[3] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
       // 轮播
       const bannerParams = {
-        navId: 30,
+        navId: navIdArr[0],
         pageNum: 1,
         pageSize: 8,
       };
@@ -119,19 +172,19 @@ module.exports = app => {
       const newsParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 31,
+        navId: navIdArr[1],
       };
       // 同业专访
       const viewParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 32,
+        navId: navIdArr[2],
       };
       // 产品资讯
       const productParams = {
         pageNum: query.page || 1,
         pageSize: 12,
-        navId: 33,
+        navId: navIdArr[3],
       };
       const newsRes = await this.apiPost('/websiteContent/list', newsParams);
       const viewRes = await this.apiPost('/websiteContent/list', viewParams);
@@ -158,7 +211,124 @@ module.exports = app => {
 
     // erp-school
     async erpSchool() {
-      await this.ctx.render('erp_school');
+      const { query } = this.ctx;
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const actionData = headerInfo.find(x => {
+        return x.name === '小强学院';
+      });
+      const paramsValue = '10000';
+      const navIdArr = [ paramsValue, paramsValue, paramsValue, paramsValue, paramsValue ];
+      pageInfo.forEach(x => {
+        if (x.parentId == actionData.id) {
+          switch (x.name) {
+            case '轮播':
+              navIdArr[0] = x.id;
+              break;
+            case '课程':
+              navIdArr[1] = x.id;
+              break;
+            case '优秀学员':
+              navIdArr[2] = x.id;
+              break;
+            case '精彩图集':
+              navIdArr[3] = x.id;
+              break;
+            case '课程回顾':
+              navIdArr[4] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      const navIdArrChild = [];
+      pageInfo.forEach(x => {
+        if (x.parentId == navIdArr[3]) {
+          navIdArrChild.push(x.id);
+        }
+      });
+      const bannerParams = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[0],
+        tags: query.tags || null,
+      };
+      const params = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[1],
+        tags: query.tags || null,
+      };
+      const paramsTwo = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[2],
+        tags: query.tags || null,
+      };
+      const paramsThree = {
+        // pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[3],
+        // tags: query.tags || null,
+      };
+      const paramsFour = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[4],
+        tags: query.tags || null,
+      };
+
+      const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
+      const res = await this.apiPost('/websiteContent/list', params);
+      const resTwo = await this.apiPost('/websiteContent/list', paramsTwo);
+      const resThree = await this.apiPost('/websiteContent/list', paramsThree);
+      const resFour = await this.apiPost('/websiteContent/list', paramsFour);
+      bannerRes.data.data.list.forEach(item => {
+        if (typeof item.content === 'string') {
+          item.content = JSON.parse(item.content);
+        }
+      });
+      res.data.data.list.forEach(item => {
+        if (typeof item.content === 'string') {
+          item.content = JSON.parse(item.content);
+        }
+      });
+
+      const resData = {
+        list: res.data.data.list,
+        twoList: resTwo.data.data.list,
+        threeList: resThree.data.data.list,
+        fourList: resFour.data.data.list,
+        bannerList: bannerRes.data.data.list,
+        navIdArrChild,
+      };
+      await this.ctx.render('erp_school', resData);
+    }
+
+    // trust-circle
+    async trustCircle() {
+      await this.ctx.render('trust_circle');
+    }
+
+    // information-train
+    async inforTrain() {
+      await this.ctx.render('infor_train');
+    }
+
+    // team-build
+    async teamBuild() {
+      await this.ctx.render('team_build');
+    }
+
+    // news-detail
+    async newsDetail() {
+      await this.ctx.render('news_detail');
+    }
+
+    // view-detail
+    async viewDetail() {
+      await this.ctx.render('interview_detail');
     }
 
     async errPage() {
