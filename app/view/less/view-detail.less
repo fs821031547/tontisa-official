@@ -1,0 +1,274 @@
+@import "vars.less";
+
+.page-detail {
+  margin-top: 80px;
+  .inner {
+    position: relative;
+  }
+  .wecode {
+    display: none;
+    position: fixed;
+    top: 148px;
+    right: 0;
+    z-index: 10;
+    width: 255px;
+    padding: 30px 40px 20px;
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+    background: #f7f7f7;
+    text-align: center;
+    border-radius: 1px;
+    .transition(all .5s);
+    .line {
+      display: inline-block;
+      width: 16px;
+      height: 1px;
+      margin: 15px 0 7px;
+      background: #bbb;
+    }
+    h4 {
+      margin-bottom: 4px;
+      font-size: 18px;
+      padding-left: 10px;
+    }
+    p {
+      line-height: 20px;
+      font-size: 14px;
+      color: @middleGray;
+    }
+  }
+  .content {
+    width: 900px;
+    .info-title {
+      height: 24px;
+      line-height: 24px;
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: normal;
+      color: @deepGray;
+    }
+    .sub-title {
+      height: 14px;
+      line-height: 14px;
+      font-family: Helve;
+      font-size: 14px;
+      color: @lightGray;
+      .date {
+        position: relative;
+        display: inline-block;
+        padding-right: 16px;
+        margin-right: 15px;
+        &:after {
+          .content();
+          top: 1px;
+          right: 0;
+          width: 1px;
+          height: 12px;
+          background: #b8b8b8;
+        }
+      }
+    }
+    .line {
+      position: relative;
+      margin: 40px 0;
+      border-bottom: 1px solid #f3f3f3;
+      &:before {
+        .content();
+        width: 20px;
+        height: 1px;
+        top: 0;
+        left: 0;
+        background: @blue;
+      }
+    }
+    .person-info {
+      padding: 45px 50px;
+      margin: 50px 0 60px;
+      box-shadow: 0 3px 24px 2px rgba(39, 122, 246, 0.07);
+      .topic {
+        position: relative;
+        float: left;
+        width: 360px;
+        padding: 70px 0 30px 15px;
+        margin-top: 40px;
+        font-size: 18px;
+        color: @deepGray;
+        box-sizing: border-box;
+        .box {
+          max-height: 180px;
+          line-height: 30px;
+          overflow: hidden;
+        }
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 155px;
+          height: 50px;
+          content: url(../images/icon_comma.png);
+        }
+        &:after {
+          position: absolute;
+          bottom: 14px;
+          right: 0;
+          width: 21px;
+          height: 20px;
+          content: url(../images/icon_comma2.png);
+        }
+      }
+      .img {
+        float: right;
+        width: 325px;
+      }
+    }
+    .info {
+      line-height: 28px;
+      font-size: 15px;
+      color: #6a6a6a;
+      img {
+        max-width: 100%;
+      }
+    }
+    .qa-info {
+      padding-top: 30px;
+      .q-title {
+        position: relative;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: normal;
+        color: #444;
+        &:after {
+          .content();
+          width: 10px;
+          height: 2px;
+          left: 0;
+          bottom: 0;
+          background: @deepGray;
+        }
+      }
+      .info {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .relative {
+    padding: 50px 0 60px;
+    background: #fafafa;
+    .module-title {
+      padding-bottom: 40px;
+      h3 {
+        float: left;
+        height: 34px;
+        line-height: 34px;
+        font-size: 34px;
+        font-weight: normal;
+      }
+      .more {
+        float: right;
+        margin: 1px 0;
+      }
+    }
+    .view-box {
+      .body {
+        margin: 0 -10px;
+        ul {
+          padding-top: 10px !important;
+          li {
+            float: left;
+            width: 300px !important;
+            padding: 0 10px;
+            box-sizing: border-box;
+            .col {
+              position: relative;
+              padding-bottom: 5px;
+              background: @white;
+              .transition();
+              .hd {
+                position: relative;
+                height: 265px;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                  min-height: 265px;
+                }
+              }
+              .bd {
+                padding: 20px;
+                .name {
+                  font-size: 18px;
+                  color: #333;
+                  .transition();
+                }
+                .cpy {
+                  color: #999;
+                }
+              }
+              .ft {
+                line-height: 20px;
+                margin: 0 20px 25px;
+                font-size: 12px;
+                color: #666;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              &:after {
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                background: @blue;
+                .content();
+                .transition();
+              }
+              &:hover {
+                box-shadow: 0px 4px 24px 1px rgba(39, 122, 246, 0.08);
+                transform: translateY(-10px);
+                .name {
+                  color: @blue;
+                }
+                &:after {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .head {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 120px;
+        height: 30px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        .prev {
+          float: left;
+          width: 60px;
+          height: 30px;
+          .transition();
+          background: url('../images/arrow_left2.png') center no-repeat;
+        }
+        .next {
+          float: right;
+          width: 60px;
+          height: 30px;
+          .transition();
+          background: url('../images/arrow_right2.png') center no-repeat;
+        }
+        .prevStop {
+          cursor: not-allowed;
+          background: url('../images/arrow_left.png') center no-repeat;
+        }
+        .nextStop {
+          cursor: not-allowed;
+          background: url('../images/arrow_right.png') center no-repeat;
+        }
+      }
+    }
+  }
+}

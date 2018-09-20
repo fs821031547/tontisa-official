@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>小强ERP</title>
+  <link rel="stylesheet" href="public/css/reset.css">
+  <link rel="stylesheet" href="public/css/layout.css">
+  <link rel="stylesheet" href="../public/css/animate.min.css">
+  <link rel="stylesheet" href="../public/css/erp-index.css">
+</head>
+<body>
+  <% include './header.html' %>
+  <div id="content" class="main-content">
+    <div class="page-erp">
+      <div class="top-content">
+        <div class="wave">
+          <canvas id="canvas" width="3000" height="1000" style="min-width: 100%; width: 100%;></canvas>
+        </div>
+      </div>
+      <div class="module part-one">
+        <div class="inner">
+          <p class="title">
+            <span>>>></span>
+            <span class="bold">综合社</span>
+            -既有批发业务又有组团业务，既对同业又对直客
+            <span><<<</span>
+          </p>
+          <div class="items">
+            <div class="item">
+              <p>运营中心轻松管理加盟的营业部线路供应商</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="functions btn-group"></div>
+  <div class="rotate btn-group">
+    <div class="btn rotatex" data-rotate="x">rotatex</div>
+    <div class="btn rotatey" data-rotate="y">rotatey</div>
+    <div class="btn rotatez" data-rotate="z">rotatez</div>
+  </div>
+  <% include './footer.html' %>
+
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script src="../public/js/plugins/wave.min.js"></script>
+  <script src="../public/js/plugins/erp-wave.js"></script>
+  <script src="../public/js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+    $(function() {
+    });
+  </script>
+</body>
+</html>
