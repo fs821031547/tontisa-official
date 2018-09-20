@@ -290,7 +290,7 @@ module.exports = app => {
             case '精彩图集':
               navIdArr[3] = x.id;
               break;
-            case '课程回顾':
+            case '往期课程':
               navIdArr[4] = x.id;
               break;
             default:
@@ -362,19 +362,111 @@ module.exports = app => {
       await this.ctx.render('erp_school', resData);
     }
 
+    filterNavId() {
+      const pageInfo = this.ctx.app.pageInfo;
+      const headerInfo = this.ctx.app.headerInfo;
+      const paramsValue = '10000';
+      const navIdArr = [ paramsValue, paramsValue ];
+      const actionData = headerInfo.find(x => {
+        return x.name === '小强学院';
+      });
+      pageInfo.forEach(x => {
+        if (x.parentId == actionData.id) {
+          switch (x.name) {
+            case '精彩图集':
+              navIdArr[0] = x.id;
+              break;
+            case '往期课程':
+              navIdArr[1] = x.id;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+      return navIdArr;
+    }
     // trust-circle
     async trustCircle() {
-      await this.ctx.render('trust_circle');
+      const {
+        query,
+      } = this.ctx;
+      const navIdArr = this.filterNavId();
+      const params = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[0],
+      };
+      const oneParams = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[1],
+      };
+      const res = await this.apiPost('/websiteContent/list', params);
+      const oneRes = await this.apiPost('/websiteContent/list', oneParams);
+
+      await this.ctx.render('trust_circle', {
+        list: res.data.data.list,
+        oneList: oneRes.data.data.list,
+      });
     }
 
     // information-train
     async inforTrain() {
-      await this.ctx.render('infor_train');
+      const {
+        query,
+      } = this.ctx;
+      const navIdArr = this.filterNavId();
+      const params = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[0],
+      };
+      const oneParams = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[1],
+      };
+      const res = await this.apiPost('/websiteContent/list', params);
+      const oneRes = await this.apiPost('/websiteContent/list', oneParams);
+
+      await this.ctx.render('trust_circle', {
+        list: res.data.data.list,
+        oneList: oneRes.data.data.list,
+      });
+      await this.ctx.render('infor_train', {
+        list: res.data.data.list,
+        oneList: oneRes.data.data.list,
+      });
     }
 
     // team-build
     async teamBuild() {
-      await this.ctx.render('team_build');
+      const {
+        query,
+      } = this.ctx;
+      const navIdArr = this.filterNavId();
+      const params = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[0],
+      };
+      const oneParams = {
+        pageNum: query.page || 1,
+        // pageSize: 12,
+        navId: navIdArr[1],
+      };
+      const res = await this.apiPost('/websiteContent/list', params);
+      const oneRes = await this.apiPost('/websiteContent/list', oneParams);
+
+      await this.ctx.render('trust_circle', {
+        list: res.data.data.list,
+        oneList: oneRes.data.data.list,
+      });
+      await this.ctx.render('team_build', {
+        list: res.data.data.list,
+        oneList: oneRes.data.data.list,
+      });
     }
 
     // news-detail
