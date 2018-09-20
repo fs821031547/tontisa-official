@@ -71,6 +71,21 @@
 .rotate-more:hover .lines:after {
   transform: translateY(100%);
 }
-.page-detail {
-  padding-top: 80px;
+.page-erp .top-content {
+  position: relative;
+  height: 1237px;
+  background: #f7f7f7 url('../images/erp_icon/erp_main_bg.png') center 0 no-repeat;
+}
+.page-erp .top-content .wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+}
+.page-erp .top-content .wave canvas {
+  pointer-events: none;
+}
+.page-erp .part-one .title {
+  text-align: center;
 }

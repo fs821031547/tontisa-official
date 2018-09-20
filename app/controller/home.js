@@ -20,6 +20,11 @@ module.exports = app => {
       await this.ctx.render('default');
     }
 
+    //erp-index
+    async erpIndex() {
+      await this.ctx.render('erp_index');
+    }
+
     async websiteContent() {
       const { query } = this.ctx;
       const params = {
