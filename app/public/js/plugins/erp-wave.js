@@ -62,7 +62,7 @@ var Point = function (_F3$Obj) {
   _createClass(Point, [{
     key: 'render',
     value: function render(ctx) {
-      ctx.fillStyle = '#fff';
+      ctx.fillStyle = '#37d7ff';
       ctx.fillRect(this.croods2D.position.x, this.croods2D.position.y, this.radius * this.croods2D.scale * this.yScale, this.radius * this.croods2D.scale * this.yScale);
     }
   }]);
