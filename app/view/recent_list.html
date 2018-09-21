@@ -65,7 +65,7 @@
                   <img src="<$ item.imgUrl $>">
                 </div>
                 <div class="info">
-                  <h3><a href=""><$ item.title $></a></h3>
+                  <h3><a href="/news-detail/<$ item.id $>"><$ item.title $></a></h3>
                   <p class="tags">
                     <span class="time"><$ item.showTime $></span>
                     <span></span>
@@ -136,7 +136,7 @@
             <% for item in productList %>
             <% if loop.index < 7 %>
             <li class="item clearfix">
-              <a href="/news-detail/<$ item.id $>">
+              <a href="/product-detail/<$ item.id $>">
                 <div class="img">
                   <img src="<$ item.imgUrl $>">
                   <div class="overaly">
