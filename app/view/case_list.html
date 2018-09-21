@@ -250,7 +250,7 @@
           return renderStr;
         }
       };
-      
+
       if ((queryType || queryPage) && scrollTopVal) {
         setTimeout(function(){
           window.scroll(0,scrollTopVal)
@@ -293,7 +293,7 @@
                 renderStr = util.renderHtml(renderArr);
                 hashStr = '#--' + obj.curr;
               }
-              $('#listCase').html(renderStr);             
+              $('#listCase').html(renderStr);
               var hrefStr = window.location.protocol + '//' + window.location.host + window.location.pathname + hashStr;
               window.location.replace(hrefStr);
               window.scroll(0,500);
@@ -319,7 +319,7 @@
         //   }
         // });
         // globalList.forEach(function(x){
-        //   renderStr+=util.renderHtml(x); 
+        //   renderStr+=util.renderHtml(x);
         // });
         renderStr = util.renderHtml(contentList, option.tags,function(gList){
           globalList = gList;

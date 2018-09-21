@@ -1,0 +1,687 @@
+@import "vars.less";
+
+.page-erp {
+  .module {
+    padding: 50px 0;
+  }
+  .top-content {
+    position: relative;
+    height: 1330px;
+    background: #f7f7f7 url('../images/erp_icon/erp_main_bg.png') center 0 no-repeat;
+    .text {
+      position: absolute;
+      top: 120px;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      color: @white;
+      text-align: center;
+      .title {
+        padding-bottom: 15px;
+        font-size: 46px;
+        font-weight: normal;
+      }
+      .sub-title {
+        margin-bottom: 40px;
+        font-size: 18px;
+      }
+      .more {
+        display: inline-block;
+        position: relative;
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        color: @white;
+        text-align: center;
+        border: 2px solid rgba(255,255,255,.4);
+        .transition();
+        span {
+          display: inline-block;
+          .transition();
+        }
+        &:before {
+          position: absolute;
+          left: 85px;
+          display: block;
+          content: "→";
+          font-size: 12px;
+          opacity: 0;
+          .transition();
+        }
+        &:hover {
+          border-color: @white;
+          span {
+            transform: translateX(-15px);
+            .transition();
+          }
+          &:before {
+            opacity: 1;
+            left: 120px;
+          }
+        }
+      }
+    }
+    .video {
+      position: absolute;
+      top: 420px;
+      left: 50%;
+      z-index: 10;
+      width: 1200px;
+      height: 570px;
+      margin-left: -600px;
+      background: #174394;
+    }
+    .wave {
+      position: absolute;
+      top: -120px;
+      left: 0;
+      width: 100%;
+      height: 800px;
+      overflow: hidden;
+      canvas {
+        position: absolute;
+        left: -30%;
+        min-width: 3000px;
+        pointer-events: none;
+      }
+    }
+  }
+  .part-one {
+    position: relative;
+    padding-bottom: 50px;
+    .version-types {
+      position: relative;
+      width: 100%;
+      margin-top: -278px;
+      text-align: center;
+      .module-title {
+        font-size: 34px;
+        font-weight: normal;
+        color: @deepGray;
+      }
+      .sub-module-title {
+        padding: 8px 0 40px;
+        font-size: 16px;
+        color: #888;
+      }
+      .hd {
+        ul {
+          li {
+            position: relative;
+            float: left;
+            width: 240px;
+            text-align: center;
+            cursor: pointer;
+            p {
+              padding: 12px 0 15px;
+              font-size: 16px;
+              color: #444;
+              .transition();
+            }
+            .icon {
+              display: inline-block;
+              width: 60px;
+              height: 50px;
+              background-position: center bottom;
+              background-repeat: no-repeat;
+              .transition();
+            }
+            .icon1 {
+              background-image: url(../images/erp_icon/icon_type1.png);
+            }
+            .icon2 {
+              background-image: url(../images/erp_icon/icon_type2.png);
+            }
+            .icon3 {
+              background-image: url(../images/erp_icon/icon_type3.png);
+            }
+            .icon4 {
+              background-image: url(../images/erp_icon/icon_type4.png);
+            }
+            .icon5 {
+              background-image: url(../images/erp_icon/icon_type5.png);
+            }
+            &:after {
+              .content();
+              left: 50%;
+              bottom: -2px;
+              width: 0;
+              height: 2px;
+              background: @blue;
+              .transition();
+            }
+            &:hover {
+              p {
+                color: @blue;
+              }
+              .icon1 {
+                background-image: url(../images/erp_icon/icon_type1_1.png);
+              }
+              .icon2 {
+                background-image: url(../images/erp_icon/icon_type2_1.png);
+              }
+              .icon3 {
+                background-image: url(../images/erp_icon/icon_type3_1.png);
+              }
+              .icon4 {
+                background-image: url(../images/erp_icon/icon_type4_1.png);
+              }
+              .icon5 {
+                background-image: url(../images/erp_icon/icon_type5_1.png);
+              }
+            }
+            &.on {
+              .icon1 {
+                background-image: url(../images/erp_icon/icon_type1_1.png);
+              }
+              .icon2 {
+                background-image: url(../images/erp_icon/icon_type2_1.png);
+              }
+              .icon3 {
+                background-image: url(../images/erp_icon/icon_type3_1.png);
+              }
+              .icon4 {
+                background-image: url(../images/erp_icon/icon_type4_1.png);
+              }
+              .icon5 {
+                background-image: url(../images/erp_icon/icon_type5_1.png);
+              }
+              p {
+                color: @blue;
+              }
+              &:after {
+                width: 100%;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+      .bd {
+        padding-top: 55px;
+        ul {
+          li {
+            .title {
+              display: inline-block;
+              position: relative;
+              font-size: 18px;
+              span {
+                font-weight: bold;
+              }
+              &:before {
+                display: block;
+                position: absolute;
+                content: ">>>";
+                left: -52px;
+                top: 0;
+                color: @lightGray;
+              }
+              &:after {
+                display: block;
+                position: absolute;
+                content: "<<<";
+                right: -52px;
+                top: 0;
+                color: @lightGray;
+              }
+            }
+            .items {
+              padding-top: 100px;
+              .item {
+                float: left;
+                width: 400px;
+                padding: 0 64px;
+                margin-bottom: 50px;
+                font-size: 16px;
+                text-align: left;
+                cursor: default;
+                box-sizing: border-box;
+                .rectangle {
+                  position: relative;
+                  height: 20px;
+                  padding-left: 15px;
+                  font-family: Helve;
+                  color: @lightGray;
+                  &:before {
+                    .content();
+                    z-index: 1;
+                    bottom: -18px;
+                    left: -6px;
+                    width: 1px;
+                    height: 0;
+                    background: @blue;
+                    .transition(all .15s);
+                  }
+                  &:after {
+                    .content();
+                    z-index: 1;
+                    top: -16px;
+                    left: -5px;
+                    width: 0;
+                    height: 1px;
+                    background: @blue;
+                    .transition(all .15s);
+                  }
+                  span {
+                    &:before {
+                      .content();
+                      z-index: 1;
+                      top: -16px;
+                      left: 52px;
+                      width: 1px;
+                      height: 0;
+                      background: @blue;
+                      .transition(all .15s);
+                    }
+                    &:after {
+                      .content();
+                      z-index: 1;
+                      top: 37px;
+                      right: 247px;
+                      width: 0;
+                      height: 1px;
+                      background: @blue;
+                      .transition(all .15s);
+                    }
+                  }
+                }
+                .line {
+                  position: relative;
+                  &:before {
+                    .content();
+                    top: -36px;
+                    left: -6px;
+                    width: 1px;
+                    height: 54px;
+                    background: #ccc;
+                  }
+                  &:after {
+                    .content();
+                    top: -36px;
+                    left: -5px;
+                    width: 58px;
+                    height: 1px;
+                    background: #ccc;
+                  }
+                  span {
+                    &:before {
+                      .content();
+                      top: -36px;
+                      left: 52px;
+                      width: 1px;
+                      height: 28px;
+                      background: #ccc;
+                    }
+                    &:after {
+                      .content();
+                      top: 17px;
+                      left: -5px;
+                      width: 30px;
+                      height: 1px;
+                      background: #ccc;
+                    }
+                  }
+                }
+                .text {
+                  position: relative;
+                  height: 48px;
+                  padding-left: 40px;
+                  color: #444;
+                  .transition();
+                  &:before {
+                    .content();
+                    top: -8px;
+                    left: 50px;
+                    width: 3px;
+                    height: 3px;
+                    border: 1px solid #444;
+                    .transition();
+                  }
+                  &:after {
+                    .content();
+                    top: 15px;
+                    left: 25px;
+                    width: 3px;
+                    height: 3px;
+                    border: 1px solid #444;
+                    .transition();
+                  }
+                }
+                &:hover {
+                  .rectangle {
+                    color: @blue;
+                    &:before {
+                      height: 54px;
+                      transition-delay: .15s;
+                    }
+                    &:after {
+                      width: 58px;
+                      transition-delay: .3s;
+                    }
+                    span {
+                      &:before {
+                        height: 28px;
+                        transition-delay: .45s;
+                      }
+                      &:after {
+                        width: 30px;
+                      }
+                    }
+                  }
+                  .text {
+                    color: @blue;
+                    &:before {
+                      border-color: @blue;
+                    }
+                    &:after {
+                      border-color: @blue;
+                    }
+                  }
+                }
+              }
+            }
+            .btns {
+              padding-top: 10px;
+              text-align: center;
+              .btn {
+                display: inline-block;
+                width: 120px;
+                height: 32px;
+                line-height: 30px;
+                margin: 0 15px;
+                font-size: 14px;
+                text-align: center;
+                color: @middleGray;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                .transition();
+                &:hover {
+                  &.btn1 {
+                    color: @white;
+                    background: @blue;
+                    border-color: @blue;
+                  }
+                  &.btn2 {
+                    color: @blue;
+                    border-color: @blue;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .part-two {
+    background: #f7f7f7;
+    .module-sub-title {
+      padding-top: 8px;
+      font-size: 16px;
+      color: #888;
+      text-align: center;
+    }
+    .items {
+      padding-top: 70px;
+      .item {
+        float: left;
+        width: 300px;
+        padding: 0 10px;
+        text-align: center;
+        box-sizing: border-box;
+        .col {
+          position: relative;
+          height: 290px;
+          padding-top: 40px;
+          background: @white;
+          overflow: hidden;
+          .transition(all .5s);
+          .icon {
+            display: inline-block;
+            width: 55px;
+            height: 75px;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+          }
+          .icon1 {
+            background-image: url('../images/erp_icon/icon_module1.png');
+          }
+          .icon2 {
+            background-image: url('../images/erp_icon/icon_module2.png');
+          }
+          .icon3 {
+            background-image: url('../images/erp_icon/icon_module3.png');
+          }
+          .icon4 {
+            background-image: url('../images/erp_icon/icon_module4.png');
+          }
+          h3 {
+            margin: 25px 0 10px;
+            font-size: 20px;
+            font-weight: normal;
+            color: @deepGray;
+          }
+          .info {
+            height: 66px;
+            position: absolute;
+            top: 200px;
+            left: 0;
+            width: 100%;
+            .transition(all .5s);
+            p {
+              line-height: 22px;
+              font-size: 14px;
+              color: @middleGray;
+            }
+          }
+          .btn {
+            position: absolute;
+            left: 50%;
+            bottom: -30px;
+            width: 112px;
+            height: 30px;
+            line-height: 28px;
+            margin-left: -56px;
+            color: @white;
+            background: @blue;
+            box-sizing: border-box;
+            border: 1px solid @blue;
+            .transition(all .5s);
+            &:hover {
+              color: @blue;
+              border-color: @blue;
+              background: none;
+            }
+          }
+          &:before {
+            .content();
+            width: 0;
+            height: 1px;
+            top: 0;
+            left: 0;
+            background: @blue;
+            .transition(all .5s);
+          }
+          &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 22px 2px rgba(23, 85, 243, 0.05);
+            &:before {
+              width: 100%;
+            }
+            .info {
+              top: 180px;
+            }
+            .btn {
+              bottom: 36px;
+            }
+          }
+        }
+      }
+    }
+    .more {
+      display: block;
+      width: 134px;
+      margin: 50px auto 0;
+    }
+  }
+  .part-three {
+    height: 759px;
+    padding: 70px 0;
+    color: @white;
+    box-sizing: border-box;
+    background: url('../images/erp_icon/function_bg.png') no-repeat;
+    .module-title {
+      color: @white;
+    }
+    .module-sub-title {
+      padding-top: 8px;
+      font-size: 16px;
+      color: rgba(255,255,255,.8);
+      text-align: center;
+    }
+    .dot-box {
+      padding-top: 100px;
+      .hd {
+        float: left;
+        width: 195px;
+        height: 290px;
+        margin-right: 90px;
+        text-align: center;
+        border-right: 2px solid #45495d;
+        ul {
+          li {
+            position: relative;
+            line-height: 38px;
+            margin-bottom: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            .transition();
+            &:hover {
+              background: #2e3249;
+            }
+            &.on {
+              background: #2e3249;
+              &:after {
+                .content();
+                top: 0;
+                right: -3px;
+                width: 4px;
+                height: 100%;
+                background: @blue;
+              }
+            }
+          }
+        }
+      }
+      .bd {
+        ul {
+          height: 290px;
+          overflow: hidden;
+          li {
+            height: 290px;
+            .head {
+              height: 65px;
+              padding-left: 88px;
+              margin-bottom: 35px;
+              background-repeat: no-repeat;
+              background-position: 0 center;
+              h2 {
+                height: 26px;
+                line-height: 26px;
+                padding-top: 6px;
+                margin-bottom: 8px;
+                font-size: 24px;
+              }
+              p {
+                height: 18px;
+                line-height: 18px;
+                font-size: 18px;
+                color: rgba(255,255,255,.7);
+              }
+            }
+            .icon1 {
+              background-image: url('../images/erp_icon/icon_fun1.png');
+              h2 {
+                padding-top: 4px;
+              }
+            }
+            .icon2 {
+              background-image: url('../images/erp_icon/icon_fun2.png');
+            }
+            .icon3 {
+              background-image: url('../images/erp_icon/icon_fun3.png');
+              h2 {
+                padding-top: 4px;
+              }
+            }
+            .icon4 {
+              background-image: url('../images/erp_icon/icon_fun4.png');
+            }
+            .icon5 {
+              background-image: url('../images/erp_icon/icon_fun5.png');
+            }
+            .body {
+              padding-top: 35px;
+              font-size: 15px;
+              border-top: 1px dashed rgba(188,190,198,.3);
+              span {
+                display: inline-block;
+                position: relative;
+                padding-left: 12px;
+                margin: 0 40px 12px 0;
+                word-break: keep-all;
+                &:before {
+                  display: block;
+                  position: absolute;
+                  top: -28px;
+                  left: 0;
+                  content: ".";
+                  font-size: 36px;
+                }
+              }
+            }
+            .foot {
+              padding-top: 25px;
+              .more {
+                display: inline-block;
+                width: 156px;
+                height: 32px;
+                line-height: 32px;
+                margin: 0;
+                text-align: center;
+                font-size: 14px;
+                color: @white;
+                background: @blue;
+                border: 1px solid @blue;
+                .transition();
+                transform: translateZ(10px);
+                &:hover {
+                  opacity: .8;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .more {
+      display: block;
+      width: 140px;
+      margin: 90px auto 0;
+      color: #bbbdc3;
+      &:hover {
+        color: @white;
+      }
+    }
+  }
+  .part-four {
+    background: #f7f7f7;
+    .module-sub-title {
+      padding-top: 8px;
+      font-size: 16px;
+      color: #888;
+      text-align: center;
+    }
+  }
+}
