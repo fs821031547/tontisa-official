@@ -7,10 +7,10 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <title>同业专访</title>
-  <link rel="stylesheet" href="public/css/reset.css">
-  <link rel="stylesheet" href="public/css/layout.css">
-  <link rel="stylesheet" href="../public/css/animate.min.css">
-  <link rel="stylesheet" href="../public/css/view-detail.css">
+  <link rel="stylesheet" href="/public/css/reset.css">
+  <link rel="stylesheet" href="/public/css/layout.css">
+  <link rel="stylesheet" href="/public/css/animate.min.css">
+  <link rel="stylesheet" href="/public/css/view-detail.css">
 </head>
 <body>
   <% include './header.html' %>
@@ -18,43 +18,43 @@
     <div class="page-detail">
       <div class="inner">
         <div id="wecode" class="wecode">
-          <div><img src="public/images/detail_wecode.jpg" alt=""></div>
+          <div><img src="/public/images/detail_wecode.jpg" alt=""></div>
           <span class="line"></span>
           <h4>同天下“小强学院”</h4>
           <p>专为旅游人服务</p>
           <p>扫码关注最新动态</p>
         </div>
         <div class="content">
-          <h3 class="info-title wow slideInLeft" data-wow-delay="0.1s">毛瑞月</h3>
+          <h3 class="info-title wow slideInLeft" data-wow-delay="0.1s"><$ data.title $></h3>
           <p class="sub-title wow slideInLeft">
-            <span>新疆峰景国际旅行社 副总经理</span>
+            <span><$ data.secondTitle $></span>
           </p>
           <div class="line"></div>
           <div class="person-info clearfix">
             <div class="topic wow slideInUp">
               <div class="box">
-                封雷同学在小强学院培训期间积极认真、成绩优异，并乐于分享个人经验，是班级的优秀榜样。对此，小强学院特邀封雷同学进行一些对行业、对小强学院的分享。
+                <$ data.content.introduce.content $>
               </div>
             </div>
             <div class="img">
-              <img src="public/images/avatar.jpg">
+              <img src="<$ data.content.introduce.img $>">
             </div>
           </div>
           <div class="qa-info wow slideInUp">
-            <h6 class="q-title">同姐：近年来，中国出境游市场飞速发展，北美市场相应升温，对此，优胜旅行是采取了怎样的商业模式来占领市场高地？</h6>
+            <% for item in data.content.question %>
+            <h6 class="q-title"><$ item.question $></h6>
             <div class="info">
-              在商业模式上，我们是采取销售与各大组团社合作，与线上OTA平台、电商平台等进行合作，线上线下同步推广产品。目前，我们认为最有效的还是人和人打交道的方式，
-              让销售在前端去和客户亲自沟通，彼此更多地了解，互相信任，才能持续良好的合作。而线上平台，更多是作为一种开拓市场、展示产品的工具，
-              比如通过系统展示线路图片、线路详情等，可以直接地呈现出来，这也是辅助销售去展示给客户的一个很好的方式。
+              <$ item.answer $>
             </div>
-            <h6 class="q-title">同姐：对于北美、欧洲等大国，中国游客大多是走马观花式的观光游。对此，优胜旅行是如何来把控产品质量的？</h6>
+            <% endfor %>
+            <!-- <h6 class="q-title">同姐：对于北美、欧洲等大国，中国游客大多是走马观花式的观光游。对此，优胜旅行是如何来把控产品质量的？</h6>
             <div class="info">
               优胜旅行一开始做美国线，主要是商旅的方式，小团队出行，也属于深度游。北美市场大规模的游客团队是在近几年才出现。随着人们生活水平提高，出游需求开始增大，
               同时对产品价格也有价廉物美的需求，所以我们才逐渐把团队规模做大。对于大团队，大家可能会有些误解，认为做大团的产品质量会较差。其实我们在大团的质量把控上反倒做得更用心。
               优胜旅行是通过规模化的方式批量采购产品，以此来降低成本，另外，比较大规模的人数出行，也能进一步降低人均摊分成本。所以，在大团队方面，我们是以控制采购成本来操作，
               而不是降低产品质量去服务。另外，我们在北美也有自己的地接团队，有着近二十年的接待经验，在服务上具有明显优势。目前，优胜旅行已是国内领先的是北美同业批发商，
               现公司除洛杉矶总部、广州、成都两个营运中心外，还在华盛顿、多伦多、夏威夷、上海等地开设了办事处或代表机构，能全方位为广大客户提供全面而专业的美加接待一揽子解决方案。
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
                   <div class="col">
                     <a href="">
                       <div class="hd">
-                        <img src="public/images/avatar.jpg">
+                        <img src="/public/images/avatar.jpg">
                       </div>
                       <div class="bd">
                         <p class="name">陈澎葰</p>
@@ -96,7 +96,7 @@
   <% include './footer.html' %>
 
   <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-  <script src="public/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="/public/js/jquery.SuperSlide.2.1.1.js"></script>
   <script src="../public/js/wow.min.js"></script>
   <script>
     new WOW().init();
@@ -112,7 +112,7 @@
       $(window).scroll(function() {
 				var t = document.documentElement.scrollTop || document.body.scrollTop;
         var r = $('#relative').offset().top;
-        console.log(r);
+        // console.log(r);
 				if(t > 148) {
 					$('#wecode').css('top', '88px');
 				}

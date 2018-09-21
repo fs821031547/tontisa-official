@@ -105,7 +105,7 @@
                 <% for item in viewList %>
                 <li>
                   <div class="col">
-                    <a href="">
+                    <a href="/view-detail/<$ item.id $>">
                       <div class="hd">
                         <img src="<$ item.imgUrl $>">
                       </div>
@@ -136,7 +136,7 @@
             <% for item in productList %>
             <% if loop.index < 7 %>
             <li class="item clearfix">
-              <a href="">
+              <a href="/news-detail/<$ item.id $>">
                 <div class="img">
                   <img src="<$ item.imgUrl $>">
                   <div class="overaly">

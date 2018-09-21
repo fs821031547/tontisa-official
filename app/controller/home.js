@@ -20,7 +20,7 @@ module.exports = app => {
       await this.ctx.render('default');
     }
 
-    //erp-index
+    // erp-index
     async erpIndex() {
       await this.ctx.render('erp_index');
     }
@@ -124,8 +124,8 @@ module.exports = app => {
      */
     // case-detail
     async caseDetail() {
-      const url = this.ctx.request.url;
-      const id = url.split('/')[url.split('/').length - 1];
+      const { params } = this.ctx;
+      const id = params.id;
       const parms = {
         id,
       };
@@ -476,12 +476,43 @@ module.exports = app => {
 
     // news-detail
     async newsDetail() {
-      await this.ctx.render('news_detail');
+      const {
+        params,
+      } = this.ctx;
+      const param = {
+        id: params.id,
+      };
+      const res = await this.apiPost('/websiteContent/detail', param);
+      // console.log('\nres\n:', res);
+      if (!res.data.data) {
+        await this.ctx.render({});
+      }
+      try {
+        res.data.data.content = JSON.parse(res.data.data.content);
+        const resData = {
+          data: res.data.data,
+        };
+        await this.ctx.render(resData);
+      } catch (error) {
+        await this.ctx.render({});
+      }
+
     }
 
     // view-detail
     async viewDetail() {
-      await this.ctx.render('interview_detail');
+      const { params } = this.ctx;
+      const param = {
+        id: params.id,
+      };
+      const res = await this.apiPost('/websiteContent/detail', param);
+      // console.log('\nres\n:', res);
+      res.data.data.content = JSON.parse(res.data.data.content);
+      const resData = {
+        data: res.data.data,
+      };
+      // console.log('resData.data.content.question:', typeof resData.data.content.introduce);
+      await this.ctx.render('interview_detail', resData);
     }
 
     async errPage() {

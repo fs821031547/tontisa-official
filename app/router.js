@@ -28,8 +28,10 @@ module.exports = app => {
   router.get('/infor-train', rv('infor-train'), controller.home.inforTrain);
   router.get('/team-build', rv('team-build'), controller.home.teamBuild);
 
-  router.get('/news-detail', rv('news-detail'), controller.home.newsDetail);
-  router.get('/view-detail', rv('view-detail'), controller.home.viewDetail);
+  router.get('/news-detail/:id', rv('news_detail'), controller.home.newsDetail);
+  router.get('/product-detail/:id', rv('product_detail'), controller.home.newsDetail);
+  router.get('/lesson-detail/:id', rv('lesson_detail'), controller.home.newsDetail);
+  router.get('/view-detail/:id', rv('view-detail'), controller.home.viewDetail);
 
   router.get('/erp-index', rv('erp-index'), controller.home.erpIndex);
 
