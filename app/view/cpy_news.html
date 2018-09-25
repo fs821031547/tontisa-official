@@ -22,7 +22,7 @@
   <% include './header.html' %>
   <div id="content" class="main-content">
     <div class="banner-normal">
-      <img src="public/images/banner2.jpg">
+      <img src="/public/images/banner2.jpg">
       <div class="overaly"></div>
       <div class="box">
         <h2 class="title">信任五环·公益课圆满结束</h2>
@@ -36,10 +36,10 @@
           <% for item in list %>
           <div class="item clearfix">
             <div class="img">
-              <img src="public/images/banner2.jpg">
+              <img src="/public/images/banner2.jpg">
             </div>
             <div class="info">
-              <h3><a href=""><$ item.title $></a></h3>
+              <h3><a href="/news-detail/<$ item.id $>"><$ item.title $></a></h3>
               <p class="tags">
                 <span class="time"><$ item.showTime $></span>
                 <span></span>

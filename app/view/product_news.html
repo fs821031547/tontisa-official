@@ -7,10 +7,10 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <title>产品资讯</title>
-  <link rel="stylesheet" href="public/css/reset.css">
-  <link rel="stylesheet" href="public/css/layout.css">
+  <link rel="stylesheet" href="/public/css/reset.css">
+  <link rel="stylesheet" href="/public/css/layout.css">
   <link rel="stylesheet" href="../public/css/animate.min.css">
-  <link rel="stylesheet" href="public/css/product-news.css">
+  <link rel="stylesheet" href="/public/css/product-news.css">
   <style>
     .case-pagination {
       margin: 20px 0;
@@ -22,7 +22,7 @@
   <% include './header.html' %>
   <div id="content" class="main-content">
     <div class="banner-normal">
-      <img src="public/images/banner2.jpg">
+      <img src="/public/images/banner2.jpg">
       <div class="overaly"></div>
       <div class="box">
         <h2 class="title">信任五环·公益课圆满结束</h2>
@@ -35,7 +35,7 @@
         <ul class="list clearfix"> 
           <% for item in list %>
           <li class="item clearfix">
-            <a href="">
+            <a href="/product-detail/<$ item.id $>">
               <div class="img">
                 <img src="<$ item.imgUrl $>">
                 <div class="overaly">
