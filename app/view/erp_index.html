@@ -343,6 +343,94 @@
         <div class="inner">
           <h3 class="module-title wow slideInDown">这里有旅行社需要的一切</h3>
           <p class="module-sub-title wow slideInUp">帮旅行社解决常见的所有问题</p>
+          <div style="height:60px;"></div>
+          <div class="module-box" id="feature_block">
+            <div class="block-head">
+              <div class="head-1 wow slideInDown">
+                <div class="feature-btn">运营平台</div>
+                <div class="feature-btn">门店平台</div>
+                <div class="feature-btn">客户管理</div>
+                <div class="feature-btn">供应商平台</div>
+                <div class="feature-btn">虚拟账户</div>
+                <div class="feature-btn">移动支付</div>
+                <div class="head-border-box">
+                  <div class="head-border"></div>
+                </div>
+              </div>
+              <div class="head-2 wow slideInUp">
+                <div class="head-border-box">
+                  <div class="head-border"></div>
+                </div>
+                <div class="feature-btn">集团化管理</div>
+                <div class="feature-btn">批发商运营管理</div>
+                <div class="feature-btn">地接运营管理</div>
+                <div class="feature-btn">组团社运营管理</div>
+                <div class="feature-btn">产品管理</div>
+                <div class="feature-btn">销售管理</div>
+                <div class="feature-btn">客户管理</div>
+                <div class="feature-btn">财务管理</div>
+                <div class="feature-btn">决策分析</div>
+              </div>
+            </div>
+            <div class="block-body clearfix" >
+              <div class="block-left clearfix block-item">
+                <div class="item-border"></div>
+                <div class="items wow fadeInRight">
+                  <ul>
+                    <li class="feature-btn-right btn-sign">扫码付</li>
+                    <li class="feature-btn-right btn-sign">电子合同</li>
+                    <li class="feature-btn-right btn-sign">证件识别</li>
+                    <li class="feature-btn-right btn-sign">机票库存共享</li>
+                    <li class="feature-btn-right btn-sign">财务系统对接</li>
+                    <li class="feature-btn-right btn-sign">电子杂志</li>
+                  </ul>
+                </div>
+                
+              </div>
+              <div class="block-center clearfix">
+                <!-- <div class="feature-block-item">
+                  <div class="feature-block-text">增值服务</div>
+                </div> -->
+                <div class="feature-core" id="feature_core">
+                  <div class="level-item"></div>
+                  <div class="vertical-item"></div>
+                  <div class="feature-item item-1">增值服务</div>
+                  <div class="feature-item item-2">管理系统</div>
+                  <div class="feature-item item-3">网站站点</div>
+                  <div class="feature-item item-4">数据对接</div>
+                </div>
+              </div>
+              <div class="block-right block-item">
+                <div class="item-border"></div>
+                <div class="items wow fadeInLeft">
+                  <ul>
+                    <li class="feature-btn-left btn-sign">网络站点</li>
+                    <li class="feature-btn-left btn-sign">同业网站</li>
+                    <li class="feature-btn-left btn-sign">旅游微商城</li>
+                    <li class="feature-btn-left btn-sign">分销平台(B2B)</li>
+                    <li class="feature-btn-left btn-sign">微信公众号</li>
+                    <li class="feature-btn-left btn-sign">移动扫码支付</li>
+                    <li class="feature-btn-left btn-sign">微信机器人</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="block-foot wow fadeInDown">
+              <div class="head-1">
+                <div class="head-border-box">
+                  <div class="head-border"></div>
+                </div>
+                <div class="feature-btn-bottom">直连携程等OTA</div>
+                <div class="feature-btn-bottom">直连小强系统</div>
+                <div class="feature-btn-bottom">包机大盘模式</div>
+                <div class="feature-btn-bottom">全国同业资源市场</div>
+                <div class="feature-btn-bottom">小强API</div>
+              </div>
+            </div>
+            <!-- <img src="/public/images/feature.png"> -->
+            <!-- <div class="module-opacity"></div> -->
+            <!-- <div class="dashed-border"></div> -->
+          </div>
         </div>
       </div>
       <div class="module part-five">
@@ -369,6 +457,34 @@
   <script>
     new WOW().init();
     $(function() {
+      // animateFn();
+      function animateFn(){
+        var featureBlock = $('#feature_block .block-item');
+        var lis = featureBlock[0].getElementsByTagName('li');
+        for(var i=0;i<lis.length;i++){
+          lis[i].style.opacity = 1;
+          lis[i].style.width = '180px';
+        }
+      }
+      function testAnim(dom,x) {
+        // dom.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        dom.removeClass(x).addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+          $(this).removeClass(x + ' animated');
+        });
+      };
+      var featureCoreArr =[$('#feature_core .item-1'),$('#feature_core .item-3')];
+      featureCoreArr.forEach(function(x,index){
+        x.hover(function(){
+          var animate;
+          if(index == 0){
+            animate = 'fadeInRight'
+          }else{
+            animate = 'fadeInLeft'
+          }
+          // $('#feature_block .block-item').eq(index).addClass(animate);
+          testAnim($('#feature_block .block-item').eq(index),animate);
+        })
+      })
       jQuery("#versionType").slide({trigger:"click"});
       jQuery("#dotFunction").slide({effect: "top", trigger: "click", easing: "easeInQuint"});
     });
