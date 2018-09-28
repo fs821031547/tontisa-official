@@ -218,7 +218,7 @@
                       <div class="item">
                         <p class="rectangle">03<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">全面的的客户资料管理功能</p>
+                        <p class="text">全面的客户资料管理功能</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">04<span></span></p>
@@ -659,12 +659,17 @@
     $(function () {
       // animateFn();
       var video = document.getElementById('video');
+      // var video = $('#video');
       $('#videoPlay').click(function(){
         $(this).addClass('video-active');
         video.play();
+        // $('#video').addClass('video-active');
+        video.style.background = '#69a7ea'
       });
       video.onended=function(){
         $('#videoPlay').removeClass('video-active');
+        // $('#video').removeClass('video-active')
+        video.style.background ='#174394'
       }
       function animateFn() {
         var featureBlock = $('#feature_block .block-item');

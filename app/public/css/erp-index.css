@@ -72,7 +72,7 @@
   transform: translateY(100%);
 }
 .page-erp .module {
-  padding: 50px 0;
+  padding: 80px 0;
 }
 .page-erp .top-content {
   position: relative;
@@ -153,9 +153,9 @@
   width: 1200px;
   height: 570px;
   margin-left: -600px;
-  background: #174394;
   color: #fff;
   opacity: 1;
+  background: #174394;
 }
 .page-erp .top-content .video h2 {
   font-size: 34px;
@@ -178,6 +178,7 @@
 .page-erp .top-content .video.video-active {
   height: 0;
   opacity: 0;
+  background: #69a7ea;
 }
 .page-erp .top-content .player-btn {
   width: 60px;
@@ -208,7 +209,7 @@
 .page-erp .part-one .version-types {
   position: relative;
   width: 100%;
-  margin-top: -278px;
+  margin-top: -308px;
   text-align: center;
 }
 .page-erp .part-one .version-types .module-title {

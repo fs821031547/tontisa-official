@@ -560,6 +560,10 @@
   color: #fff;
   background: #333;
 }
+.erp-school .photos-gallery .tab-photos .body .box {
+  height: 450px;
+  overflow: hidden;
+}
 .erp-school .photos-gallery .tab-photos .body .photos-box {
   margin-left: -10px;
   margin-right: -10px;

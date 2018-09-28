@@ -33,7 +33,7 @@
         <div class="tp-banner swiper-container">
           <ul>
             <% for item in bannerList %>
-            <li data-transition="slideleft" data-slotamount="9" data-masterspeed="1500">
+            <li data-transition="slotslide-horizontal" data-slotamount="1" data-masterspeed="1000">
               <img src="<$ item.imgUrl $>" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
               <div class="recent-box tp-caption lfr" data-x="0" data-y="150" data-speed="800">
                 <h2 class="title"><$ item.title $></h2>
@@ -55,14 +55,14 @@
       </div>
       <div class="number-info">
         <div class="inner clearfix">
-          <div class="fl content wow slideInLeft">
+          <div class="fl content">
             <div class="clearfix">
               <p id="num1" class="fl number numberRun1">1000</p>
               <p class="fl">位<br><span class="text">旅游人</span></p>
             </div>
             <p class="desc">已有1000旅游人通过小强学院充电赋能，解决工作中出现的问题</p>
           </div>
-          <div class="fr content wow slideInRight">
+          <div class="fr content">
             <div class="clearfix">
               <p id="num2" class="fl number numberRun2">100</p>
               <p class="fl">家<br><span class="text">旅行社</span></p>
@@ -468,7 +468,7 @@
 				backdropDuration: 100
 			});
 
-
+      jQuery("#viewBox").slide({titCell:".head ul", mainCell:".body ul", autoPage:true, effect:"left", easing:"easeOutCubic", scroll:4, vis:4, pnLoop:false});
 
       // var numRun = $(".numberRun1").numberAnimate({
       // 	num: '1000',

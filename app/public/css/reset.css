@@ -46,8 +46,9 @@ small { font-size: 80%;}
 .fr { float: right;}
 .clearfix { zoom: 1;}
 .clearfix:after { content: ""; display: block; clear: both;}
-
+/* IE 8/9 */
 @font-face {
   font-family: Helve;
-  src: url('../fonts/HELVETICANEUELTPRO.otf');
+  src: url('/public/fonts/HELVETICANEUELTPRO.otf');
 }
+/* must go at the END of all rules */
