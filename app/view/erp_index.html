@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="renderer" content="webkit">
@@ -7,11 +8,77 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <title>小强ERP</title>
-  <link rel="stylesheet" href="public/css/reset.css">
-  <link rel="stylesheet" href="public/css/layout.css">
+  <!-- <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <script src="https://cdn.bootcss.com/selectivizr/1.0.2/selectivizr-min.js"></script> -->
+  <link rel="stylesheet" href="/public/css/reset.css">
+  <link rel="stylesheet" href="/public/css/layout.css">
   <link rel="stylesheet" href="../public/css/animate.min.css">
   <link rel="stylesheet" href="../public/css/erp-index.css">
+  <style>
+    /* .game_time {
+      width: 43px;
+      height: 43px;
+      position: absolute;
+      top: 30%;
+      left: 40%;
+      text-align: center
+    }
+
+    .pie {
+      width: 87px;
+      height: 87px;
+      background-color: blue;
+      border-radius: 100px;
+      position: absolute
+    }
+
+    .pie1 {
+      clip: rect(0px, 87px, 87px, 43px);
+      -o-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      background-color: #fff
+    }
+
+    .pie2 {
+      clip: rect(0px, 43px, 87px, 0px);
+      -o-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      background-color: #fff
+    }
+
+    .hold {
+      width: 87px;
+      height: 87px;
+      position: absolute;
+      z-index: 1
+    }
+
+    .bg {
+      width: 87px;
+      height: 87px;
+      border-radius: 100%;
+      position: absolute;
+      background-color: #d13c36
+    }
+
+    .time {
+      width: 81px;
+      height: 81px;
+      margin: 20px 0 0 20px;
+      background-color: #e45534;
+      border-radius: 100%;
+      position: absolute;
+      z-index: 1;
+      text-align: center;
+      line-height: 81px;
+      font-size: 30px
+    } */
+  </style>
 </head>
+
 <body>
   <% include './header.html' %>
   <div id="content" class="main-content">
@@ -22,7 +89,14 @@
           <p class="sub-title wow slideInUp">将旅游人的工作流程化繁为简，带领旅行社走出传统办公时代</p>
           <a class="more wow fadeIn" href="" data-wow-delay="0.1s"><span>了解详情</span></a>
         </div>
-        <div class="video"></div>
+        <div class="video video-layer" id="videoPlay">
+          <div class="player-btn"></div>
+          <h2>三分钟了解小强ERP</h2>
+          <p>为旅行社赋能</p>
+        </div>
+        <video id="video" class="video" style="z-index:1;" width="1200" height="570" controls="true" poster="">
+          <source src="https://cdn.op110.com.cn/lib/vedio/xqerp.mp4" type="video/mp4"> 您的浏览器不支持 video 标签。
+        </video>
         <div class="wave">
           <canvas id="canvas" width="3000" height="1000" style="width: 100%;"></canvas>
         </div>
@@ -87,45 +161,74 @@
                       <div class="item">
                         <p class="rectangle">05<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">能对三方财务板块进行联合管理  每一笔业务账目清晰</p>
+                        <p class="text">能对三方财务板块进行联合管理 每一笔业务账目清晰</p>
                       </div>
                     </div>
-                    <div class="btns">
-                      <a class="btn btn1" href="">咨询产品详情</a>
-                      <a class="btn btn2" href="">查看更多版本</a>
+                      <!-- <div class="btns">
+                        <a class="btn btn1" href="">咨询产品详情</a>
+                        <a class="btn btn2" href="">查看更多版本</a>
+                      </div> -->
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <p class="title">
+                      <span class="bold">专线批发商</span> - 专注专线业务
+                    </p>
+                    <div class="items clearfix">
+                      <div class="item">
+                        <p class="rectangle">01<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text">团期余位，随时可查 </p>
+                      </div>
+                      <div class="item">
+                        <p class="rectangle">02<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text"> 特殊团期可标记，突出周结、月结客户</p>
+                      </div>
+                      <div class="item">
+                        <p class="rectangle">03<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text">一键导出账单，高效核对，批量结算</p>
+                      </div>
+                      <div class="item">
+                        <p class="rectangle">04<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text">成本明细导出核对，批量结款</p>
+                      </div>
                     </div>
                   </li>
                 </ul>
                 <ul>
                   <li>
                     <p class="title">
-                      <span class="bold">专线批发商</span> - 既有批发业务又有组团业务，既对同业又对直客
+                      <span class="bold">综合批发商</span> - 主营多个旅游目的地的旅游批发商
                     </p>
                     <div class="items clearfix">
                       <div class="item">
                         <p class="rectangle">01<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">运营中心轻松管理加盟的营业部线路供应商</p>
+                        <p class="text">多线路同时管理，线路类别清晰</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">02<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">供应商线路不合格，可一键下架</p>
+                        <p class="text">供应商分类管理，迅速找到想要资源</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">03<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">营业部业绩实时查看</p>
+                        <p class="text">全面的的客户资料管理功能</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">04<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">合同发放，保险项目在线管理</p>
+                        <p class="text">可视化的客户统计分析，一键即可导出报表</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">05<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">能对三方财务板块进行联合管理  每一笔业务账目清晰</p>
+                        <p class="text">合同附件储存，合同期限随时可查</p>
                       </div>
                     </div>
                   </li>
@@ -133,38 +236,71 @@
                 <ul>
                   <li>
                     <p class="title">
-                      <span class="bold">综合批发商</span> - 既有批发业务又有组团业务，既对同业又对直客
+                      <span class="bold">集团化</span> - 集团下有多个分公司财务独立结算
                     </p>
                     <div class="items clearfix">
                       <div class="item">
                         <p class="rectangle">01<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">运营中心轻松管理加盟的营业部线路供应商</p>
+                        <p class="text">一套系统管理全部业务</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">02<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">供应商线路不合格，可一键下架</p>
+                        <p class="text">产品共享，财务各自独立</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">03<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">营业部业绩实时查看</p>
+                        <p class="text">集团统一管理</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">04<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">合同发放，保险项目在线管理</p>
+                        <p class="text">轻松查看各分公司的业务情况</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <p class="title">
+                      <span class="bold">机票大盘</span> - 多个旅行社合作包机共享一套机票大盘
+                    </p>
+                    <div class="items clearfix">
+                      <div class="item">
+                        <p class="rectangle">01<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text">实时查看库存及各旅行社的销售情况</p>
+                      </div>
+                      <div class="item">
+                        <p class="rectangle">02<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text">股份制合作，权限分立</p>
+                      </div>
+                      <div class="item">
+                        <p class="rectangle">03<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text">机票op轻松管理库存</p>
+                      </div>
+                      <div class="item">
+                        <p class="rectangle">04<span></span></p>
+                        <p class="line"><span></span></p>
+                        <p class="text">可根据机票库存直接建团</p>
                       </div>
                       <div class="item">
                         <p class="rectangle">05<span></span></p>
                         <p class="line"><span></span></p>
-                        <p class="text">能对三方财务板块进行联合管理  每一笔业务账目清晰</p>
+                        <p class="text">上订、二订、出票日期信息提醒</p>
                       </div>
                     </div>
                   </li>
                 </ul>
               </div>
+                <div class="btns">
+                  <a class="btn btn1" href="">咨询产品详情</a>
+                  <a class="btn btn2" href="">查看更多版本</a>
+                </div>
             </div>
           </div>
         </div>
@@ -372,20 +508,20 @@
                 <div class="feature-btn">决策分析</div>
               </div>
             </div>
-            <div class="block-body clearfix" >
+            <div class="block-body clearfix">
               <div class="block-left clearfix block-item">
                 <div class="item-border"></div>
-                <div class="items wow fadeInRight">
+                <div class="items">
                   <ul>
-                    <li class="feature-btn-right btn-sign">扫码付</li>
-                    <li class="feature-btn-right btn-sign">电子合同</li>
-                    <li class="feature-btn-right btn-sign">证件识别</li>
-                    <li class="feature-btn-right btn-sign">机票库存共享</li>
-                    <li class="feature-btn-right btn-sign">财务系统对接</li>
-                    <li class="feature-btn-right btn-sign">电子杂志</li>
+                    <li class="feature-btn-right wow fangFadeIn btn-sign">扫码付</li>
+                    <li class="feature-btn-right wow fangFadeIn btn-sign">电子合同</li>
+                    <li class="feature-btn-right wow fangFadeIn btn-sign">证件识别</li>
+                    <li class="feature-btn-right wow fangFadeIn btn-sign">机票库存共享</li>
+                    <li class="feature-btn-right wow fangFadeIn btn-sign">财务系统对接</li>
+                    <li class="feature-btn-right wow fangFadeIn btn-sign">电子杂志</li>
                   </ul>
                 </div>
-                
+
               </div>
               <div class="block-center clearfix">
                 <!-- <div class="feature-block-item">
@@ -402,7 +538,7 @@
               </div>
               <div class="block-right block-item">
                 <div class="item-border"></div>
-                <div class="items wow fadeInLeft">
+                <div class="items">
                   <ul>
                     <li class="feature-btn-left btn-sign">网络站点</li>
                     <li class="feature-btn-left btn-sign">同业网站</li>
@@ -427,6 +563,9 @@
                 <div class="feature-btn-bottom">小强API</div>
               </div>
             </div>
+            <a class="more rotate-more" href="">咨询产品详情
+              <span class="lines"></span>
+            </a>
             <!-- <img src="/public/images/feature.png"> -->
             <!-- <div class="module-opacity"></div> -->
             <!-- <div class="dashed-border"></div> -->
@@ -437,6 +576,79 @@
         <div class="inner">
           <h3 class="module-title wow slideInDown">只需4步，即可完成旅行社的信息化跨越</h3>
           <p class="module-sub-title wow slideInUp">每人每天不到1块钱</p>
+          <div class="steps-sign-box">
+            <div class="sign-item">
+              <div class="step-icon">01</div>
+              <!-- <div class="game_center">
+                <div class="game_time">
+                  <div class="hold">
+                    <div class="pie pie1"></div>
+                  </div>
+                  <div class="hold">
+                    <div class="pie pie2"></div>
+                  </div>
+                  <div class="bg"> </div>
+                  <div class="time"></div>
+                </div>
+              </div> -->
+            </div>
+            <div class="sign-item">
+              <div class="step-icon">02</div>
+            </div>
+            <div class="sign-item">
+              <div class="step-icon">03</div>
+            </div>
+            <div class="sign-item">
+              <div class="step-icon">04</div>
+            </div>
+          </div>
+          <div class="step-sign-box">
+            <div class="sign-item"></div>
+          </div>
+          <div class="steps-box">
+            <div class="step-item">
+              <h4>梳理需求</h4>
+              <p>有耐心的客户经理为您梳理需求，匹配版本和功能</p>
+            </div>
+            <div class="step-item">
+              <h4>产品试用</h4>
+              <p>在专业的顾问指导下， 免费试用对应版本的全部功能</p>
+            </div>
+            <div class="step-item">
+              <h4>签约开通</h4>
+              <p>专业的客服人员会为您梳理业务流程，匹配账号并进行系统培训</p>
+            </div>
+            <div class="step-item">
+              <h4>全面实施</h4>
+              <p>由专业的售后团队保障您旅行社的信息化高效运行，答疑解惑</p>
+            </div>
+          </div>
+          <a class="more rotate-more" href="">开启试用
+            <span class="lines"></span>
+          </a>
+        </div>
+      </div>
+      <div class="module part-six">
+        <div class="inner">
+          <h3 class="module-title wow slideInDown">由强大的技术团队为您保驾护航</h3>
+          <p class="module-sub-title wow slideInUp">每人每天不到1块钱</p>
+          <div class="body-box">
+            <div class="body-item">
+              <div class="body-bg bg-1"></div>
+              <h4>高可用和先进性</h4>
+              <p>用领先的微服务架构Sprint Cloud全家桶来构建，用Eureka和Ribbon、Feign完成服务的注册调用，用Hystrix实现高可用和先进性</p>
+            </div>
+            <div class="body-item">
+              <div class="body-bg bg-2"></div>
+              <h4>高安全性</h4>
+              <p>基于Zuul开发了带256位加密的统一API网关系统为所有应用提供底层数据服务，企业业务的独立性带来的是系统的高安全性</p>
+            </div>
+            <div class="body-item">
+              <div class="body-bg bg-3"></div>
+              <h4>全方位防护</h4>
+              <p>SaaS架构，数据库集群、应用服务器集群、缓存服务器集群和静态资源CDN网络加速等全套分布式架构，部署在阿里云上，由企业级云盾提供7x24小时全方位防护</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -448,46 +660,64 @@
     <div class="btn rotatez" data-rotate="z">rotatez</div>
   </div>
   <% include './footer.html' %>
-
   <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
   <script src="../public/js/plugins/wave.min.js"></script>
   <script src="../public/js/plugins/erp-wave.js"></script>
-  <script src="public/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="/public/js/jquery.SuperSlide.2.1.1.js"></script>
   <script src="../public/js/wow.min.js"></script>
   <script>
     new WOW().init();
-    $(function() {
+    
+    $(function () {
       // animateFn();
-      function animateFn(){
+      var video = document.getElementById('video');
+      $('#videoPlay').click(function(){
+        $(this).addClass('video-active');
+        video.play();
+      });
+      video.onended=function(){
+        $('#videoPlay').removeClass('video-active');
+      }
+      function animateFn() {
         var featureBlock = $('#feature_block .block-item');
         var lis = featureBlock[0].getElementsByTagName('li');
-        for(var i=0;i<lis.length;i++){
+        for (var i = 0; i < lis.length; i++) {
           lis[i].style.opacity = 1;
           lis[i].style.width = '180px';
         }
       }
-      function testAnim(dom,x) {
+
+      function testAnim(dom, x) {
         // dom.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        dom.removeClass(x).addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-          $(this).removeClass(x + ' animated');
-        });
+        dom.removeClass(x).addClass(x + ' animated').one(
+          'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+          function () {
+            $(this).removeClass(x + ' animated');
+          });
       };
-      var featureCoreArr =[$('#feature_core .item-1'),$('#feature_core .item-3')];
-      featureCoreArr.forEach(function(x,index){
-        x.hover(function(){
-          var animate;
-          if(index == 0){
-            animate = 'fadeInRight'
-          }else{
-            animate = 'fadeInLeft'
-          }
-          // $('#feature_block .block-item').eq(index).addClass(animate);
-          testAnim($('#feature_block .block-item').eq(index),animate);
-        })
-      })
-      jQuery("#versionType").slide({trigger:"click"});
-      jQuery("#dotFunction").slide({effect: "top", trigger: "click", easing: "easeInQuint"});
+      // var featureCoreArr =[$('#feature_core .item-1'),$('#feature_core .item-3')];
+      // featureCoreArr.forEach(function(x,index){
+      //   x.hover(function(){
+      //     var animate;
+      //     if(index == 0){
+      //       animate = 'fadeInDown'
+      //     }else{
+      //       animate = 'fadeInLeft'
+      //     }
+      //     // $('#feature_block .block-item').eq(index).addClass(animate);
+      //     testAnim($('#feature_block .block-item').eq(index),animate);
+      //   })
+      // })
+      jQuery("#versionType").slide({
+        trigger: "click"
+      });
+      jQuery("#dotFunction").slide({
+        effect: "top",
+        trigger: "click",
+        easing: "easeInQuint"
+      });
     });
   </script>
 </body>
+
 </html>
