@@ -851,11 +851,12 @@
   font-size: 14px;
 }
 .page-erp .steps-box {
-  display: table;
+  width: 100%;
+  overflow: hidden;
 }
 .page-erp .steps-box .step-item {
-  display: table-cell;
-  padding: 0 30px;
+  width: 25%;
+  float: left;
 }
 .page-erp .steps-box .step-item h4 {
   font-size: 20px;
@@ -868,6 +869,7 @@
   font-size: 14px;
   text-align: center;
   color: #666;
+  padding: 0 30px;
 }
 .page-erp .part-four {
   background: #f7f7f7;
