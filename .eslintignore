@@ -1,3 +1,5 @@
 coverage
 app/public
 app/view
+/app/view
+/app/view/*

@@ -901,6 +901,9 @@
   width: 25%;
   display: table-cell;
 }
+.page-erp .part-five .steps-sign-box .sign-item .step-sign-item {
+  text-align: center;
+}
 .page-erp .part-five .steps-sign-box .sign-item .step-icon {
   width: 87px;
   height: 87px;
