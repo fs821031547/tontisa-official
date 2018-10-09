@@ -82,8 +82,9 @@
 }
 .banner-build .img-truction {
   position: absolute;
-  top: 40px;
+  top: 64px;
   left: 0px;
+  zoom: 0.93;
 }
 .team-build .module {
   padding: 70px 0;

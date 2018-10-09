@@ -723,6 +723,10 @@
     .step-item{
       width: 25%;
       float: left;
+      opacity: 0;
+        &.fadeIn{
+          opacity: 1;
+        }
       // padding: 0 30px;
     }
     .step-item h4{
@@ -769,6 +773,10 @@
         width:25%;
         display: table-cell;
         .step-sign-item{
+          opacity: 0;
+          &.fadeIn{
+            opacity: 1;
+          }
           text-align: center;
         }
         .step-icon{

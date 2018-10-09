@@ -858,6 +858,10 @@
 .page-erp .steps-box .step-item {
   width: 25%;
   float: left;
+  opacity: 0;
+}
+.page-erp .steps-box .step-item.fadeIn {
+  opacity: 1;
 }
 .page-erp .steps-box .step-item h4 {
   font-size: 20px;
@@ -902,7 +906,11 @@
   display: table-cell;
 }
 .page-erp .part-five .steps-sign-box .sign-item .step-sign-item {
+  opacity: 0;
   text-align: center;
+}
+.page-erp .part-five .steps-sign-box .sign-item .step-sign-item.fadeIn {
+  opacity: 1;
 }
 .page-erp .part-five .steps-sign-box .sign-item .step-icon {
   width: 87px;

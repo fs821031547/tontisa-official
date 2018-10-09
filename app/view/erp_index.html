@@ -511,7 +511,7 @@
             <div class="block-body clearfix">
               <div class="block-left clearfix block-item">
                 <div class="item-border"></div>
-                <div class="items">
+                <div class="items wow fadeInRight">
                   <ul>
                     <li class="feature-btn-right wow fangFadeIn btn-sign">扫码付</li>
                     <li class="feature-btn-right wow fangFadeIn btn-sign">电子合同</li>
@@ -538,7 +538,7 @@
               </div>
               <div class="block-right block-item">
                 <div class="item-border"></div>
-                <div class="items">
+                <div class="items wow fadeInLeft">
                   <ul>
                     <li class="feature-btn-left btn-sign">网络站点</li>
                     <li class="feature-btn-left btn-sign">同业网站</li>
@@ -679,7 +679,8 @@
             barColor: '#3f7ef7',
             barWidth: 3,
             radius: 44,
-            initValue: 25*(index+1),
+            initValue: 0,
+            // initValue: 25*(index+1),
             fontWeight: 500,
             fontSize: 26,
             frameTime: 1,
@@ -689,28 +690,54 @@
           });
           indiArr.push(indiObj);
         })
-        function fnScroll(){       
-          $.each(indiArr, function (index, obj) {
-            var indexs = [1000,1500,2000,3000][index];
+
+        function recursionBox(indiArr,len){
+          var index = 0;
+          var recursion = function(){
             setTimeout(function(){
+              var obj = indiArr[index];
+              // var indexs1 = [1000,2000,2500,3000][index];
+              var indexs1 = [800,1300,1800,2500][index];
               // $(eleContainer[index]).addClass('fadeIn');
               // console.log(eleContainer[0].className);
               indicatorContainer[index].className = 'step-sign-item wow fadeIn';
               obj.animate(25 * (index + 1));
               setTimeout(function(){
                 eleContainer[index].className = 'step-item wow fadeIn';
-              },indexs);
-              
-            },1000*(index));
-          });
+                if(index<=len){
+                  index++;
+                  recursion();
+                }
+                // recursion();
+              },indexs1);
+            },500);
+          }
+          return recursion();
+        }
+        function fnScroll(){
+          var len = 3;
+          return recursionBox(indiArr,len); 
+          // $.each(indiArr, function (index, obj) {
+          //   var indexs = [0,1500,2000,2500][index];
+          //   setTimeout(function(){
+          //     var indexs1 = [1000,2000,2500,3000][index];
+          //     // $(eleContainer[index]).addClass('fadeIn');
+          //     // console.log(eleContainer[0].className);
+          //     indicatorContainer[index].className = 'step-sign-item wow fadeIn';
+          //     obj.animate(25 * (index + 1));
+          //     setTimeout(function(){
+          //       eleContainer[index].className = 'step-item wow fadeIn';
+          //     },indexs1);
+          //   },indexs);
+          // });
         }
         // $('.part-five').scroll(fnScroll)
-        // $(window).scroll(function(e){
-        //   var scrollTop = document.getElementById('part_five').offsetTop-1000;
-        //   if($(window).scrollTop()>scrollTop){
-        //     fnScroll();
-        //   }
-        // })
+        $(window).scroll(function(e){
+          var scrollTop = document.getElementById('part_five').offsetTop-1000;
+          if($(window).scrollTop()>scrollTop){
+            fnScroll();
+          }
+        })
       }
     };
     $(function () {

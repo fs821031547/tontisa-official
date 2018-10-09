@@ -60,15 +60,18 @@ $(document).ready(function() {
 	var index = 0;
 
 	var num = 4;
-	var num2 = Math.ceil(num / 2);
+	var num2 = Math.ceil(num / 2);	
 
 	function Change() {
 		Animate(oPicUl, {left: - index * w1});
-
 		if(index < num2) {
 			Animate(oListUl, {left: 0});
 		}else if(index + num2 <= len2){
-			Animate(oListUl, {left: - (index - num2 + 1) * w2});
+			if(index == (len2-2)){
+				// Animate(oListUl, {left: 0});
+			}else{
+				Animate(oListUl, {left: - (index - num2 + 1) * w2});
+			}
 		}else{
 			Animate(oListUl, {left: - (len2 - num) * w2});
 		}
@@ -114,6 +117,8 @@ $(document).ready(function() {
 		oListLi[i].onclick = function() {
 			index = this.index;
 			Change();
+			clearInterval(timer);
+			timer = setInterval(autoPlay, 8000);
 		}
 	}
 });

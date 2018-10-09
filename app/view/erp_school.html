@@ -209,7 +209,7 @@
       <div class="module share-box">
         <div class="inner">
           <h3 class="module-title wow slideInUp">优秀学员分享</h3>
-          <div class="share-slide">
+          <div class="share-slide" id="shareSlide">
             <span id="prev" class="btn prev" style="display:none;"></span>
       			<span id="next" class="btn next" style="display:none;"></span>
       			<span id="prevTop" class="btn prev"></span>
@@ -469,6 +469,7 @@
 			});
 
       jQuery("#viewBox").slide({titCell:".head ul", mainCell:".body ul", autoPage:true, effect:"left", easing:"easeOutCubic", scroll:4, vis:4, pnLoop:false});
+      // jQuery("#shareSlide").slide({titCell:".listBox ul", mainCell:".picBox ul", autoPage:true, effect:"left", easing:"easeOutCubic", scroll:4, vis:4, pnLoop:false});
 
       // var numRun = $(".numberRun1").numberAnimate({
       // 	num: '1000',
