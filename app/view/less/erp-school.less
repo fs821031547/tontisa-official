@@ -284,6 +284,9 @@
         padding: 40px 0;
         height: 270px;
         .transition();
+        .inner{
+          position: relative;
+        }
         .img {
           position: relative;
           width: 480px;
@@ -295,10 +298,14 @@
           }
         }
         .info {
+          position: absolute;
+          top:0;
+          left:480px;
           width: 720px;
           height: 270px;
           padding: 12px 0;
           box-sizing: border-box;
+          .transition();
           .hd {
             margin-bottom: 20px;
             font-size: 24px;
@@ -338,6 +345,9 @@
           box-shadow: 0px 0px 18px 3px rgba(39, 122, 246, 0.1);
           img {
             left: 10px;
+          }
+          .info{
+            left:490px;
           }
         }
       }

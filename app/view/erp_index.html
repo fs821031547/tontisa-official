@@ -683,7 +683,6 @@
             // initValue: 25*(index+1),
             fontWeight: 500,
             fontSize: 26,
-            frameTime: 1,
             format: function (value) {
               return '0'+ (index+1);
             }
@@ -697,19 +696,20 @@
             setTimeout(function(){
               var obj = indiArr[index];
               // var indexs1 = [1000,2000,2500,3000][index];
-              var indexs1 = [800,1300,1800,2500][index];
+              // var indexs1 = [800,1300,1800,2500][index];
+              // var indexs1 = [500,1000,1500,2000][index];
               // $(eleContainer[index]).addClass('fadeIn');
               // console.log(eleContainer[0].className);
               indicatorContainer[index].className = 'step-sign-item wow fadeIn';
               obj.animate(25 * (index + 1));
               setTimeout(function(){
                 eleContainer[index].className = 'step-item wow fadeIn';
-                if(index<=len){
+                if(index<len){
                   index++;
                   recursion();
                 }
                 // recursion();
-              },indexs1);
+              },500);
             },500);
           }
           return recursion();

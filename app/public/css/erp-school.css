@@ -349,6 +349,9 @@
   -ms-transition: all 0.3s;
   transition: all 0.3s;
 }
+.erp-school .three-course .items .item .inner {
+  position: relative;
+}
 .erp-school .three-course .items .item .img {
   position: relative;
   width: 480px;
@@ -363,10 +366,17 @@
   transition: all 0.3s;
 }
 .erp-school .three-course .items .item .info {
+  position: absolute;
+  top: 0;
+  left: 480px;
   width: 720px;
   height: 270px;
   padding: 12px 0;
   box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .erp-school .three-course .items .item .info .hd {
   margin-bottom: 20px;
@@ -408,6 +418,9 @@
 }
 .erp-school .three-course .items .item:hover img {
   left: 10px;
+}
+.erp-school .three-course .items .item:hover .info {
+  left: 490px;
 }
 .erp-school .share-box {
   height: 698px;

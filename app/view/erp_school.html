@@ -158,7 +158,15 @@
                  <$ item.description $>
                 </div>
                 <div class="ft">
-                  <a href="">了解详情</a>
+                  <% if loop.index == 1 %>
+                  <a href="/trust-circle">了解详情</a>
+                  <% endif %>
+                  <% if loop.index == 2 %>
+                  <a href="/infor-train">了解详情</a>
+                  <% endif %>
+                  <% if loop.index == 3 %>
+                  <a href="/team-build">了解详情</a>
+                  <% endif %>
                   <a class="two" href="">预约报名</a>
                 </div>
               </div>
