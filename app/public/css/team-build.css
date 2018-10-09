@@ -72,7 +72,7 @@
   transform: translateY(100%);
 }
 .banner-build .box-content .box {
-  padding-left: 60px;
+  padding-left: 480px;
 }
 .banner-build .box-content .box .title {
   text-align: left;
@@ -83,7 +83,7 @@
 .banner-build .img-truction {
   position: absolute;
   top: 40px;
-  right: 65px;
+  left: 0px;
 }
 .team-build .module {
   padding: 70px 0;

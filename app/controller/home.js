@@ -182,7 +182,7 @@ module.exports = app => {
       // 同业专访
       const viewParams = {
         pageNum: query.page || 1,
-        pageSize: 12,
+        pageSize: 100,
         navId: navIdArr[2],
       };
       // 产品资讯

@@ -302,7 +302,7 @@
 .banner-normal .box .title {
   height: 50px;
   line-height: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 50px;
   font-weight: normal;
 }
@@ -313,13 +313,13 @@
 .banner-normal .box .more {
   display: inline-block;
   position: relative;
-  width: 180px;
+  width: 160px;
   height: 42px;
   line-height: 40px;
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   text-align: center;
-  border: 2px solid rgba(133, 127, 125, 0.4);
+  border: 1px solid rgba(133, 127, 125, 0.4);
   box-sizing: border-box;
   overflow: hidden;
   -webkit-transition: all 0.3s;
@@ -345,12 +345,14 @@
   position: relative;
 }
 .banner-school .box-content .box {
-  top: 100px;
+  top: 112px;
 }
 .banner-school .box-content .box .title {
-  width: 505px;
-  height: 100px;
-  font-size: 42px;
+  width: auto;
+  height: auto;
+  font-size: 40px;
+  margin-top: 30px;
+  text-align: left;
 }
 .banner-school .box-content .box .sub-title {
   color: #deedfa;

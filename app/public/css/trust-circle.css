@@ -74,7 +74,16 @@
 .banner-trust .img-truction {
   position: absolute;
   top: 0;
-  right: -155px;
+  left: -203px;
+}
+.banner-trust .box-content .box {
+  padding-left: 480px;
+}
+.banner-trust .box-content .box .title {
+  text-align: left;
+}
+.banner-trust .box-content .box .sub-title {
+  color: rgba(255, 255, 255, 0.9);
 }
 .trust-circle .module {
   padding: 70px 0;

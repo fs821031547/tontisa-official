@@ -82,8 +82,9 @@
 }
 .banner-infor .img-truction {
   position: absolute;
-  top: 45px;
+  top: 75px;
   left: 0;
+  zoom: 0.93;
 }
 .infor-train .module {
   padding: 70px 0;
