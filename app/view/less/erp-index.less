@@ -724,7 +724,8 @@
       width: 25%;
       float: left;
       opacity: 0;
-        &.fadeIn{
+      .transition();
+        &.wow{
           opacity: 1;
         }
       // padding: 0 30px;
@@ -771,10 +772,12 @@
       width: 100%;
       .sign-item{
         width:25%;
-        display: table-cell;
+        // display: table-cell;
+        float: left;
         .step-sign-item{
           opacity: 0;
-          &.fadeIn{
+          .transition();
+          &.wow{
             opacity: 1;
           }
           text-align: center;
