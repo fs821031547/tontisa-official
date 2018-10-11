@@ -420,12 +420,13 @@
   <script src="../public/js/plugins/lightgallery.min.js"></script>
   <script src="../public/js/plugins/lightgallery-all.min.js"></script>
   <script src="public/js/jquery.SuperSlide.2.1.1.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js"></script>
   <script src="../public/js/jqueryPhoto.js"></script>
   <script src="../public/js/wow.min.js"></script>
   <script src="../public/js/numAnimate.js"></script>
   <script>
     new WOW().init();
-
+    
     $(function() {
       $('.tp-banner').revolution({
         delay: 6000,
@@ -478,7 +479,21 @@
 
       jQuery("#viewBox").slide({titCell:".head ul", mainCell:".body ul", autoPage:true, effect:"left", easing:"easeOutCubic", scroll:4, vis:4, pnLoop:false});
       // jQuery("#shareSlide").slide({titCell:".listBox ul", mainCell:".picBox ul", autoPage:true, effect:"left", easing:"easeOutCubic", scroll:4, vis:4, pnLoop:false});
-
+      var options = {
+        useEasing: true,
+        useGrouping: true,
+        separator: ',',
+        decimal: '.',
+      };
+      var numAnim = new CountUp("num1", 0, 1000, 0,1.5,options);
+      var numAnim2 = new CountUp("num2", 0, 100, 0,1.5,options);
+      if (!numAnim.error) {
+      numAnim.start();
+      numAnim2.start();
+      } else {
+        console.error(numAnim.error);
+      }
+      
       // var numRun = $(".numberRun1").numberAnimate({
       // 	num: '1000',
       // 	dot: 0,
@@ -489,7 +504,7 @@
       // setInterval(function() {
       // 	numRun.resetData(nums);
       // }, 2000);
-      //
+      
       // var numView = $(".numberRun2").numberAnimate({
       //   num: '100',
       //   dot: 0,

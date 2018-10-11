@@ -859,8 +859,12 @@
   width: 25%;
   float: left;
   opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
 }
-.page-erp .steps-box .step-item.fadeIn {
+.page-erp .steps-box .step-item.wow {
   opacity: 1;
 }
 .page-erp .steps-box .step-item h4 {
@@ -903,13 +907,17 @@
 }
 .page-erp .part-five .steps-sign-box .sign-item {
   width: 25%;
-  display: table-cell;
+  float: left;
 }
 .page-erp .part-five .steps-sign-box .sign-item .step-sign-item {
   opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
   text-align: center;
 }
-.page-erp .part-five .steps-sign-box .sign-item .step-sign-item.fadeIn {
+.page-erp .part-five .steps-sign-box .sign-item .step-sign-item.wow {
   opacity: 1;
 }
 .page-erp .part-five .steps-sign-box .sign-item .step-icon {

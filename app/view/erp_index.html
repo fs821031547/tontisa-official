@@ -682,6 +682,7 @@
             initValue: 0,
             // initValue: 25*(index+1),
             fontWeight: 500,
+            fontFamily:'Helve',
             fontSize: 26,
             format: function (value) {
               return '0'+ (index+1);
@@ -700,16 +701,16 @@
               // var indexs1 = [500,1000,1500,2000][index];
               // $(eleContainer[index]).addClass('fadeIn');
               // console.log(eleContainer[0].className);
-              indicatorContainer[index].className = 'step-sign-item wow fadeIn';
-              obj.animate(25 * (index + 1));
+              indicatorContainer[index].className = 'step-sign-item wow fadeInLeft animated';
+              obj.value(25 * (index + 1));
               setTimeout(function(){
-                eleContainer[index].className = 'step-item wow fadeIn';
+                eleContainer[index].className = 'step-item wow fadeInLeft animated';
                 if(index<len){
                   index++;
                   recursion();
                 }
                 // recursion();
-              },500);
+              },0);
             },500);
           }
           return recursion();
@@ -717,19 +718,6 @@
         function fnScroll(){
           var len = 3;
           return recursionBox(indiArr,len); 
-          // $.each(indiArr, function (index, obj) {
-          //   var indexs = [0,1500,2000,2500][index];
-          //   setTimeout(function(){
-          //     var indexs1 = [1000,2000,2500,3000][index];
-          //     // $(eleContainer[index]).addClass('fadeIn');
-          //     // console.log(eleContainer[0].className);
-          //     indicatorContainer[index].className = 'step-sign-item wow fadeIn';
-          //     obj.animate(25 * (index + 1));
-          //     setTimeout(function(){
-          //       eleContainer[index].className = 'step-item wow fadeIn';
-          //     },indexs1);
-          //   },indexs);
-          // });
         }
         // $('.part-five').scroll(fnScroll)
         $(window).scroll(function(e){
