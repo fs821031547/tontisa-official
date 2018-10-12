@@ -1,0 +1,230 @@
+@import "vars.less";
+
+.page-work {
+  .banner {
+    position: relative;
+    height: 425px;
+    color: @white;
+    text-align: center;
+    overflow: hidden;
+    background: url(../images/work_module/module_banner_bg.jpg) center 0 no-repeat;
+    h2 {
+      height: 52px;
+      line-height: 52px;
+      padding-top: 85px;
+      font-weight: normal;
+      font-size: 40px;
+    }
+    p {
+      line-height: 52px;
+      font-size: 20px;
+      color: rgba(255,255,255,.8);
+    }
+    .img {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 400px;
+      height: 230px;
+      margin-left: -200px;
+      background: url(../images/work_module/banner_img.png) center 0 no-repeat;
+    }
+    .box {
+      position: relative;
+    }
+    .icon {
+      display: block;
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-animation: transparency 4s linear infinite;
+      animation: transparency 4s linear infinite;
+    }
+    .icon1 {
+      top: 84px;
+      left: 70px;
+      background-image: url(../images/work_module/icon1.png);
+      -webkit-animation: transparency 4s linear infinite;
+      animation: transparency 4s linear infinite;
+    }
+    .icon2 {
+      top: 128px;
+      left: 200px;
+      background-image: url(../images/work_module/icon2.png);
+      -webkit-animation: transparency 5s linear infinite;
+      animation: transparency 5s linear infinite;
+    }
+    .icon3 {
+      top: 55px;
+      left: 322px;
+      background-image: url(../images/work_module/icon3.png);
+      -webkit-animation: transparency 4s linear infinite;
+      animation: transparency 4s linear infinite;
+      animation-delay: 0.5s;
+    }
+    .icon4 {
+      top: 60px;
+      right: 306px;
+      background-image: url(../images/work_module/icon4.png);
+      -webkit-animation: transparency 5s linear infinite;
+      animation: transparency 5s linear infinite;
+    }
+    .icon5 {
+      top: 126px;
+      right: 188px;
+      background-image: url(../images/work_module/icon5.png);
+      -webkit-animation: transparency 3s linear infinite;
+      animation: transparency 3s linear infinite;
+    }
+    .icon6 {
+      top: 80px;
+      right: 78px;
+      background-image: url(../images/work_module/icon6.png);
+      -webkit-animation: transparency 4s linear infinite;
+      animation: transparency 4s linear infinite;
+    }
+    .icon7 {
+      top: 132px;
+      right: -27px;
+      background-image: url(../images/work_module/icon7.png);
+      -webkit-animation: transparency 4s linear infinite;
+      animation: transparency 4s linear infinite;
+    }
+  }
+  .modules {
+    padding: 50px 0;
+    .posts {
+      .post {
+        position: relative;
+        float: left;
+        width: 386px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        .top {
+          height: 40px;
+          .transition();
+        }
+        .box {
+          position: relative;
+          height: 484px;
+          text-align: center;
+          border: 1px solid #d9dce4;
+          box-sizing: border-box;
+          overflow: hidden;
+          .transition();
+          .hd {
+            height: 94px;
+            line-height: 94px;
+            font-size: 24px;
+            color: @middleGray;
+            .transition();
+            h4 {
+              font-weight: normal;
+            }
+          }
+          .bd {
+            position: relative;
+            padding: 24px 0;
+            background: #f0f7fb;
+            .transition();
+            &:before {
+              .content();
+              top: -12px;
+              left: 50%;
+              width: 0;
+              height: 0;
+              margin-left: -12px;
+              border-width: 0 12px 12px;
+              border-style: solid;
+              border-color: transparent transparent #f0f7fb;
+              .transition();
+            }
+            p {
+              padding: 6px 0;
+              font-size: 14px;
+              span {
+                display: inline-block;
+                line-height: 30px;
+                padding: 0 15px;
+                color: @blue;
+                border: 1px solid transparent;
+                border-image: url(../images/work_module/icon_text.png) 1 1 1 stretch;
+                -webkit-border-image: url(../images/work_module/icon_text.png) 1 1 1 stretch;
+                -moz-border-image: url(../images/work_module/icon_text.png) 1 1 1 stretch;
+                -o-border-image: url(../images/work_module/icon_text.png) 1 1 1 stretch;
+                .transition();
+              }
+            }
+          }
+          .ft {
+            padding: 25px 0;
+            color: #888;
+            .transition();
+            p {
+              line-height: 30px;
+              font-size: 15px;
+            }
+          }
+          .more {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            display: block;
+            width: 130px;
+            height: 35px;
+            line-height: 35px;
+            margin-left: -65px;
+            font-size: 14px;
+            color: @white;
+            background: @blue;
+            .transition();
+            &:hover {
+              box-shadow: 0 4px 12px 3px rgba(39,112,246,.1);
+            }
+          }
+        }
+        &:hover {
+          .top {
+            height: 0;
+          }
+          .box {
+            height: 524px;
+            box-shadow: 0 8px 30px 0 rgba(24,41,96,0.1);
+            .hd {
+              color: #3a4155;
+            }
+            .bd {
+              background: @blue;
+              &:before {
+                border-color: transparent transparent @blue;
+              }
+              p {
+                span {
+                  color: @white;
+                  border-image: url(../images/work_module/icon_text2.png) 1 1 1 stretch;
+                  -webkit-border-image: url(../images/work_module/icon_text2.png) 1 1 1 stretch;
+                  -moz-border-image: url(../images/work_module/icon_text2.png) 1 1 1 stretch;
+                  -o-border-image: url(../images/work_module/icon_text2.png) 1 1 1 stretch;
+                }
+              }
+            }
+            .ft {
+              color: @middleGray;
+            }
+            .more {
+              bottom: 38px;
+            }
+            .down {
+              bottom: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

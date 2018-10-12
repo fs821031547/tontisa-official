@@ -515,6 +515,16 @@ module.exports = app => {
       await this.ctx.render('interview_detail', resData);
     }
 
+    //work-module
+    async workModule() {
+      await this.ctx.render('work_module');
+    }
+
+    //version-type
+    async versionType() {
+      await this.ctx.render('version_type');
+    }
+
     async errPage() {
       await this.ctx.render('404');
     }

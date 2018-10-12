@@ -34,6 +34,8 @@ module.exports = app => {
   router.get('/view-detail/:id', rv('view-detail'), controller.home.viewDetail);
 
   router.get('/erp-index', rv('erp-index'), controller.home.erpIndex);
+  router.get('/version-type', rv('version-type'), controller.home.versionType);
+  router.get('/work-module', rv('work-module'), controller.home.workModule);
 
 
   router.get('/404', rv('404'), controller.home.errPage);
