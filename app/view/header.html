@@ -15,7 +15,7 @@
               <a class="item-a" href="/">首页</a>
             </li>
           <% elseif item.name == '小强ERP' %>
-            <li class="item <% if ctx.path.includes('/erp-index') %>active<% endif %>">
+            <li class="item <% if ctx.path.includes('/erp-index') or ctx.path.includes('/version-type') or ctx.path.includes('/work-module') %>active<% endif %>">
               <a class="item-a" href="/erp-index">小强ERP</a>
               <% if item.subMenu.length > 0 %>
                 <div class="sub-box">
