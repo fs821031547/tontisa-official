@@ -22,8 +22,8 @@
   <div id="content" class="main-content">
     <div class="page-work">
       <div class="banner">
-        <h2>覆盖旅行社全流程的工作模块</h2>
-        <p>满足所有岗位的工作需求</p>
+        <h2 class="wow slideInDown">覆盖旅行社全流程的工作模块</h2>
+        <p class="wow slideInDown" data-wow-delay="0.1">满足所有岗位的工作需求</p>
         <div class="img"></div>
         <div class="inner box">
           <i class="icon icon1"></i>
@@ -37,7 +37,7 @@
       </div>
       <div class="modules">
         <div class="inner">
-          <div class="posts clearfix">
+          <div class="posts clearfix wow slideInUp">
             <div class="post">
               <div class="top"></div>
               <div class="box">
@@ -101,7 +101,7 @@
               </div>
             </div>
           </div>
-          <div class="posts clearfix">
+          <div class="posts clearfix wow slideInUp">
             <div class="post">
               <div class="top"></div>
               <div class="box">
@@ -163,7 +163,7 @@
               </div>
             </div>
           </div>
-          <div class="posts clearfix">
+          <div class="posts clearfix wow slideInUp">
             <div class="post">
               <div class="top"></div>
               <div class="box">
@@ -230,6 +230,9 @@
   <% include './footer.html' %>
 
   <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
-
+  <script src="../public/js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
 </body>
 </html>
