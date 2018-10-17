@@ -72,11 +72,12 @@ module.exports = app => {
         tags: query.tags || null,
       };
 
-      const tagParams = {
-
-      };
+      const tagParams = {};
       const res = await this.apiPost('/websiteContent/list', params);
-      const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
+      const bannerRes = await this.apiPost(
+        '/websiteContent/list',
+        bannerParams
+      );
       const tagRes = await this.apiPost('/websiteTag/list', tagParams);
       const websiteTag = {
         type: [],
@@ -95,8 +96,10 @@ module.exports = app => {
           case 3:
             websiteTag.feature.push(item);
             break;
-          default:
+          case 4:
             websiteTag.target.push(item);
+            break;
+          default:
             break;
         }
       });
@@ -193,8 +196,14 @@ module.exports = app => {
       };
       const newsRes = await this.apiPost('/websiteContent/list', newsParams);
       const viewRes = await this.apiPost('/websiteContent/list', viewParams);
-      const productRes = await this.apiPost('/websiteContent/list', productParams);
-      const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
+      const productRes = await this.apiPost(
+        '/websiteContent/list',
+        productParams
+      );
+      const bannerRes = await this.apiPost(
+        '/websiteContent/list',
+        bannerParams
+      );
       const resData = {
         newsList: newsRes.data.data.list,
         viewList: viewRes.data.data.list,
@@ -279,7 +288,13 @@ module.exports = app => {
         return x.name === '小强学院';
       });
       const paramsValue = '10000';
-      const navIdArr = [ paramsValue, paramsValue, paramsValue, paramsValue, paramsValue ];
+      const navIdArr = [
+        paramsValue,
+        paramsValue,
+        paramsValue,
+        paramsValue,
+        paramsValue,
+      ];
       pageInfo.forEach(x => {
         if (x.parentId == actionData.id) {
           switch (x.name) {
@@ -340,7 +355,10 @@ module.exports = app => {
         tags: query.tags || null,
       };
 
-      const bannerRes = await this.apiPost('/websiteContent/list', bannerParams);
+      const bannerRes = await this.apiPost(
+        '/websiteContent/list',
+        bannerParams
+      );
       const res = await this.apiPost('/websiteContent/list', params);
       const resTwo = await this.apiPost('/websiteContent/list', paramsTwo);
       const resThree = await this.apiPost('/websiteContent/list', paramsThree);
@@ -393,9 +411,7 @@ module.exports = app => {
     }
     // trust-circle
     async trustCircle() {
-      const {
-        query,
-      } = this.ctx;
+      const { query } = this.ctx;
       const navIdArr = this.filterNavId();
       const params = {
         pageNum: query.page || 1,
@@ -418,9 +434,7 @@ module.exports = app => {
 
     // information-train
     async inforTrain() {
-      const {
-        query,
-      } = this.ctx;
+      const { query } = this.ctx;
       const navIdArr = this.filterNavId();
       const params = {
         pageNum: query.page || 1,
@@ -447,9 +461,7 @@ module.exports = app => {
 
     // team-build
     async teamBuild() {
-      const {
-        query,
-      } = this.ctx;
+      const { query } = this.ctx;
       const navIdArr = this.filterNavId();
       const params = {
         pageNum: query.page || 1,
@@ -476,9 +488,7 @@ module.exports = app => {
 
     // news-detail
     async newsDetail() {
-      const {
-        params,
-      } = this.ctx;
+      const { params } = this.ctx;
       const param = {
         id: params.id,
       };
@@ -496,7 +506,6 @@ module.exports = app => {
       } catch (error) {
         await this.ctx.render({});
       }
-
     }
 
     // view-detail
@@ -515,12 +524,12 @@ module.exports = app => {
       await this.ctx.render('interview_detail', resData);
     }
 
-    //work-module
+    // work-module
     async workModule() {
       await this.ctx.render('work_module');
     }
 
-    //version-type
+    // version-type
     async versionType() {
       await this.ctx.render('version_type');
     }
@@ -537,7 +546,10 @@ module.exports = app => {
         sign: '88888888',
         timestamp: '2018-05-07 15:04:12',
       };
-      const user = await this.apiPost('vutest.op110.com.cn/usercenter-service/user/info', data);
+      const user = await this.apiPost(
+        'vutest.op110.com.cn/usercenter-service/user/info',
+        data
+      );
       console.log('user=========:', user);
       if (typeof user.data === 'string') {
         user.data = JSON.parse(user.data);
@@ -553,7 +565,10 @@ module.exports = app => {
         sign: '88888888',
         timestamp: '2018-05-07 15:04:12',
       };
-      const user = await this.apiPost('vutest.op110.com.cn/usercenter-service/user/info', data);
+      const user = await this.apiPost(
+        'vutest.op110.com.cn/usercenter-service/user/info',
+        data
+      );
       if (typeof user.data === 'string') {
         user.data = JSON.parse(user.data);
       }
