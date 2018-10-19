@@ -111,3 +111,14 @@
   96% { opacity: 0.9;}
   99% { opacity: 0.95;}
 }
+
+
+//亮点功能
+@keyframes flickerImg {
+  25% {
+    background-image: none;
+  }
+  75% {
+    background-image: url(../images/highlight/banner_icon.png);
+  }
+}

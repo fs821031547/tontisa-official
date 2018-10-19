@@ -6,22 +6,461 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="keywords" content="">
   <meta name="description" content="">
-  <title>客户案例</title>
+  <title>首页</title>
   <link rel="stylesheet" href="public/css/reset.css">
+  <link rel="stylesheet" href="/public/css/layout.css">
+  <link rel="stylesheet" href="public/css/revolution.css">
+  <link rel="stylesheet" href="../public/css/animate.min.css">
+  <link rel="stylesheet" href="../public/css/default.css">
+  <style>
+    @media screen and ( max-width: 1480px ) {
+      .page-index .attach .box .cards {
+        padding: 40px 0;
+      }
+    }
+    @media screen and ( max-width: 1280px ) {
+      .page-index .attach .box .banner {
+        height: 400px;
+      }
+      .page-index .attach .box .notice {
+        padding: 20px 0;
+      }
+      .page-index .attach .box .cards {
+        padding: 40px 0;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="page-index">
 
-<div style="padding: 20px; font-size: 16px;">
-  暂时还没有首页！
-  <br><br>
+<% include './header.html' %>
+<div id="content" class="main-content">
+  <div class="attach">
+    <div class="box">
+      <div class="banner"></div>
+      <div class="notice">
+        <div class="inner clearfix">
+          <span class="name">同天下头条：</span>
+          <div id="slideNotice" class="slide-notice">
+            <div class="hd"></div>
+            <div class="bd">
+              <ul>
+                <li><a href="">8月25日，同天下《信任五环》公益课堂广州站完美收官！</a></li>
+                <li><a href="">8月25日，同天下《信任五环》公益课堂广州站完美收官！</a></li>
+                <li><a href="">8月25日，同天下《信任五环》公益课堂广州站完美收官！</a></li>
+              </ul>
+            </div>
+          </div>
+          <a class="more" href="">查看更多></a>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="inner clearfix">
+          <div class="card card1">
+            <h6>报名小强学院</h6>
+            <p>《信息化技能培训》郑州站</p>
+            <span class="line"></span>
+          </div>
+          <div class="card card2 card-even">
+            <h6>合作开课</h6>
+            <p>在当地协办小强学院</p>
+            <span class="line"></span>
+          </div>
+          <div class="card card3">
+            <h6>咨询小强ERP</h6>
+            <p>了解、试用、购买小强ERP</p>
+            <span class="line"></span>
+          </div>
+          <div class="card card4 card-even">
+            <h6>加入同天下</h6>
+            <p>招募技术、销售、客服精英</p>
+            <span class="line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  您可以先看：<br>
-  <a href="/case-list" style="font-size: 14px;">客户案例</a><br>
-  <a href="/recent-list" style="font-size: 14px;">最新动态</a><br>
-  <a href="/erp-school" style="font-size: 14px;">小强学院</a><br>
-  <a href="/erp-index" style="font-size: 14px;">小强erp</a>
+  <div class="parts">
+    <!--五大产品体系-->
+    <div class="part-one">
+      五大产品体系
+    </div>
+    <!--五大产品体系-->
+
+    <!--小强学院-赋能旅游人-->
+    <div class="part-two">
+      <div class="inner">
+        <div class="module">
+          <div class="head">
+            <h2 class="module-title">小强学院 - 赋能旅游人</h2>
+            <p class="module-sub-title">旅游人自己的学院，为旅游人提供一切对经营业务有利的方法、工具和理念</p>
+          </div>
+          <div class="body clearfix">
+            <div class="post">
+              <img src="/public/images/index/part_one_img1.png" alt="">
+              <h4>关注客户思维的超级销售拜访技巧</h4>
+              <a class="more" href="">了解更多</a>
+            </div>
+            <div class="post">
+              <img src="/public/images/index/part_one_img2.png" alt="">
+              <h4>多维度全面提升旅行社员工信息化能力</h4>
+              <a class="more" href="">了解更多</a>
+            </div>
+            <div class="post">
+              <img src="/public/images/index/part_one_img3.png" alt="">
+              <h4>量身定制最贴合旅行社特性的个性化团建</h4>
+              <a class="more" href="">了解更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--小强学院-赋能旅游人-->
+
+    <!--专业为基，服务为魂-->
+    <div class="part-three">
+      <div class="inner">
+        <div class="module">
+          <div class="head">
+            <h2 class="module-title">专业为基，服务为魂</h2>
+            <p class="module-sub-title">优秀的服务团队，完善的售后服务体系，为用户提供专业的、优质的、全方位的服务</p>
+          </div>
+          <div class="body clearfix">
+            <div class="post">
+              <div class="hd icon1"></div>
+              <div class="bd">
+                <p class="title">培训服务</p>
+                <p class="line"></p>
+                <div class="text">真人视频课程，图文使用手册，专业客服在线培训，小强学院案例教学加实操演练，全国服务站地区免费上门服务。</div>
+              </div>
+              <a class="ft" href="#">了解更多</a>
+            </div>
+            <div class="post">
+              <div class="hd icon2"></div>
+              <div class="bd">
+                <p class="title">咨询服务</p>
+                <p class="line"></p>
+                <div class="text">具备丰富系统操作经验及全面系统知识的专业客服，建立专属的服务群，及时解答客户问 题，收集解决客户需求，保障用户体验。</div>
+              </div>
+              <a class="ft" href="#">了解更多</a>
+            </div>
+            <div class="post">
+              <div class="hd icon3"></div>
+              <div class="bd">
+                <p class="title">工单服务</p>
+                <p class="line"></p>
+                <div class="text">免费的智能工单服务，用户在使用系统时遇到任何问题和需求，24小时均可在后台在线反馈，客服和技术将第一时间响应解决。</div>
+              </div>
+              <a class="ft" href="#">了解更多</a>
+            </div>
+            <div class="post">
+              <div class="hd icon4"></div>
+              <div class="bd">
+                <p class="title">技术保障</p>
+                <p class="line"></p>
+                <div class="text">采用国际先进SaaS模式，性能稳定，保障数据安全。后端采用基于java的SOA架构，分布式服务器集+NGINX保证负载均衡。</div>
+              </div>
+              <a class="ft" href="#">了解更多</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--专业为基，服务为魂-->
+
+    <!--小强ERP代言人-->
+    <div class="part-four">
+      <!-- <div class="module share-box">
+        <div class="inner">
+          <h3 class="module-title wow slideInUp">优秀学员分享</h3>
+          <div class="share-slide" id="shareSlide">
+            <span id="prev" class="btn prev" style="display:none;"></span>
+      			<span id="next" class="btn next" style="display:none;"></span>
+      			<span id="prevTop" class="btn prev"></span>
+      			<span id="nextTop" class="btn next"></span>
+            <div id="picBox" class="picBox">
+      				<ul class="cf">
+                <% for item in twoList %>
+      					<li class="clearfix">
+                  <div class="img">
+                    <img src="<$ item.imgUrl $>" alt="<$ item.imgUrl $>">
+                  </div>
+                  <div class="info">
+                    <p class="hd"><$ item.title $></p>
+                    <p class="bd"><$ item.secondTitle $></p>
+                    <div class="ft"><$ item.description $></div>
+                  </div>
+                </li>
+                <% endfor %>
+      				</ul>
+      			</div>
+            <div id="listBox" class="listBox">
+      				<ul class="cf">
+                <% for item in twoList %>
+      					<li class="on">
+                  <div class="col clearfix">
+                    <img src="<$ item.imgUrl $>" alt="<$ item.imgUrl $>">
+                    <div class="info">
+                      <p class="p1"><$ item.title $></p>
+                      <p class="p2"><$ item.secondTitle $></p>
+                    </div>
+                  </div>
+                </li>
+                <% endfor %>
+      				</ul>
+      			</div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <!--小强ERP代言人-->
+
+    <!--全国服务范围-->
+    <div class="part-five">
+      <div class="inner">
+        <div class="map-info">
+          <div id="mapChina" style="height:800px;width:900px;"></div>
+        </div>
+        <div class="text-info">
+          <div class="head">
+            <h2 class="module-title">全国服务范围</h2>
+            <p class="module-sub-title">服务网络覆盖全国，助力旅行社实现业绩腾飞</p>
+          </div>
+          <div class="body">同天下业务范围已扩至全国<span>90%</span>地区，在北京、广州、武汉、成都、郑州、贵州、南昌、上海、西安、长沙多地都有驻点。</div>
+        </div>
+      </div>
+    </div>
+    <!--全国服务范围-->
+
+    <!--客户案例-->
+    <div class="part-six">
+      <div class="module">
+        <div class="head">
+          <h2 class="module-title">客户案例 - 同天下之利者则得天下</h2>
+          <p class="module-sub-title">同天下已为逾万家旅行社提供互联网解决方案</p>
+        </div>
+        <div class="inner body">
+          <div class="list-case">
+            <ul class="clearfix">
+              <li>
+                <div class="col">
+                  <a  href="/case-detail/<$ item.id $>">
+                    <div class="img">
+                      <img src="/public/images/banner2.jpg">
+                    </div>
+                    <p class="hd">
+                      <span class="tag">出境批发商</span>
+                      <span>深圳海洋假日</span>
+                    </p>
+                    <div class="bd">
+                      <p class="title">大数据分析，科学指导旅行社经营</p>
+                      <p class="info">
+                        海洋假日利用小强ERP大数据功能，指导公司运营，使传 统旅行社成功拥抱互联网和大数据海洋假日 。
+                      </p>
+                    </div>
+                    <div class="ft clearfix">
+                      <p class="fl left-item">
+                        <span class="">数据统计分析</span>
+                        <span class="">科学指导经营</span>
+                      </p>
+                      <p class="fr">20~30人</p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="col">
+                  <a  href="/case-detail/<$ item.id $>">
+                    <div class="img">
+                      <img src="/public/images/banner2.jpg">
+                    </div>
+                    <p class="hd">
+                      <span class="tag">出境批发商</span>
+                      <span>深圳海洋假日</span>
+                    </p>
+                    <div class="bd">
+                      <p class="title">大数据分析，科学指导旅行社经营</p>
+                      <p class="info">
+                        海洋假日利用小强ERP大数据功能，指导公司运营，使传 统旅行社成功拥抱互联网和大数据海洋假日 。
+                      </p>
+                    </div>
+                    <div class="ft clearfix">
+                      <p class="fl left-item">
+                        <span class="">数据统计分析</span>
+                        <span class="">科学指导经营</span>
+                      </p>
+                      <p class="fr">20~30人</p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="col">
+                  <a  href="/case-detail/<$ item.id $>">
+                    <div class="img">
+                      <img src="/public/images/banner2.jpg">
+                    </div>
+                    <p class="hd">
+                      <span class="tag">出境批发商</span>
+                      <span>深圳海洋假日</span>
+                    </p>
+                    <div class="bd">
+                      <p class="title">大数据分析，科学指导旅行社经营</p>
+                      <p class="info">
+                        海洋假日利用小强ERP大数据功能，指导公司运营，使传 统旅行社成功拥抱互联网和大数据海洋假日 。
+                      </p>
+                    </div>
+                    <div class="ft clearfix">
+                      <p class="fl left-item">
+                        <span class="">数据统计分析</span>
+                        <span class="">科学指导经营</span>
+                      </p>
+                      <p class="fr">20~30人</p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <a class="more" href="/case-list">了解更多案例</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--客户案例-->
+  </div>
 </div>
+<% include './footer.html' %>
+
+<script src="/public/js/jquery-1.11.1.min.js"></script>
+<script src="public/js/jquery.themepunch.plugins.min.js"></script>
+<script src="public/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/public/js/jquery.SuperSlide.2.1.1.js"></script>
+<!-- <script src="../public/js/jqueryPhoto.js"></script> -->
+<script src="/public/js/plugins/echarts.min.js"></script>
+<script src="/public/js/plugins/china.js"></script>
+<script>
+  $(function() {
+    $('.tp-banner').revolution({
+      delay: 6000,
+      startwidth: 1200,
+      startheight: 490,
+      fullWidth: 'on',
+      forceFullWidth: "on",
+      onHoverStop: 'on',
+      hideThumbs: 10
+    });
+
+    jQuery("#slideNotice").slide({titCell:".hd ul", mainCell:".bd ul", autoPage:true, effect:"top", autoPlay:true, interTime: 5000});
+
+
+    //地图
+    // 全国省份列表
+    var dataMap = [
+      { name: '北京' }, { name: '天津' }, { name: '上海' }, { name: '重庆' }, { name: '河北' }, { name: '河南' }, { name: '云南' }, { name: '辽宁' }, { name: '黑龙江' },
+      { name: '湖南' }, { name: '安徽' }, { name: '山东' }, { name: '新疆' }, { name: '江苏' }, { name: '浙江' }, { name: '江西' }, { name: '湖北' }, { name: '广西' },
+      { name: '甘肃' }, { name: '山西' }, { name: '内蒙古' }, { name: '陕西' }, { name: '吉林' }, { name: '福建' }, { name: '贵州' }, { name: '广东' }, { name: '青海' },
+      { name: '西藏' }, { name: '四川' }, { name: '宁夏' }, { name: '海南' }, { name: '台湾' }, { name: '香港' }, { name: '澳门' }
+    ];
+
+    // 需要在页面上直接标记出来的城市
+    var specialMap = [
+      '北京', '天津', '上海', '重庆', '河南', '云南', '辽宁', '黑龙江', '湖南', '安徽', '山东', '陕西', '山西',
+       '新疆', '浙江', '江西', '湖北', '广西', '甘肃', '福建', '贵州', '广东', '青海', '四川', '宁夏'];
+
+     // 对dataMap进行处理，使其可以直接在页面上展示
+    for (var i = 0; i < specialMap.length; i++) {
+      for (var j = 0; j < dataMap.length; j++) {
+        if (specialMap[i] == dataMap[j].name) {
+          dataMap[j].selected = true;
+          break;
+        }
+      }
+    }
+
+    // 绘制图表，准备数据
+    var option = {
+      tooltip: {
+        formatter: function (params) {
+          if(params.name == '广东') {
+            var info = '<div class="tip-info">'+
+            '<p class="pro">深圳总部/惠州/珠海</p><p class="normal">服务经理：刘金红</p><p class="normal">联系方式：13534212585</p><br>'+
+            '<p class="pro">广州/佛山/东莞</p><p class="normal">服务经理：郑少芳</p><p class="normal">联系方式：15814649059</p>'
+            +'</div>';
+          } else if(params.name == '新疆' || params.name == '青海') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：刘金红</p><p class="normal">联系方式：13534212585</p></div>'
+          } else if(params.name == '四川') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：李厚斌</p><p class="normal">联系方式：15361850666</p></div>'
+          } else if(params.name == '云南' || params.name == '贵州') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：周  骞</p><p class="normal">联系方式：15925134134</p></div>'
+          } else if(params.name == '河南' || params.name == '山西') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：王渊明</p><p class="normal">联系方式：18538222981</p></div>'
+          } else if(params.name == '广西') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：何  蓉</p><p class="normal">联系方式：13686432900</p></div>'
+          } else if(params.name == '湖南' || params.name == '江西') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：张  帅</p><p class="normal">联系方式：13510221790</p></div>'
+          } else if(params.name == '安徽') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：林苗佳</p><p class="normal">联系方式：15013796505</p></div>'
+          } else if(params.name == '甘肃' || params.name == '山西' || params.name == '宁夏' || params.name == '陕西' ) {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：文  舒</p><p class="normal">联系方式：18211567155</p></div>'
+          } else if(params.name == '重庆') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：罗  捷</p><p class="normal">联系方式：18038007300</p></div>'
+          } else if(params.name == '天津') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：李亚洲</p><p class="normal">联系方式：18137393529</p></div>'
+          } else if(params.name == '北京' || params.name == '福建' ) {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：古月清</p><p class="normal">联系方式：13312918009</p></div>'
+          } else if(params.name == '山东' || params.name == '湖北' || params.name == '黑龙江' || params.name == '辽宁') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：戚本令</p><p class="normal">联系方式：13008888495</p></div>'
+          } else if(params.name == '上海' || params.name == '浙江') {
+            var info = '<div class="tip-info"><p class="pro">' + params.name + '</p><p class="normal">服务经理：郑少锋</p><p class="normal">联系方式：18938932225</p></div>'
+          }
+
+          return info;
+        },
+        backgroundColor: "",//提示标签背景颜色
+        textStyle: { color: "#fff" } //提示标签字体颜色
+      },
+      series: [
+        {
+          name: '中国',
+          type: 'map',
+          mapType: 'china',
+          selectedMode: 'multiple',
+          label: {
+            normal: {
+              show: true,//显示省份标签
+              textStyle:{color:"#182d51"} //省份标签字体颜色
+            },
+            emphasis: {
+              show: true,//对应的鼠标悬浮效果
+              textStyle:{color:"#fff"}
+            }
+          },
+          itemStyle: {
+            normal: {
+              borderWidth: 1,//区域边框宽度
+              borderColor: '#8196bf',//区域边框颜色
+              areaColor:"#182d51",//区域颜色
+            },
+            emphasis: {
+              borderWidth: 1,
+              borderColor: '#8196bf',
+              areaColor: "#2770f6",
+            }
+          },
+          data: dataMap
+        }
+      ]
+    };
+    //初始化echarts实例
+    var myChart = echarts.init(document.getElementById('mapChina'));
+    //使用制定的配置项和数据显示图表
+    myChart.setOption(option);
+
+
+  });
+</script>
 
 </body>
 </html>

@@ -525,6 +525,31 @@ module.exports = app => {
       await this.ctx.render('version_type');
     }
 
+    //know-us
+    async knowUs() {
+      await this.ctx.render('know_us');
+    }
+
+    //page-report
+    async pageReport() {
+      await this.ctx.render('page_report');
+    }
+
+    //page-contact
+    async pageContact() {
+      await this.ctx.render('page_contact');
+    }
+
+    //page-join
+    async pageJoin() {
+      await this.ctx.render('page_join');
+    }
+
+    //highlight-fun
+    async highLight() {
+      await this.ctx.render('highlight_fun');
+    }
+
     async errPage() {
       await this.ctx.render('404');
     }
