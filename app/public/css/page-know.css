@@ -1,0 +1,699 @@
+.rotate-more {
+  display: inline-block;
+  position: relative;
+  line-height: 32px;
+  padding: 0px 25px;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+.rotate-more .lines {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.rotate-more .lines:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background-color: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more .lines:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  content: "";
+  background-color: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more:before {
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #bbb;
+  transition: transform 300ms;
+}
+.rotate-more:hover:before {
+  transform: translateX(-100%);
+}
+.rotate-more:hover:after {
+  transform: translateX(100%);
+}
+.rotate-more:hover .lines:before {
+  transform: translateY(-100%);
+}
+.rotate-more:hover .lines:after {
+  transform: translateY(100%);
+}
+.page-know {
+  background: #f7f7f7;
+}
+.page-know .slide {
+  height: 480px;
+  background: url(../images/know_us/bg.jpg) center 0 no-repeat;
+}
+.page-know .content {
+  position: relative;
+  z-index: 1;
+  width: 1200px;
+  min-height: 500px;
+  padding: 48px 65px 75px;
+  margin: 0 auto 100px;
+  margin-top: -113px;
+  color: #666;
+  background: #fff;
+  box-sizing: border-box;
+}
+.page-know .content .top .title {
+  float: left;
+  position: relative;
+  height: 26px;
+  line-height: 26px;
+  padding-left: 35px;
+  font-size: 26px;
+  font-weight: normal;
+  color: #666;
+}
+.page-know .content .top .title:before {
+  display: block;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 11px;
+  width: 20px;
+  height: 3px;
+  background: #2770f6;
+}
+.page-know .content .top .tab-menu {
+  float: left;
+  padding-top: 8px;
+  margin-left: 50px;
+}
+.page-know .content .top .tab-menu li {
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  margin-right: 40px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.page-know .content .top .tab-menu li.active {
+  color: #2770f6;
+}
+.page-know .content .top .link-menu {
+  float: right;
+  padding-top: 12px;
+}
+.page-know .content .top .link-menu a {
+  float: left;
+  height: 14px;
+  line-height: 14px;
+  margin-left: 25px;
+  font-size: 14px;
+}
+.page-know .content .head {
+  position: relative;
+  height: 312px;
+  margin-top: 40px;
+  background: url(../images/know_us/common_img.jpg) center 0 no-repeat;
+}
+.page-know .content .head .name {
+  position: absolute;
+  right: 114px;
+  bottom: 58px;
+  height: 32px;
+  line-height: 32px;
+  font-family: Helve;
+  font-size: 28px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.page-know .content .head .name.active {
+  bottom: 98px;
+  opacity: 1;
+}
+.page-know .content .head .name span {
+  display: inline-block;
+  position: relative;
+}
+.page-know .content .head .name span:before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 15px;
+  left: -46px;
+  width: 36px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.8);
+}
+.page-know .content .body {
+  position: relative;
+  padding-top: 32px;
+  font-size: 14px;
+  overflow: hidden;
+}
+.page-know .content .body .bold {
+  line-height: 28px;
+  font-weight: bold;
+  color: #333;
+}
+.page-know .content .body .box {
+  position: absolute;
+  width: 100%;
+}
+.page-know .content .body .box .type {
+  padding-top: 30px;
+}
+.page-know .content .body .box .type img {
+  max-width: 100%;
+}
+.page-know .content .body .box .type .title {
+  position: relative;
+  height: 18px;
+  line-height: 18px;
+  padding-left: 20px;
+  margin: 50px 0 24px;
+  font-size: 18px;
+  color: #444;
+}
+.page-know .content .body .box .type .title:before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 0;
+  width: 10px;
+  height: 2px;
+  background: #333;
+}
+.page-know .content .body .box .type .desc {
+  padding-top: 15px;
+  line-height: 28px;
+  font-size: 15px;
+}
+.page-know .content .body .about-us {
+  opacity: 1;
+}
+.page-know .content .body .about-us .certi-imgs {
+  padding-top: 40px;
+}
+.page-know .content .body .about-us .certi-imgs .img {
+  float: left;
+  margin-right: 40px;
+}
+.page-know .content .body .about-us .certi-imgs .img:nth-last-child(1) {
+  margin-right: 0;
+}
+.page-know .content .body .about-us .certi-imgs .img p {
+  line-height: 40px;
+  padding-top: 8px;
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+}
+.page-know .content .body .team-us {
+  opacity: 0;
+}
+.page-know .content .body .team-us .type {
+  padding-top: 0;
+}
+.page-know .content .body .team-us .type .title {
+  margin-top: 0;
+}
+.page-know .content .body .team-us .type .desc {
+  margin-bottom: 50px;
+}
+.page-know .content .body .develop-us {
+  height: 710px;
+  padding-top: 38px;
+  opacity: 0;
+}
+.page-know .content .body .develop-us .post {
+  position: relative;
+}
+.page-know .content .body .develop-us .post .col {
+  padding-left: 70px;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.page-know .content .body .develop-us .post .col .year {
+  position: relative;
+  float: left;
+  width: 226px;
+  padding-right: 65px;
+  font-size: 34px;
+  font-family: Helve;
+  text-align: right;
+  box-sizing: border-box;
+}
+.page-know .content .body .develop-us .post .col .year span {
+  display: block;
+  position: absolute;
+  right: 45px;
+  bottom: 10px;
+  font-size: 14px;
+  color: #999;
+}
+.page-know .content .body .develop-us .post .col .line {
+  float: left;
+  position: relative;
+  width: 2px;
+  height: 140px;
+  margin-right: 45px;
+  background: #e6e6e6;
+}
+.page-know .content .body .develop-us .post .col .line:before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: -10px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #bdbdbd;
+  border-radius: 50%;
+  background: #fff;
+}
+.page-know .content .body .develop-us .post .col .desc {
+  float: left;
+  width: 465px;
+  padding-right: 42px;
+  box-sizing: border-box;
+}
+.page-know .content .body .develop-us .post .col .desc h3 {
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: normal;
+}
+.page-know .content .body .develop-us .post .col .desc p {
+  line-height: 28px;
+  font-size: 16px;
+}
+.page-know .content .body .develop-us .post .col:nth-child(even) .desc {
+  text-align: right;
+}
+.page-know .content .body .develop-us .post .col:nth-child(even) .year {
+  text-align: left;
+}
+.page-know .content .body .develop-us .post .col-1 {
+  padding-left: 309px;
+}
+.page-know .content .body .develop-us .post .col-1 .line {
+  margin-top: 32px;
+}
+.page-know .content .body .develop-us .post .col-2 {
+  padding-left: 70px;
+}
+.page-know .content .body .develop-us .post .col-2 .year {
+  padding-right: 0;
+  margin-top: -26px;
+  text-align: left;
+}
+.page-know .content .body .develop-us .post .col-2 .year span {
+  right: 30px;
+}
+.page-know .content .body .develop-us .post .col-2 .desc {
+  margin-top: -20px;
+  text-align: right;
+}
+.page-know .content .body .develop-us .post .col-3 {
+  padding-left: 295px !important;
+}
+.page-know .content .body .develop-us .post .col-3 .year {
+  width: 240px;
+  margin-top: -26px;
+}
+.page-know .content .body .develop-us .post .col-3 .line {
+  height: 278px;
+}
+.page-know .content .body .develop-us .post .col-3 .desc {
+  margin-top: -20px;
+}
+.page-know .content .body .develop-us .post .col-4 .year {
+  margin-top: -26px;
+  text-align: left;
+}
+.page-know .content .body .develop-us .post .col-4 .year span {
+  right: 95px;
+}
+.page-know .content .body .develop-us .post .col-4 .line {
+  height: 90px;
+}
+.page-know .content .body .develop-us .post .col-4 .desc {
+  margin-top: -20px;
+  text-align: right;
+}
+.page-know .content .body .develop-us .post .hover {
+  position: absolute;
+  top: 0;
+  width: 716px;
+  border: 1px solid #2770f6;
+  box-sizing: border-box;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+.page-know .content .body .develop-us .post .hover .hover-year {
+  position: relative;
+  float: left;
+  width: 224px;
+  height: 135px;
+  font-size: 34px;
+  font-family: Helve;
+  color: #2770f6;
+  background: #fff;
+  box-sizing: border-box;
+}
+.page-know .content .body .develop-us .post .hover .hover-year span {
+  display: block;
+  position: absolute;
+  font-size: 14px;
+}
+.page-know .content .body .develop-us .post .hover .hover-desc {
+  float: left;
+  position: relative;
+  width: 490px;
+  height: 100%;
+  color: #fff;
+  background: #2770f6;
+  box-sizing: border-box;
+}
+.page-know .content .body .develop-us .post .hover .hover-desc:before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 47px;
+  left: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+}
+.page-know .content .body .develop-us .post .hover .hover-desc h3 {
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: normal;
+}
+.page-know .content .body .develop-us .post .hover .hover-desc p {
+  line-height: 28px;
+  font-size: 16px;
+}
+.page-know .content .body .develop-us .post .hover.hover-1 {
+  top: -26px;
+  left: 290px;
+  height: 137px;
+}
+.page-know .content .body .develop-us .post .hover.hover-1 .hover-year {
+  padding: 25px 0 0 98px;
+}
+.page-know .content .body .develop-us .post .hover.hover-1 .hover-year span {
+  right: 26px;
+  top: 45px;
+}
+.page-know .content .body .develop-us .post .hover.hover-1 .hover-desc {
+  padding: 25px 0 0 67px;
+}
+.page-know .content .body .develop-us .post .hover.hover-2 {
+  width: 736px;
+  top: -46px;
+  left: 66px;
+  height: 137px;
+}
+.page-know .content .body .develop-us .post .hover.hover-2 .hover-desc {
+  padding: 25px 64px 0 0;
+  text-align: right;
+}
+.page-know .content .body .develop-us .post .hover.hover-2 .hover-desc:before {
+  left: auto;
+  top: 35px;
+  right: 16px;
+}
+.page-know .content .body .develop-us .post .hover.hover-2 .hover-year {
+  width: 244px;
+  padding: 19px 0 0 25px;
+}
+.page-know .content .body .develop-us .post .hover.hover-2 .hover-year span {
+  top: 39px;
+  right: 22px;
+}
+.page-know .content .body .develop-us .post .hover.hover-3 {
+  top: -48px;
+  left: 270px;
+  width: 736px;
+  height: 284px;
+}
+.page-know .content .body .develop-us .post .hover.hover-3 .hover-year {
+  width: 244px;
+  height: 100%;
+  padding: 21px 0 0 26px;
+}
+.page-know .content .body .develop-us .post .hover.hover-3 .hover-year span {
+  top: 41px;
+  right: 25px;
+}
+.page-know .content .body .develop-us .post .hover.hover-3 .hover-desc {
+  padding: 27px 0 0 67px;
+}
+.page-know .content .body .develop-us .post .hover.hover-3 .hover-desc:before {
+  top: 37px;
+}
+.page-know .content .body .develop-us .post .hover.hover-4 {
+  top: -42px;
+  left: 66px;
+  height: 160px;
+}
+.page-know .content .body .develop-us .post .hover.hover-4 .hover-desc {
+  padding: 21px 64px 0 0;
+  text-align: right;
+}
+.page-know .content .body .develop-us .post .hover.hover-4 .hover-desc:before {
+  left: auto;
+  top: 31px;
+  right: 16px;
+}
+.page-know .content .body .develop-us .post .hover.hover-4 .hover-year {
+  height: 100%;
+  padding: 15px 0 0 25px;
+}
+.page-know .content .body .develop-us .post .hover.hover-4 .hover-year span {
+  top: 35px;
+  right: 68px;
+}
+.page-know .content .body .develop-us .post:hover .col {
+  opacity: 0;
+}
+.page-know .content .body .develop-us .post:hover .hover {
+  opacity: 1;
+}
+.page-know .content .body .report-list .item {
+  margin-bottom: 40px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.page-know .content .body .report-list .item .date {
+  width: 180px;
+  height: 26px;
+  float: left;
+  font-family: Helve;
+}
+.page-know .content .body .report-list .item .date p {
+  position: relative;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding-right: 46px;
+  font-size: 30px;
+}
+.page-know .content .body .report-list .item .date p span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 14px;
+  line-height: 14px;
+  font-size: 16px;
+}
+.page-know .content .body .report-list .item .title {
+  float: left;
+  width: 780px;
+  height: 18px;
+  line-height: 18px;
+  padding-top: 8px;
+}
+.page-know .content .body .report-list .item .title a {
+  display: inline-block;
+  max-width: 780px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.page-know .content .body .report-list .item .origin {
+  float: right;
+  height: 18px;
+  line-height: 18px;
+  padding-top: 8px;
+  font-size: 16px;
+}
+.page-know .content .body .report-list .item:hover {
+  color: #2770f6;
+}
+.page-know .content .body .report-list .item:hover a {
+  color: #2770f6;
+}
+.page-know .content .body .job-list .item {
+  padding: 30px 32px;
+  margin-bottom: 30px;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+}
+.page-know .content .body .job-list .item .name {
+  height: 18px;
+  line-height: 18px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #333;
+}
+.page-know .content .body .job-list .item .info {
+  line-height: 28px;
+  font-size: 14px;
+}
+.page-know .content .body .job-list .item .info span {
+  float: left;
+  width: 70px;
+}
+.page-know .content .body .job-list .item .info .text {
+  float: left;
+  width: 930px;
+}
+.page-know .content .body .job-list .hr-info {
+  padding-top: 10px;
+}
+.page-know .content .body .job-list .hr-info p {
+  float: left;
+  margin-right: 30px;
+}
+.page-know .content .body .contact-page .cpy-name {
+  line-height: 1;
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: #333;
+}
+.page-know .content .body .contact-page .cpy-info {
+  line-height: 32px;
+  font-size: 16px;
+}
+.page-know .content .body .contact-page .cpy-info .value {
+  font-weight: bold;
+  color: #444;
+}
+.page-know .content .body .contact-page .cpy-info span {
+  float: left;
+  width: 295px;
+}
+.page-know .content .body .contact-page .cpy-info span:nth-last-child(1) {
+  width: 475px;
+}
+.page-know .content .body .contact-page .sales-info {
+  margin-top: 60px;
+}
+.page-know .content .body .contact-page .sales-info .title {
+  line-height: 1;
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: #333;
+}
+.page-know .content .body .contact-page .sales-info .title.support {
+  padding-top: 15px;
+}
+.page-know .content .body .contact-page .sales-info .list-sales {
+  margin-right: -26px;
+}
+.page-know .content .body .contact-page .sales-info .list-sales .sale {
+  float: left;
+  width: 192px;
+  height: 220px;
+  padding-top: 28px;
+  margin-right: 26px;
+  margin-bottom: 26px;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+.page-know .content .body .contact-page .sales-info .list-sales .sale .name {
+  line-height: 1;
+  margin: 25px 0 12px;
+  font-size: 18px;
+  color: #444;
+}
+.page-know .content .body .contact-page .sales-info .list-sales .sale .name span {
+  display: inline-block;
+  line-height: 1;
+  padding: 3px 6px;
+  margin-left: 6px;
+  font-size: 12px;
+  color: #fff;
+  background: #2770f6;
+  border-radius: 4px;
+  vertical-align: top;
+}
+.page-know .content .body .contact-page .sales-info .list-sales .sale .tel {
+  line-height: 1;
+  font-size: 15px;
+}
+.page-know .content .body .contact-page .sales-info .list-sales .sale:nth-last-child(1) {
+  margin-bottom: 0;
+}
+.page-know .map {
+  width: 100%;
+  height: 800px;
+  margin-top: -110px;
+  overflow: hidden;
+}

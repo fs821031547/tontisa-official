@@ -6,6 +6,7 @@ module.exports = app => {
         type: 0,
       };
       const navData = await this.apiPost('/websiteNav/list', data);
+      console.log('==========navData=================', navData);
       if (typeof navData.data === 'string') {
         navData.data = JSON.parse(navData.data);
         return navData.data;

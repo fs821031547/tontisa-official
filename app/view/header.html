@@ -15,15 +15,25 @@
               <a class="item-a" href="/">首页</a>
             </li>
           <% elseif item.name == '小强ERP' %>
-            <li class="item <% if ctx.path.includes('/erp-index') or ctx.path.includes('/version-type') or ctx.path.includes('/work-module') %>active<% endif %>">
+            <li class="item <% if ctx.path.includes('/erp-index') or ctx.path.includes('/version-type') or ctx.path.includes('/work-module') or ctx.path.includes('/highlight-fun') %>active<% endif %>">
               <a class="item-a" href="/erp-index">小强ERP</a>
               <% if item.subMenu.length > 0 %>
                 <div class="sub-box">
                   <ul class="sub-menu">
                     <% for child in item.subMenu %>
-                    <li class="sub-item">
-                      <a class="sub-item-a" href=""><$ child.name $></a>
-                    </li>
+                      <% if child.name == '版本类型' %>
+                        <li class="sub-item">
+                          <a class="sub-item-a" href="/version-type">版本类型</a>
+                        </li>
+                      <% elseif child.name == '工作模块' %>
+                        <li class="sub-item">
+                          <a class="sub-item-a" href="/work-module">工作模块</a>
+                        </li>
+                      <% elseif child.name == '亮点功能' %>
+                        <li class="sub-item">
+                          <a class="sub-item-a" href="/highlight-fun">亮点功能</a>
+                        </li>
+                      <% endif %>
                     <% endfor %>
                   </ul>
                 </div>
@@ -91,8 +101,8 @@
               <% endif %>
             </li>
           <% elseif item.name == '了解我们' %>
-            <li class="item">
-              <a class="item-a" href="/">了解我们</a>
+            <li class="item <% if ctx.path.includes('/know-us') or ctx.path.includes('/page-report') or ctx.path.includes('/page-join') or ctx.path.includes('/page-contact') %>active<% endif %>">
+              <a class="item-a" href="/know-us">了解我们</a>
               <% if item.subMenu.length > 0 %>
                 <div class="sub-box">
                   <ul class="sub-menu">

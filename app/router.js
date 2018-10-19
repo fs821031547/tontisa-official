@@ -36,7 +36,12 @@ module.exports = app => {
   router.get('/erp-index', rv('erp-index'), controller.home.erpIndex);
   router.get('/version-type', rv('version-type'), controller.home.versionType);
   router.get('/work-module', rv('work-module'), controller.home.workModule);
+  router.get('/highlight-fun', rv('highlight-fun'), controller.home.highLight);
 
+  router.get('/know-us', rv('know-us'), controller.home.knowUs);
+  router.get('/page-report', rv('page-report'), controller.home.pageReport);
+  router.get('/page-contact', rv('page-contact'), controller.home.pageContact);
+  router.get('/page-join', rv('page-join'), controller.home.pageJoin);
 
   router.get('/404', rv('404'), controller.home.errPage);
 };
